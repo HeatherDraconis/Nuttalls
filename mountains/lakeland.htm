@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Lake District Mountains</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/mountains.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var mountains_list = new Array(
+"Allen Crags **************	2575ft -- 785m - NY236085	Allen Crags, tarn",
+"Atkinson Pike ************	2772ft -- 845m - NY324282	Atkinson Pike",
+"Bannerdale Crags *********	2241ft -- 683m - NY335290	Bannerdale Crags, winter",
+"Base Brown ***************	2119ft -- 646m - NY225114	Base Brown from above Stockly Bridge",
+"Birkhouse Moor ***********	2356ft -- 718m - NY363159	Birkhouse Moor from Keldas",
+"Birks ********************	2041ft -- 622m - NY380143	Birks",
+"Black Crag ***************	2717ft -- 828m - NY166116	Black Crag (beyond Pillar) from Brandreth",
+"Black Sails **************	2444ft -- 745m - NY282007	Black Sails",
+"Blencathra ***************	2848ft -- 868m - NY323277	Blencathra from Derwent Water",
+"Bowfell ******************	2959ft -- 902m - NY244064	Bowfell from Three Tarns",
+"Bowfell North Top ********	2841ft -- 866m - NY245070	Bowfell North Top above Angle Tarn",
+"Bowscale Fell ************	2303ft -- 702m - NY333305	Bowscale Fell from Bannerdale Crags summit",
+"Brandreth ****************	2346ft -- 715m - NY214119	Brandreth summit",
+"Branstree ****************	2339ft -- 713m - NY477100	Branstree, the survey pillar",
+"Branstree North East Top *	2208ft -- 673m - NY487103	Branstree North East Top from Artle Crag cairn",
+"Brim Fell ****************	2612ft -- 796m - SD270985	Brim Fell from Coniston Old Man",
+"Broad Crag ***************	3064ft -- 934m - NY218075	Broad Crag from the descent to Lingmell Col from Scafell Pike",
+"Carl Side ****************	2447ft -- 746m - NY254280	Carl Side",
+"Carrock Fell *************	2165ft -- 660m - NY341336	Carrock Fell from Mosedale",
+"Catstye Cam **************	2920ft -- 890m - NY348158	Catstye Cam winter",
+"Causey Pike **************	2090ft -- 637m - NY218208	Causey Pike",
+"Caw Fell *****************	2264ft -- 690m - NY131109	Caw Fell",
+"Clough Head **************	2382ft -- 726m - NY333225	Clough Head",
+"Codale Head **************	2395ft -- 730m - NY289090	Codale Head",
+"Cold Pike ****************	2300ft -- 701m - NY262035	Cold Pike summit",
+"Cold Pike Far West Top ***	2198ft -- 670m - NY256037	Cold Pike Far West Top",
+"Cold Pike West Top *******	2241ft -- 683m - NY258035	Cold Pike West Top pointed out by Heather",
+"Combe Door Top ***********	2218ft -- 676m - NY253108	Combe Door Top",
+"Combe Head ***************	2411ft -- 735m - NY249109	Combe Head from Combe Door Top",
+"Coniston Old Man *********	2634ft -- 803m - SD272978	Coniston Old Man",
+"Crag Hill ****************	2753ft -- 839m - NY192203	Crag Hill from Sand Hill",
+"Crinkle Crags ************	2818ft -- 859m - NY248048	Crinkle Crags",
+"Crinkle Crags South Top **	2736ft -- 834m - NY249045	Crinkle Crags South Top (the leftmost Crinkle)",
+"Dale Head ****************	2470ft -- 753m - NY223153	Dale Head from Hindscarth Edge",
+"Dodd (Buttermere) ********	2103ft -- 641m - NY164158	Dodd (Buttermere) summit",
+"Dollywaggon Pike *********	2815ft -- 858m - NY345130	Dollywaggon Pike from Nethermost Pike",
+"Dove Crag ****************	2598ft -- 792m - NY374104	Dove Crag",
+"Dovenest Top *************	2073ft -- 632m - NY256113	Dovenest Top",
+"Dow Crag *****************	2552ft -- 778m - SD262978	Dow Crag",
+"Esk Pike *****************	2904ft -- 885m - NY236075	Esk Pike, late afternoon",
+"Fairfield ****************	2864ft -- 873m - NY358117	Fairfield summit, summer",
+"Fleetwith Pike ***********	2126ft -- 648m - NY205141	Fleetwith Pike",
+"Froswick *****************	2362ft -- 720m - NY435085	Froswick",
+"Gategill Fell Top ********	2792ft -- 851m - NY318274	Gategill Fell Top",
+"Glaramara ****************	2569ft -- 783m - NY246104	Glaramara from Looking Steads",
+"Grasmoor *****************	2795ft -- 852m - NY174203	Grasmoor above Crummock Water",
+"Gray Crag (Hartsop) ******	2293ft -- 699m - NY428117	Gray Crag (Hartsop)",
+"Great Borne **************	2021ft -- 616m - NY123163	Great Borne from the ridge of Iron Crag",
+"Great Calva **************	2264ft -- 690m - NY290311	Great Calva",
+"Great Carrs **************	2575ft -- 785m - NY270008	Great Carrs, the plane wreck",
+"Great Dodd ***************	2812ft -- 857m - NY342206	Great Dodd from High Rigg",
+"Great End ****************	2986ft -- 910m - NY226084	Great End from Esk Pike",
+"Great Gable **************	2949ft -- 899m - NY211103	Great Gable from Scafell Pike",
+"Great Knott **************	2283ft -- 696m - NY260043	Great Knott",
+"Great Lingy Hill *********	2021ft -- 616m - NY310340	Great Lingy Hill summit",
+"Great Rigg ***************	2513ft -- 766m - NY355104	Great Rigg and Fairfield from Heron Pike North Top",
+"Green Gable **************	2628ft -- 801m - NY214107	Green Gable and Great Gable from Glaramara",
+"Green Side ***************	2608ft -- 795m - NY352187	Green Side",
+"Grey Crag (Sleddale) *****	2093ft -- 638m - NY496072	Grey Crag (Sleddale) from Tarn Crag summit",
+"Grey Friar ***************	2526ft -- 770m - NY259003	Grey Friar",
+"Grey Knotts **************	2287ft -- 697m - NY217126	Grey Knotts, looking to High Crag and High Stile",
+"Grisedale Pike ***********	2595ft -- 791m - NY198225	Grisedale Pike",
+"Hare Stones **************	2057ft -- 627m - NY315344	Hare Stones",
+"Harrison Stickle *********	2415ft -- 736m - NY281073	Harrison Stickle and Stickle Tarn",
+"Harrop Pike **************	2090ft -- 637m - NY501078	Harrop Pike summit",
+"Hart Crag ****************	2697ft -- 822m - NY368112	Hart Crag from Fairfield",
+"Hart Side ****************	2480ft -- 756m - NY358197	Hart Side",
+"Harter Fell(Duddon Valley)	2142ft -- 653m - SD218997	Harter Fell (Duddon)  winter",
+"Harter Fell (Kentmere) ***	2552ft -- 778m - NY459092	Harter Fell (Kentmere) from Yoke, winter",
+"Hartsop Dodd *************	2028ft -- 618m - NY411117	Hartsop Dodd",
+"Haycock ******************	2615ft -- 797m - NY144107	Haycock",
+"Helvellyn ****************	3117ft -- 950m - NY341151	Helvellyn from Nethermost Pike",
+"Helvellyn Lower Man ******	3035ft -- 925m - NY337155	Helvelyn Lower Man from the slopes of White Side",
+"Heron Pike ***************	2008ft -- 612m - NY355082	Heron Pike, winter",
+"Heron Pike North Top *****	2037ft -- 621m - NY357087	Heron Pike North Top",
+"High Crag ****************	2441ft -- 744m - NY180140	High Crag from Hay Stacks summit",
+"High House Tarn Top ******	2244ft -- 684m - NY240092	High House Tarn Top",
+"High Pike ****************	2159ft -- 658m - NY318350	High Pike from Great Lingy Hill summit cairn",
+"High Raise (High Street) *	2631ft -- 802m - NY448134	High Raise (High Street)",
+"High Raise (Langdale) ****	2500ft -- 762m - NY280095	High Raise (Langdale)",
+"High Spy *****************	2142ft -- 653m - NY234162	High Spy from Dalehead Tarn",
+"High Spy North Top *******	2080ft -- 634m - NY236171	High Spy North Top looking down on Derwent Water",
+"High Stile ***************	2648ft -- 807m - NY170148	High Stile from Brandreth",
+"High Street **************	2717ft -- 828m - NY440110	High Street from Thornthwaite Crag",
+"Hindscarth ***************	2385ft -- 727m - NY215165	Hindscarth",
+"Hobcarton Crag ***********	2425ft -- 739m - NY194220	Hobcarton Crag from Hopegill Head",
+"Hobcarton End ************	2080ft -- 634m - NY194235	Hobcarton End from Grisedale Pike",
+"Honister Crag ************	2067ft -- 630m - NY212142	Honister Crag",
+"Hopegill Head ************	2526ft -- 770m - NY185221	Hopegill Head",
+"Ill Bell *****************	2484ft -- 757m - NY436077	Ill Bell from Froswick",
+"Ill Crag *****************	3068ft -- 935m - NY223073	Ill Crag mist",
+"Iron Crag ****************	2100ft -- 640m - NY123119	Iron Crag",
+"Kentmere Pike ************	2395ft -- 730m - NY465077	Kentmere Pike from Branstree",
+"Kidsty Pike **************	2559ft -- 780m - NY447126	Kidsty Pike",
+"Kirk Fell ****************	2631ft -- 802m - NY194104	Kirk Fell from Great Gable",
+"Kirk Fell East Top *******	2582ft -- 787m - NY199106	Kirk Fell East Top from Beck Head",
+"Knott ********************	2329ft -- 710m - NY296329	Knott",
+"Ladyside Pike ************	2306ft -- 703m - NY184227	Ladyside Pike from Hopegill Head",
+"Lingmell *****************	2625ft -- 800m - NY209081	Lingmell summit",
+"Little Calva *************	2106ft -- 642m - NY282314	Little Calva summit",
+"Little Gowder Crag *******	2405ft -- 733m - NY140109	Little Gowder Crag with Haycock behind",
+"Little Hart Crag *********	2090ft -- 637m - NY387100	Little Hart Crag",
+"Little Stand *************	2428ft -- 740m - NY250034	Little Stand from Cold Pike",
+"Loadpot Hill *************	2201ft -- 671m - NY456181	Loadpot Hill, winter",
+"Loft Crag ****************	2198ft -- 670m - NY277071	Loft Crag and Pike o'Stickle",
+"Long Side ****************	2408ft -- 734m - NY248284	Long Side",
+"Lonscale Fell ************	2346ft -- 715m - NY285271	Lonscale Fell",
+"Looking Stead (Pillar) ***	2057ft -- 627m - NY186118	Looking Stead (Pillar) from Brandreth",
+"Looking Steads (Glaramara)	2543ft -- 775m - NY246102	Looking Steads (Glaramara)",
+"Low Saddle ***************	2152ft -- 656m - NY288133	Low Saddle",
+"Middleboot Knotts ********	2306ft -- 703m - NY213080	Middleboot Knotts",
+"Nethermost Pike **********	2923ft -- 891m - NY343141	Nethermost Pike",
+"Pavey Ark ****************	2297ft -- 700m - NY284079	Pavey Ark",
+"Pike of Blisco ***********	2313ft -- 705m - NY271042	Pike of Blisco from the Crinkles",
+"Pike of Stickle **********	2326ft -- 709m - NY273073	Pike of Stickle from Harrison Stickle",
+"Pillar *******************	2926ft -- 892m - NY171120	Pillar from Ennerdale",
+"Pillar Rock **************	2559ft -- 780m - NY171123	Pillar Rock",
+"Place Fell ***************	2155ft -- 657m - NY405169	Place Fell and Ullswater",
+"Raise ********************	2897ft -- 883m - NY342174	Raise from Sticks Pass",
+"Rampsgill Head ***********	2598ft -- 792m - NY442127	Rampsgill Head",
+"Red Beck Top *************	2365ft -- 721m - NY243097	Red Beck Top from Looking Steads",
+"Red Pike (Buttermere) ****	2477ft -- 755m - NY160154	Red Pike (Buttermere) from High Stile",
+"Red Pike (Wasdale) *******	2710ft -- 826m - NY165106	Red Pike (Wasdale)",
+"Red Screes ***************	2546ft -- 776m - NY396087	Red Screes Tarn",
+"Rest Dodd ****************	2283ft -- 696m - NY432136	Rest Dodd",
+"Robinson *****************	2418ft -- 737m - NY201168	Robinson and Hindscarth",
+"Rossett Pike *************	2136ft -- 651m - NY249075	Rossett Pike from High Raise",
+"Rosthwaite Fell **********	2008ft -- 612m - NY255118	Rosthwaite Fell",
+"Rough Crag ***************	2060ft -- 628m - NY454112	Rough Crag ridge above Haweswater",
+"Round How ****************	2431ft -- 741m - NY218081	Round How and Great End",
+"Sail *********************	2536ft -- 773m - NY198202	Sail and Crag Hill from the slopes of Grisedale Pike",
+"Sale How *****************	2185ft -- 666m - NY276286	Sale How",
+"Sand Hill ****************	2480ft -- 756m - NY187218	Sand Hill from Hopegill Head",
+"Sca Fell *****************	3163ft -- 964m - NY206064	Sca Fell from Hollow Stones",
+"Scafell Pike *************	3209ft -- 978m - NY215072	Scafell Pike from Three Tarns",
+"Scar Crags ***************	2205ft -- 672m - NY208206	Scar Crags from Sail",
+"Scoat Fell ***************	2759ft -- 841m - NY159113	Scoat Fell and Pillar from Brandreth",
+"Seat Sandal **************	2415ft -- 736m - NY343115	Seat Sandal from Grisedale Tarn",
+"Seatallan ****************	2274ft -- 693m - NY139083	Seatallan from Greendale Tarn",
+"Seathwaite Fell **********	2073ft -- 632m - NY227096	Seathwaite Fell",
+"Seathwaite Fell South Top 	2070ft -- 631m - NY227094	Seathwaite Fell South Top",
+"Selside Pike *************	2149ft -- 655m - NY490111	Selside Pike from the head of Haweswater",
+"Sheffield Pike ***********	2215ft -- 675m - NY369181	Sheffield Pike from Keldas",
+"Shelter Crags ************	2674ft -- 815m - NY249053	Shelter Crags (Crinkle Crags to left)",
+"Shelter Crags North Top **	2543ft -- 775m - NY249057	Shelter Crags North Top",
+"Skiddaw ******************	3054ft -- 931m - NY260290	Skiddaw from Derwent Water",
+"Skiddaw Little Man *******	2838ft -- 865m - NY267278	Skiddaw Little Man",
+"St Sunday Crag ***********	2759ft -- 841m - NY369134	St Sunday Crag from Dollywaggon Pike",
+"Starling Dodd ************	2077ft -- 633m - NY141157	Starling Dodd summit",
+"Steeple ******************	2687ft -- 819m - NY157116	Steeple",
+"Stony Cove Pike **********	2503ft -- 763m - NY417100	Stony Cove Pike",
+"Striding Edge ************	2821ft -- 860m - NY350149	Striding Edge",
+"Stybarrow Dodd ***********	2766ft -- 843m - NY343189	Stybarrow Dodd summit",
+"Swirl How ****************	2631ft -- 802m - NY272005	Swirl How from Brim Fell",
+"Symonds Knott ************	3146ft -- 959m - NY207067	Symonds Knott, looking to Scafell Pike",
+"Tarn Crag ****************	2178ft -- 664m - NY488078	Tarn Crag, the Survey pillar",
+"Thornthwaite Crag ********	2572ft -- 784m - NY431100	Thornthwaite Crag and Froswick from Ill Bell",
+"Thunacar Knott ***********	2372ft -- 723m - NY279080	Thunacar Knott summit, looking to Harrison Stickle",
+"Ullscarf *****************	2382ft -- 726m - NY291121	Ullscarf sunset",
+"Walna Scar ***************	2037ft -- 621m - SD258963	Walna Scar summit",
+"Wandope ******************	2533ft -- 772m - NY188197	Wandope (right of Whiteless Pike)",
+"Wether Hill **************	2198ft -- 670m - NY456167	Wether Hill summit cairn",
+"Wetherlam ****************	2503ft -- 763m - NY288011	Wetherlam above Tarn Hows",
+"White Maiden *************	2001ft -- 610m - SD254957	White Maiden summit",
+"White Side (Helvellyn) ***	2831ft -- 863m - NY337166	White Side (Helvellyn)",
+"Whiteless Pike ***********	2165ft -- 660m - NY180189	Whiteless Pike from Crummock Water",
+"Whiteside (Crummock) *****	2320ft -- 707m - NY170219	Whiteside and Grasmoor",
+"Whiteside East Top *******	2359ft -- 719m - NY175221	Whiteside East Top and Whiteside above Gasgale Crags",
+"Yewbarrow ****************	2060ft -- 628m - NY173084	Yewbarrow and Great Gable from Wast Water",
+"Yewbarrow North Top ******	2021ft -- 616m - NY176092	Yewbarrow North Top from Red Pike",
+"Yoke *********************	2316ft -- 706m - NY437067	Yoke, Ill Bell and Froswick from Mardale Ill Bell"
+);
+	
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= false;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+var m_picavailable;
+var gridref;
+ 
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var mountlist = 	document.getElementById('mountainlist');
+	if(m_touchdevice == true)
+		mountlist.className = "mountainlisttouch";
+	else
+		mountlist.className = "mountainlist";
+	sorttops(units,field,"");
+	topcount();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	layoutsortmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var mountlist = document.getElementById("mountainlist");
+	var mlistwrap = document.getElementById("mlistwrap");
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + 20 + "px";
+	var noteb = document.getElementById("noteb");
+	var rect = mountlist.getBoundingClientRect();
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "visible";
+		mountlist.style.overflow = "visible";
+		mountlist.style.width = scrwidth + "px";
+		mlistwrap.style.width = scrwidth + "px";
+		mountlist.style.height = "";
+		mountlist.style.overflow = "visible";
+		if (scrwidth < 480)
+			{
+			note.style.width = scrwidth + "px";
+			notea.style.width = (scrwidth - 126) + "px";
+			}
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		mountlist.style.overflow = "scroll";
+		mountlist.style.width = "480px";
+		mlistwrap.style.width = "1024px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			mountlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			mountlist.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		mountlist.style.overflow = "scroll";
+		mountlist.style.width = "480px";
+		mlistwrap.style.width = scrwidth + "px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			mountlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			mountlist.style.height = "600px";
+			}
+		}
+	if(m_picvisible != "")
+		{
+		HidePic();
+		ShowPic(glineid, gname,ggr)
+		}
+	}
+
+function ShowPic(lineid, name,gr) {
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+	var pictop;
+	glineid = lineid;
+	gname = name;
+    var frame = document.getElementById("pictureframe");
+    if (scrwidth < 850)
+   		pictop = posTop();
+   	else
+   		pictop = posTop()+ 20;
+	//clear hilite
+	var ident;
+	var elem;
+	var count = mountains_list.length;
+	for (var i = 0; i < count; i++)
+		{
+		ident = "top" + i;
+		elem = document.getElementById(ident);
+		elem.firstChild.style.color='#4C71D0';
+		}
+	elem = document.getElementById(lineid);
+	elem.firstChild.style.color = '#FF0000';
+	gridref = gr;  //save to use to get gridref
+	if(name.substr(0,1) != "#")
+		document.getElementById("caption").innerHTML=name;
+	else
+		{
+		name = "Sorry";
+		document.getElementById("caption").innerHTML="";
+		}
+	document.getElementById("gr").innerHTML="Grid ref: " + gr;
+    var picref = document.getElementById("pic");
+    if ((scrwidth < 500) || (scrheight < 340))
+    	{
+			picref.src = "../images/england_small/" + name + ".jpg";
+		}
+	else
+		{
+			picref.src = "../images/england/" + name + ".jpg";
+		}
+    frame.style.visibility = "visible";
+    header.style.visibility = "hidden";
+    mainmenu.style.visibility = "hidden";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "hidden";
+    var c = document.getElementById("note");
+    c.style.visibility = "hidden";
+    var sm = document.getElementById("sortmenu");
+    sm.style.visibility = "hidden";
+    mountainlist.style.visibility = "hidden";
+    m_picvisible = name;
+    grvisible = gr;
+	PositionPic(pictop);
+}
+
+function PositionPic(frametop)
+{
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+   var picref = document.getElementById("pic");
+   var frame = document.getElementById("pictureframe");
+   var picwidth;
+   var picheight;
+   var picinfo = document.getElementById("picinfo");
+	if (scrwidth >= 820)
+		{
+		if (scrheight >= 556)
+			{
+			//pic full size
+			picwidth = 820;
+			picheight = 556;
+			}
+		else
+			{
+			//fit to height and scale down width
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	else
+		{
+		if (scrheight >= scrwidth*556/820)
+			{
+			//scale to width
+			picwidth = scrwidth;
+			picheight = picwidth*556/820;
+			}
+		else
+			{
+			//scale to height
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	picref.style.height = "";
+	picref.style.width = picwidth + "px";
+   frame.style.top = frametop + "px";
+	frame.style.left = (scrwidth - picwidth)/2 + "px";
+  	picinfo.style.left = frame.style.left;
+  }
+
+function HidePic() {
+    m_picvisible = "";
+    grvisible = "";
+    var frame = document.getElementById("pictureframe");
+    var picref = document.getElementById("pic");
+	picref.src = "";
+    frame.style.visibility = "hidden";
+    header.style.visibility = "visible";
+    mainmenu.style.visibility = "visible";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "visible";
+    var c = document.getElementById("note");
+    c.style.visibility = "visible";
+    var sm = document.getElementById("sortmenu");
+    sm.style.visibility = "visible";
+    mountainlist.style.visibility = "visible";
+}
+
+function posTop() 
+	{
+	return typeof window.pageYOffset != 'undefined' ?  window.pageYOffset : document.documentElement && document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ? document.body.scrollTop : 0;
+	}    
+    
+function GetMap()
+{	
+	setTimeout(function(){document.location.href = "../php/getmap.html?" + gridref;},500);
+	HidePic;
+}
+    
+function sorttops(units,order,user)
+{
+	//sorts the original list
+	//base is the index from which I calculate the position of ft and m
+	var alist = document.getElementById("mountainlist");
+	var base = 27;
+	var pos = base;
+	//only change units if given in call
+	if(user != "" & order == "Name")
+		dirName = !dirName;
+	else if(user != "" & order == "Height")
+		dirHeight = !dirHeight;
+	
+	if(units == "" & dirUnits == "ft")
+		pos = base;
+	else if(units == "" & dirUnits == "m")
+		pos = base + 9;
+	else if(units == "m")
+		{
+		dirUnits = "m";
+		pos = base +9;
+		}
+	else if(units == "ft")
+		{
+		dirUnits = "ft";
+		pos = base;
+		}
+	if(order == "Name")
+		{
+			if(dirName)
+				{
+				// have to sort first in case previous sort was by height
+				mountains_list.sort();
+				mountains_list.reverse();
+				}
+			else
+				mountains_list.sort();
+		}
+	else if(order == "Height")
+		//sort by height
+		// position of height value depends on whether it's feet or metres
+		{
+			mountains_list.sort(function(sa,sb)
+			{
+				var ha = sa.substr(pos,4);
+				var hb = sb.substr(pos,4);
+				if(dirHeight)
+					return ha - hb;
+				else
+					return hb - ha;
+			})
+		}
+	//setup the display
+   var innerHTML = "";
+   var thisline;
+	for (var i = 0; i < mountains_list.length; i++)
+		{
+		entry = mountains_list[i];
+		tab1 = entry.indexOf("\t",1);
+		var caption = entry.substr(base +26,entry.length);
+		// fix the quote mark in captions
+		caption = caption.replace(/\'s/,"\\'s");
+		caption = caption.replace(/\'S/,"\\'S");
+		var gridref = entry.substr(base+17,8);
+ 		var display = entry.substr(0,base-1);
+ 		if(dirUnits == "ft")
+ 			height = entry.substr(base, 6);
+ 		else
+ 			height = entry.substr(base + 9,5);
+ 		if(scrwidth > 400)
+ 			{
+ 			display = display + "  " + height + "  " + gridref; 			
+ 			}
+		else
+			{
+ 			display = display + "  " + height;
+			}
+ 		thisline = "<li id=\"top" + i + "\" onclick=";
+ 		thisline = thisline + "\"ShowPic('top" + i + "', '" + caption + "','" + gridref + "');return false;\"";
+ 		thisline = thisline + "><a href=\"#\">";
+ 		thisline = thisline + display + "</a></li>";
+		innerHTML = innerHTML + thisline;
+		}
+	alist.innerHTML = innerHTML;
+	alist.style.overflow = "auto";
+	return(false);
+}
+
+function topcount()
+{
+	var headcount = document.getElementById("header");
+	var count = mountains_list.length;
+	headcount.innerHTML = headcount.innerHTML.replace("***",count);	
+}
+
+	
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">LAKE DISTRICT MOUNTAINS (***)</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div id="note">
+		<div id="notea">Click/Touch mountain for picture and details</div>
+		<div id="noteb">
+		<ul class="menusmall" id="sortmenu">
+    		<li><a href="#"
+        		onmousedown="mopen('msort')" 
+        		onmouseover="mopen('msort')" 
+        		onmouseout="mclosetime()">Sort by</a>
+        		<div id="msort" 
+            		onmouseover="mcancelclosetime()"
+           		onmouseout="mclosetime()">
+        		<a href="#" onmousedown="sorttops('','Name','User');mclose();">Name</a>
+        		<a href="#" onmousedown="sorttops('','Height','User');mclose();">Height</a>
+        		<a href="#" onmousedown="sorttops('ft','','User');mclose();">Show ft</a>
+        		<a href="#" onmousedown="sorttops('m','','User');mclose();">Show m</a>
+        		</div>
+    		</li>
+		</ul>
+		</div>
+	</div>
+	<div id="mlistwrap">
+		<ul id="mountainlist" class="mountainlist">
+		</ul>
+	</div>
+     <div class = "footer">
+		©John and Anne Nuttall 2014
+     </div>
+</div>
+<div id="pictureframe" style = "visibility: hidden; z-Index: 30; position: absolute; left: 1px; top: 0px">
+    <img id="pic" src="" onMouseDown="HidePic();">
+    <br>
+    	<div id="caption"> CAPTION </div>
+    	<div id="picinfo">
+    		<a class="button" style="width: 100px; left:0px" href="#" onMouseDown="GetMap();">MAP</a>
+    		<div id="gr" style="left:0px"> Grid ref</div>
+    		<div id="close" style="float:left">Click picture to close</div>
+    	</div>
+</div>
+</body>
+

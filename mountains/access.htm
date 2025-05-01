@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>ACCESS</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+ 
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + "px";
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		}
+	}
+    
+    
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div class="content_std">
+    	<div class="title1">ACCESS</div>
+  
+    <div class="header1red">MICKLE FELL, MURTON FELL, LITTLE FELL</div>
+      Murton Fell is outside the restricted area and can be  
+      visited at any time (though not by the route shown in our book)  
+      <p>The MOD arrangements for access to the Warcop Range  
+      are given on their website at <a class="button" href="http://www.mod.uk/DefenceInternet/AboutDefence/WhatWeDo/DefenceEstateandEnvironment/AccessRecreation/North/Warcop.htm">  
+      WARCOP RANGE ACCESS</a>  
+      <p> and are summarised below  
+      <ul class="content_stdlist2">  
+        <li>Access to public rights of way in the Danger Area every Sunday  
+          afternoon after 1pm</li>  
+        <li>Access to public rights of way in the Danger Area for 12 weekends a  
+          year</li>  
+        <li>Access to WTA through a range of guided walks (contact Clare  
+          Hetherington on 017683 43227 for further information)</li>  
+        <li>Access to public rights of way in the Danger Area on at least 15  
+          short notice days. Due to their very nature, these dates can not be  
+          published very far in advance. However the Warcop freephone access  
+          answer machine (0800 7835181) does hold details of the firing  
+          programme 7 days in advance and is updated daily</li>  
+        <li>Access to Mickle Fell is available (subject to training, high fire  
+          risk etc) on a permit system only. Applications should be sent to the  
+          Range Officer, Warcop Training Area, Warcop, Appleby, Cumbria, CA16  
+          6PA</li>  
+        <li>Access to Area Victor (including Murton Pike and Murton Fell) under  
+          the CROW Act 2000</li>  
+      </ul>  
+        
+        <p class="header3">You should double check the dates before setting  
+      out by telephoning the Range Office <font color="#FF0000"><b>0800 7835181</b></font></p>  
+     <p>  
+     <div class="header1red">  
+      CROW ACT  
+     </div>  
+      As readers will have noticed, nearly all the routes recommended in <i><b>The  
+      Mountains of England and Wales</b></i> are now officially covered by the  
+      Countryside and Rights of Way Act.  
+	</div>  
+     <div class = "footer">  
+		©John and Anne Nuttall 2014  
+     </div>  
+</div>  
+</body>  
+</html>  

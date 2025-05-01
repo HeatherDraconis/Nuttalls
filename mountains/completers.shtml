@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Completers</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/mountains.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script src="../js/completers.js"></script>
+<script>
+function setup()
+	{
+	general();
+	setcompleters();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var pcompleters = document.getElementById('completerslist');
+	if(m_touchdevice == true)
+		pcompleters.className = "mountainlisttouch";
+	else
+		pcompleters.className = "mountainlist";
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var pcompleters = document.getElementById('completerslist');
+	var intro = document.getElementById('intro');
+	pcompleters.style.fontSize = "12px";
+	var mlistwrap = document.getElementById("mlistwrap");
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + "px";
+	var rect = pcompleters.getBoundingClientRect();
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "visible";
+		pcompleters.style.overflow = "visible";
+		pcompleters.style.width = scrwidth + "px";
+		intro.style.width = scrwidth + "px";
+		mlistwrap.style.width = scrwidth + "px";
+		pcompleters.style.height = "";
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		pcompleters.style.overflow = "scroll";
+		pcompleters.style.width = "480px";
+		intro.style.width = "480px";
+		mlistwrap.style.width = "1024px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			pcompleters.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			pcompleters.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		pcompleters.style.overflow = "scroll";
+		pcompleters.style.width = "480px";
+		intro.style.width = "480px";
+		mlistwrap.style.width = scrwidth + "px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			pcompleters.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			pcompleters.style.height = "600px";
+			}
+		}
+	}
+
+function setcompleters()
+	{
+	var innerHTML = "";
+	var thisline;
+	var thislist = document.getElementById('completerslist');
+	for (var i = 0; i < completers.length; i++)
+		{
+ 		thisline = "<li>" + completers[i] + "</li>";
+		innerHTML = innerHTML + thisline;
+		}
+	thislist.innerHTML = innerHTML;
+	}
+</script>
+</head>
+
+<body onload="setup()" onresize="reset()">	
+
+<div id="backdrop" style="background-color: rgb(253, 241, 219); width: 1024px; min-height: 639px; overflow: hidden;">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">COMPLETERS</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div id="intro" class="introclass" style="width: 480px;">
+      People who have climbed all of <i>The Mountains of England and Wales</i>.
+	  <br>We are also maintaining lists for completers of just <a class="button" href="http://www.nuttalls.com/mountains/completersw.shtml">WALES</a>
+	   or <a class="button" href="http://www.nuttalls.com/mountains/completerse.shtml">ENGLAND</a>
+      <br>Some names are from the <a class="button" href="https://ldwa.org.uk/"> LDWA</a>
+	  <br>
+      <br>If you would like to be added to the completers list (England, Wales, or both) please email us at:
+	  <br><i> john@nuttalls.com</i>
+	  <br>
+	  <br>
+      <p><b>(NPR)</b> means all summits except Pillar Rock.
+	  <br>Tinside Rigg and Long Fell:
+	  &nbsp;We have decided that these summits in the Warcop Artillery Range (added in 2016) will be optional.
+	  <br> For new and deleted tops see
+	  <a class="button" href="http://www.nuttalls.com/mountains/2000.htm">Changes</a>
+   </p>
+   </div>
+   <div id="mlistwrap" style="width: 1000px;">
+		<div id="completerslist" class="mountainlist" style="font-size: 12px; overflow: scroll; width: 480px; height: 300px;"><li> 335 Simon Mason----------------------- Jul-24</li><li> 334 Mick Peakman---------------------- Jul-24</li><li> 333 Peter Lancaster------------------- Jul-24</li><li> 332 Louise Terril (NPR)--------------- May-24</li><li> 331 Richard Kennaugh (NPR)------------ May-24</li><li> 331 Lotte Gale (NPR)------------------ Oct-23</li><li> 330 Peter Grayson--------------------- Jun-23</li><li> 329 Alan Duval (NPR)------------------ Apr-23</li><li> 330 Kathy Duval (NPR)----------------- Apr-23</li><li> 329 Bryony Carter--------------------- Jul-22</li><li> 328 Mike Doughty---------------------- Jun-22</li><li> 327 Jim Linton (NPR)------------------ Sep-21</li><li> 326 Rick Salter----------------------- Jul-21</li><li> 325 Jenny Hatfield-------------------- Jul-21</li><li> 324 Mike Boothman--------------------- May-21</li><li> 323 Helen Boothman-------------------- May-21</li><li> 322 Mike Day-------------------------- Oct-20</li><li> 321 Peter Ibison---------------------- Aug-20</li><li> 320 Malcolm Rogers-------------------- Aug-20</li><li> 319 Anne Rogers----------------------- Aug-20</li><li> 318 Neil Midgley---------------------- Jul-20</li><li> 317 John Green------------------------ Oct-19</li><li> 316 Malcolm Barrett------------------- Sep-19</li><li> 315 Paul Gregson---------------------- Aug-19</li><li> 314 Anne Gregson---------------------- Aug-19</li><li> 313 Ruth Martin----------------------- Jul-19</li><li> 312 Nigel Mason (NPR)----------------- Jun-19</li><li> 311 Jim Hatfield---------------------- Mar-19</li><li> 310 Mike Wells------------------------ Mar-19</li><li> 309 Tim Sharp------------------------- Mar-19</li><li> 308 Howard Jones---------------------- Nov-18</li><li> 307 Ken Whyte------------------------- Sep-18</li><li> 306 Colin Shearer--------------------- Sep-18</li><li> 305 Jenny Barnard (NPR)--------------- Sep-18</li><li> 304 John Barnard (NPR)---------------- Sep-18</li><li> 303 Alex Hardisty--------------------- Sep-18</li><li> 302 David Garside--------------------- Aug-18</li><li> 301 Howard Mann----------------------- Jul-18</li><li> 300 Gordon Coventry------------------- Sep-17</li><li> 299 Adrienne Coventry----------------- Sep-17</li><li> 298 James Forrest--------------------- Sep-17</li><li> 302 Diane Pickering------------------- Sep-17</li><li> 301 Christine Gordon------------------ Sep-17</li><li> 300 John Hart------------------------- Sep-17</li><li> 299 Katherine Hart-------------------- Sep-17</li><li> 298 John Jennison--------------------- Sep-17</li><li> 297 Andy Moon------------------------- Aug-17</li><li> 296 Sarah Marlor---------------------- Aug-17</li><li> 295 Mark Lloyd------------------------ Aug-17</li><li> 294 John Burgess (NPR)---------------- Jul-17</li><li> 292 Peter Yoxall---------------------- Apr-17</li><li> 291 Martin Roberts-------------------- Apr-17</li><li> 290 Peter Smith (NPR)----------------- Jan-17</li><li> 289 Steve Smith----------------------- Nov-16</li><li> 288 Paul Kirkwood--------------------- Oct-16</li><li> 287 Gill Sanderson ------------------- Oct-16</li><li> 286 Steve Sanderson ------------------ Oct-16</li><li> 285 Stephen Walker-------------------- Jun-16</li><li> 284 Alan Tinker----------------------- Jun-16</li><li> 283 Ivan Grindrod--------------------- Jun-16</li><li> 282 John Astbury---------------------- Jun-16</li><li> 281 Ronnie Bowron--------------------- May-16</li><li> 280 John Burgess (NPR)---------------- May-16</li><li> 279 David Pettit---------------------- May-16</li><li> 278 Sharron Rogers-------------------- Oct-15</li><li> 277 Chris Rogers---------------------- Oct-15</li><li> 276 Matthew Braithwaite (NPR)--------- Sep-15</li><li> 275 Ted Richards (NPR)---------------- Sep-15</li><li> 274 Caroline Roy---------------------- Aug-15</li><li> 273 Nick Norman----------------------- Aug-15</li><li> 272 Tony Hill------------------------- Aug-15</li><li> 271 Guy Froud------------------------- Jun-15</li><li> 270 Steve Stobie (NPR)---------------- Jun-15</li><li> 269 Philip Massey--------------------- May-15</li><li> 268 Gerry Bowes----------------------- May-15</li><li> 267 John Farrow----------------------- May-15</li><li> 266 David Stearne--------------------- May-15</li><li> 265 Vince Joyce (NPR)----------------- Oct-14</li><li> 264 Meirion Evans--------------------- Sep-14</li><li> 263 John Burton----------------------- Aug-14</li><li> 262 Stephen P. Smith------------------ Jul-14</li><li> 261 Stephen Mawby (NPR)--------------- Jul-14</li><li> 260 Mike Finnigan (NPR)--------------- Jul-14</li><li> 259 Peter M. Young-------------------- May-14</li><li> 258 Jeff Ford------------------------- May-14</li><li> 257 Kathy Duval (NPR)----------------- Apr-14</li><li> 256 Alan Duval (NPR)------------------ Apr-14</li><li> 254 Nigel Thackrah-------------------- Jan-14</li><li> 253 Mike Saul------------------------- Oct-13</li><li> 252 Peg Saul-------------------------- Oct-13</li><li> 251 Terry Fuller---------------------- Sep-13</li><li> 250 Richard Fuller-------------------- Sep-13</li><li> 249 John Balmforth-------------------- Sep-13</li><li> 248 Steve Ward------------------------ Aug-13</li><li> 247 Christine Stratton---------------- Aug-13</li><li> 246 Steve Hudson---------------------- Jul-13</li><li> 245 Malcolm Bee----------------------- Jul-13</li><li> 244 Kevin Jones----------------------- Jul-13</li><li> 243 Carol Gruffydd-------------------- Jul-13</li><li> 242 Kenneth Highley------------------- Jun-13</li><li> 241 David Highley--------------------- Jun-13</li><li> 240 Andy Hyams------------------------ Jun-13</li><li> 239 Andrew Larkins-------------------- Jun-13</li><li> 238 Martin Clarke--------------------- May-13</li><li> 237 Jeffrey Hobbs--------------------- May-13</li><li> 236 Darran Moss----------------------- May-13</li><li> 235 Nicola Moss (NPR)----------------- May-13</li><li> 234 Jules Alexandrou------------------ Dec-12</li><li> 233 Colin J Green--------------------- Nov-12</li><li> 232 Richard Aust (NPR)---------------- Oct-12</li><li> 231 Kris Scott------------------------ Sep-12</li><li> 230 Andy Wade------------------------- Sep-12</li><li> 229 Simon Manson---------------------- Sep-12</li><li> 228 Bob Kelly (NPR)------------------- Jul-12</li><li> 227 Stephen Coveny-------------------- May-12</li><li> 226 Keith Chetwood-------------------- May-12</li><li> 225 Pamela Brooks--------------------- May-12</li><li> 224 Alan Lea (NPR)-------------------- May-12</li><li> 223 Jill Wright----------------------- May-12</li><li> 222 Trevor Prew----------------------- May-12</li><li> 221 Frank Baillie--------------------- Nov-11</li><li> 220 Andy Merrick---------------------- Nov-11</li><li> 219 Peter Young----------------------- Oct-11</li><li> 218 Ian Roberts (NPR)----------------- Oct-11</li><li> 217 Chris Braund---------------------- Oct-11</li><li> 216 Antonio Garofalo------------------ Sep-11</li><li> 215 Dave Evans (NPR)------------------ Jul-11</li><li> 214 Andy N Sutton--------------------- Jul-11</li><li> 213 Derek Snaith---------------------- Jul-11</li><li> 212 Liz Nicholas---------------------- Jul-11</li><li> 211 Andrew Gregory (NPR)-------------- Jun-11</li><li> 210 Bill Shaw------------------------- Jun-11</li><li> 209 Simon Bristow (NPR)--------------- Jun-11</li><li> 208 Malcolm Gilbertson---------------- Jun-11</li><li> 207 Crowdie (Clair's dog)(NPR)-------- May-11</li><li> 206 Clair Hutchings------------------- May-11</li><li> 205 Wendy Price (NPR)----------------- Apr-11</li><li> 204 Bob Price (NPR)------------------- Apr-11</li><li> 203 Kevin Ryder----------------------- Nov-10</li><li> 202 Carole Ryder---------------------- Nov-10</li><li> 201 John Paul Wilkinson--------------- Oct-10</li><li> 200 Stan Appleton--------------------- Oct-10</li><li> 199 Ian Davis------------------------- Aug-10</li><li> 198 Mark Lloyd------------------------ Aug-10</li><li> 197 David Rowlands (NPR)-------------- Jul-10</li><li> 196 David Findel-Hawkins ------------- Jun-10</li><li> 195 Merrian Lancaster (NPR)----------- Jun-10</li><li> 194 Malcolm Andrew-------------------- May-10</li><li> 193 Steven Turnbull------------------- May-10</li><li> 192 John Nudds (NPR)------------------ Mar-10</li><li> 191 Steve Allen (NPR)----------------- Mar-10</li><li> 190 Chris Clissold-------------------- Nov-09</li><li> 189 Phil Clayton---------------------- Oct-09</li><li> 188 Dave Corby------------------------ Oct-09</li><li> 187 Jean Bowers----------------------- Sep-09</li><li> 186 John Robert Colquhoun------------- Sep-09</li><li> 185 Martin Shallcross (NPR)----------- Sep-09</li><li> 184 Howard Sowerby-------------------- Sep-09</li><li> 183 Kevan Guest----------------------- Aug-09</li><li> 182 Mick Moore------------------------ Aug-09</li><li> 181 Anthony Rowe---------------------- Jul-09</li><li> 180 Robert Horridge------------------- Jun-09</li><li> 179 Michael Earnshaw------------------ May-09</li><li> 178 Anton Ciritis (NPR)--------------- Apr-09</li><li> 177 Carole Engel---------------------- Apr-09</li><li> 176 Janet Jackson--------------------- Mar-09</li><li> 175 Graham Jackson-------------------- Mar-09</li><li> 174 Wendy Dodds----------------------- Dec-08</li><li> 173 Ralph Henderson------------------- Dec-08</li><li> 172 Osian ab Ifan--------------------- Nov-08</li><li> 171 Liz Halpin------------------------ Nov-08</li><li> 170 Garth Fenton---------------------- Sep-08</li><li> 169 Elaine Fenton--------------------- Sep-08</li><li> 168 Ian Thomas------------------------ Jul-08</li><li> 167 Sue Dalton------------------------ Jul-08</li><li> 166 Andy West------------------------- Jul-08</li><li> 165 Des Taylor------------------------ Jul-08</li><li> 164 Barry Brown (NPR)----------------- Feb-08</li><li> 163 David M Bratt (NPR)--------------- Dec-07</li><li> 162 Christopher Litherland------------ Nov-07</li><li> 161 Jon Baldwin----------------------- Oct-07</li><li> 160 Barry Baldwin--------------------- Oct-07</li><li> 159 Peter Charlton (NPR)-------------- Oct-07</li><li> 158 Valerie Crookes (NPR)------------- Oct-07</li><li> 157 Bill Bowers----------------------- Oct-07</li><li> 156 Eric Hardman (NPR)---------------- Sep-07</li><li> 156 Eilir Evans (NPR)----------------- Aug-07</li><li> 155 Debbie Evans (NPR)---------------- Aug-07</li><li> 154 Steve Wilby (NPR)----------------- Aug-07</li><li> 153 Owen Brown (NPR)------------------ Aug-07</li><li> 152 Jonathan Curry-------------------- Jul-07</li><li> 151 Steve Lewis----------------------- Jul-07</li><li> 150 Peter Stubbs (NPR)---------------- Jun-07</li><li> 149 Linda Dworowski (NPR)------------- Jun-07</li><li> 148 Richard Edward Moss--------------- Apr-07</li><li> 147 Shaun Woodward-------------------- May-07</li><li> 146 Ian Rear-------------------------- May-07</li><li> 146 Stephen Dixon--------------------- Mar-07</li><li> 145 John Marshall--------------------- Sep-06</li><li> 144 Paul Jensen----------------------- Sep-06</li><li> 143 Linda Jensen---------------------- Sep-06</li><li> 142 Brian Green (NPR)----------------- Sep-06</li><li> 141 Carole Green (NPR)---------------- Sep-06</li><li> 140 Simon Puddifoot------------------- Aug-06</li><li> 138 John Harvey----------------------- Aug-06</li><li> 138 Elizabeth Harvey------------------ Aug-06</li><li> 137 Ian Hildich----------------------- Jul-06</li><li> 136 Frank Stoddart (NPR)-------------- Jul-06</li><li> 135 Eric Povall----------------------- Jul-06</li><li> 134 Graham Phillips------------------- Jun-06</li><li> 133 Chris Deane----------------------- Jun-06</li><li> 132 Cyril Deeming--------------------- May-06</li><li> 131 John Price------------------------ Dec-05</li><li> 130 Mick Langton---------------------- Nov-05</li><li> 129 Michelle Sergeant----------------- Nov-05</li><li> 128 Eddie Broome (NPR)---------------- Aug-05</li><li> 127 David Irons----------------------- Jul-05</li><li> 126 Neil Stafford--------------------- May-05</li><li> 125 Peter Roberts (NPR)--------------- May-05</li><li> 124 Graham Illing--------------------- May-05</li><li> 123 Peter Fairhurst------------------- Feb-05</li><li> 122 Tim Gardner----------------------- Feb-05</li><li> 121 Martin Pearson-------------------- Nov-04</li><li> 120 Michael Wray---------------------- Oct-04</li><li> 119 Kathy Edwards--------------------- Oct-04</li><li> 118 John Edwards---------------------- Oct-04</li><li> 117 Jeff Parr------------------------- Sep-04</li><li> 116 Graeme Crow----------------------- Sep-04</li><li> 115 Barrie Trigg---------------------- Sep-04</li><li> 114 Jeff Bridge----------------------- Sep-04</li><li> 113 John Burn------------------------- Jun-04</li><li> 112 Christine Weller------------------ Jun-04</li><li> 111 Richard Litherland---------------- Apr-04</li><li> 110 Sonja Brentley-------------------- Dec-03</li><li> 109 Alan Brook------------------------ Nov-03</li><li> 108 Chris Harle----------------------- Oct-03</li><li> 107 David C Bratt--------------------- Sep-03</li><li> 106 Jess Milligan--------------------- Sep-03</li><li> 105 Malcolm Renshaw (NPR)------------- Sep-03</li><li> 104 Dave Beresford-------------------- Jun-03</li><li> 103 Clare Holdcroft------------------- Jun-03</li><li> 102 John Holmes----------------------- Jun-03</li><li> 101 Alan Burnet----------------------- Jun-03</li><li> 100 Cheryl Burnett-------------------- Jun-03</li><li>  99 Stephen Brown--------------------- May-03</li><li>  98 Ursula Stubbings------------------ Feb-03</li><li>  97 Caron Tan------------------------- Dec-02</li><li>  96 Jeremy Ward (NPR)----------------- Nov-02</li><li>  95 John Arkell----------------------- Nov-02</li><li>  94 Dave Cattell (NPR)---------------- Oct-02</li><li>  93 Charles Leventon------------------ Aug-02</li><li>  92 James Cain------------------------ Aug-02</li><li>  91 Brian Key------------------------- Jul-02</li><li>  90 Nicholas Key---------------------- Jul-02</li><li>  89 Bob Garrett----------------------- Jul-02</li><li>  88 David Richards-------------------- Jul-02</li><li>  87 Steve Taylor---------------------- Jun-02</li><li>  86 Peter Standing-------------------- Jun-02</li><li>  85 Raymond Myers--------------------- Jun-02</li><li>  84 Frank Yates----------------------- May-02</li><li>  83 Alison Fox------------------------ Apr-02</li><li>  82 Martin Thomerson (2 rnds NPR)----- Jan-02</li><li>  81 Graham Brookes-------------------- Dec-01</li><li>  80 Jerzy Matuszewski----------------- Aug-01</li><li>  79 Andy Sutton----------------------- Jul-01</li><li>  78 Andy Mohun-Smith------------------ Dec-00</li><li>  77 Rupert Booth---------------------- Dec-00</li><li>  76 Stephen Walker-------------------- Nov-00</li><li>  75 Richard Tait---------------------- Oct-00</li><li>  74 David Johnston-------------------- Oct-00</li><li>  73 Kathryn Willis-------------------- Oct-00</li><li>  72 Graham Willis--------------------- Oct-00</li><li>  71 Chris Crocker--------------------- Aug-00</li><li>  70 Paul Norman----------------------- Jul-00</li><li>  69 Andrew Copley--------------------- May-00</li><li>  68 Don Smithies---------------------- Mar-00</li><li>  67 Martin Richardson----------------- Dec-99</li><li>  66 Ian Rae--------------------------- Dec-99</li><li>  65 Jason Gregory--------------------- Dec-99</li><li>  64 Becky Hindle---------------------- Dec-99</li><li>  63 George Wilks---------------------- Dec-99</li><li>  62 Neville Cohen--------------------- Dec-99</li><li>  61 Jane Gill------------------------- Dec-99</li><li>  60 Paul Sollis----------------------- Oct-99</li><li>  59 Martyn Thurston------------------- Oct-99</li><li>  58 Michael Jacobs-------------------- Oct-99</li><li>  57 Peter Mallowan-------------------- Sep-99</li><li>  56 Frances Wilson-------------------- Aug-99</li><li>  55 Mark Jump------------------------- Aug-99</li><li>  54 Christina Jump-------------------- Aug-99</li><li>  53 George Ross----------------------- Aug-99</li><li>  52 Christine Roache------------------ Jul-99</li><li>  51 David Purchase (NPR)-------------- Jun-99</li><li>  50 Ian Watson------------------------ Apr-99</li><li>  49 Stuart Carter--------------------- Feb-99</li><li>  48 Martin Scott---------------------- Jan-99</li><li>  47 John Fenwick---------------------- Jan-99</li><li>  46 Andrew West----------------------- Dec-98</li><li>  45 Robert Mitchell------------------- Dec-98</li><li>  44 Danny Allen----------------------- Nov-98</li><li>  43 Chris Pearson--------------------- Sep-98</li><li>  42 Brian Graves---------------------- Aug-98</li><li>  41 Jean Pickford--------------------- Jul-98</li><li>  40 David Pickford-------------------- Jul-98</li><li>  39 D.H. Barham----------------------- Oct-97</li><li>  38 Chris Bullard--------------------- Sep-97</li><li>  37 Keith Abbott---------------------- Sep-97</li><li>  36 Frank Meacham--------------------- Aug-97</li><li>  35 Mike Baker (NPR)------------------ Jul-97</li><li>  34 Alan Castle----------------------- May-97</li><li>  33 Martin Hudson--------------------- Mar-97</li><li>  32 Dai Rowlands---------------------- Oct-96</li><li>  31 Margaret Waller------------------- Oct-96</li><li>  30 Vivien Crowder-------------------- Aug-96</li><li>  29 Geoff Crowder--------------------- Aug-96</li><li>  28 Nicolas Kingston------------------ Aug-96</li><li>  27 Deborah Seed---------------------- Jun-96</li><li>  26 Christopher Watson---------------- Jun-96</li><li>  25 Stephen Glasper------------------- Jun-96</li><li>  24 Gordon Adshead-------------------- Jun-96</li><li>  23 Mike Halpin (2 rounds)------------ May-96</li><li>  22 David Hoyle----------------------- Apr-96</li><li>  21 Rob Woodall----------------------- Apr-96</li><li>  20 Anthony Weetman------------------- Nov-95</li><li>  19 Peter Hughes---------------------- Oct-95</li><li>  18 Yong Tay-------------------------- Oct-95</li><li>  17 Robert Don------------------------ Oct-95</li><li>  16 Myrddyn Phillips------------------ Aug-95</li><li>  15 Rod Kearny------------------------ Apr-95</li><li>  14 Kevin Hostford-------------------- Dec-94</li><li>  13 Alan Poxon------------------------ Oct-94</li><li>  12 Philip Kearney-------------------- Aug-94</li><li>  11 Peter Wilson---------------------- Aug-94</li><li>  10 Iain Thow------------------------- Dec-93</li><li>   9 Cherry Kirby---------------------- Nov-93</li><li>   8 David Green----------------------- Aug-93</li><li>   7 Geoffrey Carter------------------- Aug-93</li><li>   6 Andy Moffat----------------------- Jul-93</li><li>   5 Valerie Moffat-------------------- Jul-93</li><li>   4 Aled Owen------------------------- May-93</li><li>   3 Mike Kirby------------------------ Aug-92</li><li>   2 John Nuttall (3 rounds 2NPR)------ Mar-90</li><li>   1 Anne Nuttall (3 rounds 2NPR)------ Mar-90 </li></div> 
+	</div>
+     <div class="footer">
+		©John and Anne Nuttall 2014
+     </div>
+</div>
+
+</body></html>

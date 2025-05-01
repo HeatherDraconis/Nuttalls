@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Lake District Tarns</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/mountains.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var tarns_list = new Array(
+"ALCOCK TARN ---------------- NY349079",
+"ALLAN TARN ----------------- SD292894 (private)",
+"ALLEN CRAGS TARNS ---------- NY236088",
+"ANGLE TARN (Hartsop) ------- NY418143",
+"ANGLE TARN (Langdale) ------ NY245076",
+"ARGLES TARN ---------------- SD445870",
+"ARLECDON RESERVOIR --------- See Cogra Moss",
+"ARNSBARROW TARN ------------ SD311918",
+"ASH CRAGS TARN ------------- NY293096",
+"ATKINSON TARN -------------- SD447948",
+"AYSIDE TARN ---------------- SD388839 (private)",
+"BACK READINGS ALLOTMENT TARN SD365835",
+"BARFIELD TARN -------------- SD107869 (private)",
+"BARNGATES TARN ------------- See Drunken Duck",
+"BARROW PLANTATION TARN ----- See Stonehills Tarn",
+"BAYSBROWN TARN ------------- NY317048 (private)",
+"BAYSTONES BANK RESERVOIR --- SD171858 (reservoir)",
+"BEACON TARN ---------------- SD274900",
+"BECKHEAD TARN -------------- NY205107",
+"BELL CRAG TARN ------------- See Whin Rigg Tarn",
+"BELL CRAGS TARN ------------ NY299143",
+"BIGLAND TARN --------------- SD355829",
+"BIGLAND TROUT FISHERY ------ See Back Readings Allotment Tarn",
+"BINSEY HILL TARN ----------- NY228363 (private)",
+"BIRKET HOUSES TARN --------- See Podnet Tarn",
+"BLACK BECK TARN ------------ SD334871",
+"BLACK COMBE TARN ----------- SD135853",
+"BLACK WALL TARN ------------ NY257108",
+"BLACKBECK TARN ------------- NY202128",
+"BLACKSAIL PASS TARN -------- See Looking Stead Tarn",
+"BLEA TARN (Eskdale) -------- NY166010",
+"BLEA TARN (Langdale) ------- NY293044",
+"BLEA TARN (Watendlath) ----- NY292141",
+"BLEA WATER ----------------- NY449108",
+"BLEABERRY TARN ------------- NY165155",
+"BLELHAM FISH POND ---------- NY363007 (dried up)",
+"BLELHAM TARN --------------- NY366006",
+"BLIND TARN (Coniston) ------ SD262968",
+"BLIND TARN (Eskdale) ------- NY162010",
+"BLIND TARN (Furness) ------- SD256863",
+"BOLTON'S TARN -------------- SD448935 (overgrown)",
+"BOO TARN ------------------- SD282968",
+"BORETREE TARN -------------- SD355874",
+"BORRANS RESERVOIR ---------- NY429010 (private)",
+"BORWICK FOLD TARN ---------- SD443969",
+"BOWSCALE TARN -------------- NY336313",
+"BRANDRETH THREE TARNS ------ NY215115",
+"BRANSTREE TARN ------------- NY484103",
+"BRIGSTONE TARN ------------- NY319068",
+"BROADCRAG TARN ------------- NY213069",
+"BROCK CRAGS TARNS ---------- NY417137",
+"BROTHERS WATER ------------- NY402129",
+"BROUGHTON TARN ------------- SD219881",
+"BROWN COVE TARN ------------ NY344160",
+"BROWNRIGG MOSS TARN -------- NY298104",
+"BROWNSTONE TARN ------------ SD383976",
+"BURNEY TARN ---------------- SD255859",
+"BURNMOOR TARN -------------- NY185045",
+"CACER TARN ----------------- See Slew Tarn",
+"CANNY HILL TARN ------------ SD365852",
+"CARLSIDE TARN -------------- NY255283",
+"CASPEL GATE TARN ----------- NY451113",
+"CAUDALE MOOR TARN ---------- NY415101",
+"CAW MOSS TARN -------------- SD252949",
+"CHAPEL HOUSE RESERVOIR ----- NY260359",
+"CLEABARROW TARN ------------ SD424963",
+"CODALE HEAD TARNS ---------- NY288091",
+"CODALE TARN ---------------- NY298088",
+"COGRA MOSS ----------------- NY095195",
+"COLD PIKE TARNS ------------ NY257038",
+"COMB BECK TARN ------------- NY215247",
+"COMBE DOOR TARNS ----------- NY252108",
+"COMBE HEAD TARNS ----------- NY249108",
+"CRINKLE CRAGS TARN --------- NY248049",
+"CROOK RESERVOIR ------------ SD445956 (private)",
+"CUNSWICK TARN -------------- SD490938",
+"DALEHEAD TARN -------------- NY230152",
+"DAW'S POND ----------------- NY479262 (private)",
+"DECOY HAG POND ------------- NY534229 (private)",
+"DECOY POND (Askham) -------- NY532226 (private)",
+"DEVOKE WATER --------------- SD159970",
+"DOCK TARN ------------------ NY274144",
+"DOCKEY TARN ---------------- NY353073 (dried up)",
+"DOVENEST TOP TARNS --------- NY255112",
+"DRUNKEN DUCK TARN ---------- NY351011 (private, by roadside)",
+"DRY TARN ------------------- NY215098 (dried up)",
+"DUBBS RESERVOIR ------------ NY422017",
+"DUCK TARN ------------------ SD404884 (private)",
+"EASEDALE TARN -------------- NY308088",
+"EEL TARN ------------------- NY189019",
+"ESKDALE GREEN TARN --------- NY145001 (private)",
+"FIDDLER HALL TARN ---------- SD391855",
+"FLASS TARN ----------------- NY130035",
+"FLOUTERN TARN -------------- NY125170",
+"FOTHERGILL TARN ------------ See Gurnal Dubbs",
+"FOURSTONES TARN ------------ NY491164",
+"FOXES TARN ----------------- NY209064",
+"GALLS TARN ----------------- NY409004 (private)",
+"GARNETT BRIDGE TARN -------- See Routen Beck Tarns",
+"GHYLL HEAD FISH POND ------- SD397927",
+"GHYLL HEAD RESERVOIR ------- SD398923",
+"GHYLL POOL ----------------- SD497985",
+"GOAT'S WATER --------------- SD266977",
+"GOOSEYFOOT TARN ------------ SD337970",
+"GRANGE RESERVOIR ----------- See High Newton Reservoirs",
+"GREAT CASTLE HOW TARNS ----- NY306077",
+"GREAT GREEN HOWS TARN ------ See Green Howes Upper Tarn",
+"GREAT HOLLOW TARNS --------- NY256116",
+"GREAT HOW TARNS ------------ NY195041",
+"GREAT KNOTT TARN ----------- NY258043",
+"GREAT MOSS TARN ------------ NY223055",
+"GREEN HOWS TARN ------------ SD362908 (private)",
+"GREEN HOWS UPPER TARN ------ SD360900",
+"GREEN TARN ----------------- SD366985 (private)",
+"GREENBURN TARN ------------- NY285022",
+"GREENDALE TARN ------------- NY147075",
+"GREENHILL TARN ------------- See Jenny Dam",
+"GREENUP EDGE TARNS --------- NY288111",
+"GREY KNOTTS TARN ----------- NY218125",
+"GREYCRAG TARN -------------- NY491077 (overgrown)",
+"GRISEDALE TARN ------------- NY350120",
+"GRIZEDALE TARN ------------- SD346945",
+"GRIZEDALE TARN SMALL ------- SD348944",
+"GUMMER'S HOW TARN ---------- SD394886",
+"GURNAL DUBS ---------------- SD502992",
+"HABER TARN ----------------- NY502224 (private)",
+"HAGG POND ------------------ SD367983 (private)",
+"HARD KNOTT TARNS ----------- NY234029",
+"HARD TARN ------------------ NY345138",
+"HARDKNOTT PASS TARNS ------- NY227012",
+"HARROP TARN ---------------- NY312136",
+"HASKEW TARN ---------------- NY521114",
+"HAY STACKS TARN ------------ NY193132",
+"HAYESWATER ----------------- NY430122",
+"HEATHWAITE TARN ------------ See Pewet Tarn",
+"HEIGHTS TARN --------------- SD401885 (private)",
+"HELTON TARN ---------------- SD420850 (private)",
+"HIGH ARNSIDE TARN ---------- NY332012",
+"HIGH BORRANS RESERVOIR ----- See Borrans Reservoir",
+"HIGH CROSS TARN ------------ See Wharton Tarn",
+"HIGH DAM ------------------- SD362888",
+"HIGH HOUSE TARN ------------ NY241094",
+"HIGH MAN TARN -------------- SD329965",
+"HIGH MOSS TARN ------------- SD375980",
+"HIGH NEWTON RESERVOIRS ----- SD400840 (private, by roadside)",
+"HIGH NOOK TARN ------------- NY125199",
+"HIGH RIGG TARN ------------- NY309214",
+"HIGH SCAWDEL TARN ---------- NY232148",
+"HIGH TAGGLESHAW ------------ SD505994",
+"HOB GILL TARN -------------- See Wood Moss Tarn",
+"HODSON'S TARN -------------- SD369982",
+"HOLE RAKE TARN ------------- SD295994",
+"HOLEHIRD TARN -------------- NY409007",
+"HOLEHOUSE TARN ------------- SD155940",
+"HOLME GROUND TARNS --------- NY316011",
+"HOLMESHEAD TARN ------------ NY351024 (Private, by roadside)",
+"HOW TOP TARN --------------- NY345068",
+"HOWES TARN ----------------- NY501104",
+"INNOMINATE TARN ------------ NY198129",
+"JACK CROFT POND ------------ NY524236 (private)",
+"JENNY DAM ------------------ SD463953 (private)",
+"JUNIPER TARN --------------- SD340964",
+"KELLY HALL TARN ------------ SD288933",
+"KEMP TARN ------------------ SD464988",
+"KENTMERE RESERVOIR --------- NY445080",
+"KENTMERE TARN -------------- NY453021",
+"KEPPLECOVE TARN ------------ NY343166 (dried up)",
+"KIRKFELL TARN -------------- NY197106",
+"KNIPE TARN ----------------- SD427944",
+"KNITTLETON TARN LARGE ------ See Burney Tarn",
+"KNITTLETON TARN SMALL ------ See Blind Tarn (Furness)",
+"LAMBFOOT DUB --------------- NY221084",
+"LAMBHOWE TARN -------------- SD418917 (private)",
+"LANG HOW TARN -------------- See Youdell Tarn",
+"LANG TARN ------------------ SD260886",
+"LANTY TARN (Howtown) ------- NY435190 (dried up)",
+"LANTY'S TARN (Glenridding) - NY394164",
+"LATRIGG TARN --------------- NY416018 (private)",
+"LAUNCHY TARN (Borrowdale) -- NY234150",
+"LAUNCHY TARN (Thirlmere) --- NY302142",
+"LEVERS WATER --------------- SD279993",
+"LILY POND ------------------ SD367984",
+"LILY TARN ------------------ NY364040",
+"LINCOMB TARNS -------------- NY241094",
+"LINDETH FELL TARN ---------- SD404952 (private)",
+"LINDETH TARN --------------- SD412947 (disappeared)",
+"LINGMOOR TARN -------------- NY309032",
+"LINTHWAITE HOUSE HOTEL TARN- SD407954 (private)",
+"LITTLE LANGDALE TARN ------- NY309032",
+"LITTLE LUDDERBURN TARN ----- SD403916 (overgrown)",
+"LITTLE STAND TARN ---------- NY250034",
+"LITTLE TARN ---------------- NY249338",
+"LITTLEWATER TARN ----------- NY509170 (private)",
+"LOAF TARN ------------------ See Innominate Tarn",
+"LODGE HEAD TARN ------------ See Tent Lodge Tarn",
+"LONG MOSS ------------------ SD292936",
+"LOOKING STEAD TARN --------- NY191116",
+"LOUGHRIGG FELL TARNS ------- NY352047",
+"LOUGHRIGG TARN ------------- NY345045",
+"LOW BIRKER TARN ------------ SD190995",
+"LOW DAM -------------------- SD364885",
+"LOW ESKHOLME TARN ---------- SD114973 (overgrown)",
+"LOW TAGGLESHAW ------------- SD525992",
+"LOW TARN ------------------- NY162093",
+"LOW WATER ------------------ SD275983",
+"MARTCRAG MOOR TARN --------- NY267081",
+"MEADLEY RESERVOIR ---------- NY051145 (reservoir)",
+"MIDDLE FAIRBANK TARN ------- SD449974 (private)",
+"MIDDLE TAGGLESHAW ---------- SD516993",
+"MIDDLE TARN ---------------- SD404881",
+"MIDDLEBOOT KNOTTS TARN ----- NY215080",
+"MIDDLERIGG TARN ------------ NY398012",
+"MORTIMERE ------------------ NY364029 (private)",
+"MOSS DUB ------------------- NY146138",
+"MOSS ECCLES TARN ----------- SD372968",
+"MOSS INTAKE TARN ----------- SD370991",
+"MOSS SIDE TARN ------------- SD484956",
+"MUNCASTER TARN ------------- SD106978 (private)",
+"NEVIN TARN ----------------- See Little Tarn",
+"NEWTON TARN ---------------- SD409826 (private)",
+"NORMOSS TARN --------------- SD378992",
+"OUT DUBS TARN -------------- SD368949 (private)",
+"OVER WATER ----------------- NY252350",
+"PARKGATE TARN -------------- NY118006",
+"PEWET TARN ----------------- SD253872",
+"PLACE FELL TARN ------------ NY408172",
+"PODNET TARN ---------------- SD404925",
+"POTTER TARN ---------------- SD495989",
+"POTTS OF ASHNESS ----------- NY145091 (pools)",
+"PRIEST POT ----------------- SD357978 (private)",
+"RAINSBORROW TARN ----------- NY443067",
+"RAISE HOW TARN ------------- SD339994 (private)",
+"RATHER HEATH TARN ---------- SD484958",
+"RATHER HEATH TARN SMALL ---- SD484960",
+"RAVEN CRAG TARN ------------ NY230017",
+"RAVEN'S BARROW TARN -------- SD413876",
+"RED SCREES TARN ------------ NY396088",
+"RED TARN (Helvellyn) ------- NY348152",
+"RED TARN (Langdale) -------- NY268038",
+"REDCRAG TARN --------------- NY450150",
+"ROBIN TARN ----------------- See Youdell Tarn",
+"ROBINSON'S TARN ------------ SD368981 (private)",
+"ROSE CASTLE TARN ----------- NY334002",
+"ROSTHWAITE FARM TARNS ------ SD402934",
+"ROUNDSEA TARN -------------- SD332824 (private)",
+"ROUGH CRAG TARN ------------ See Steel Fell Tarn",
+"ROUGH HILL TARN ------------ NY495195 (by roadside)",
+"ROUTEN BECK-- LOW ---------- SD514991 (private)",
+"ROUTEN BECK-- UPPER -------- SD511992 (private)",
+"ROWANTHWAITE POND ---------- SD461953 (private)",
+"SATURA CRAG TARN ----------- NY423136",
+"SAWREY STRICELY TARN ------- SD338907",
+"SCALE HEAD TARN ------------ SD373975",
+"SCALE IVY TARN ------------- SD382962",
+"SCALE TARN ----------------- See Scale head Tarn",
+"SCALEBARROW TARN ----------- NY519152 (disappeared)",
+"SCALES TARN ---------------- NY329281",
+"SCANDALE TARN -------------- NY386098",
+"SCHOOL KNOTT TARN ---------- SD427973",
+"SCOAT TARN ----------------- NY159104",
+"SCOPE BECK TARN ------------ NY215178",
+"SCREAM POINT TARN ---------- See Ratherheath Tarn Small",
+"SEAT TARN ------------------ NY184136",
+"SEATHWAITE FELL TARNS ------ NY228098",
+"SEATHWAITE TARN ------------ SD255988",
+"SERGEANT MAN TARN ---------- NY288091",
+"SHELTER CRAGS TARNS -------- NY250055",
+"SILVER HOW TARN ------------ NY321067",
+"SIMPSON GROUND RESERVOIR --- SD396864",
+"SINEY TARN ----------------- NY162011",
+"SKEGGLES WATER ------------- NY479035",
+"SLEW TARN ------------------ NY356030 (private)",
+"SMALL WATER ---------------- NY453100",
+"SNIPESHOW TARN ------------- NY297211",
+"SOW HOW TARN --------------- SD401879",
+"SPRINKLING CRAG TARN ------- NY228095",
+"SPRINKLING TARN ------------ NY228091",
+"STAKE PASS TARN ------------ NY265088",
+"STANDING CRAG TARNS -------- NY296137",
+"STEEL FELL TARN ------------ NY308112",
+"STEWART'S RESERVOIR -------- See Middle Fairbank",
+"STICKLE TARN (Dunnerdale) -- SD214928",
+"STICKLE TARN (Langdale) ---- NY287076",
+"STICKS PASS RESERVOIR ------ NY357181 (disappeared)",
+"STONEHILLS TARN ------------ SD418944",
+"STONESTY PIKE TARN --------- NY250042",
+"STONY TARN ----------------- NY200025",
+"STYHEAD TARN --------------- NY222098",
+"SUMMERHOUSE POND ----------- SD368984 (private)",
+"SWINKLEBANK TARN ----------- NY503047 (No access from valley)",
+"SWIRL HAWSE TARNS ---------- NY279002",
+"TARN AT LEAVES ------------- NY258123",
+"TARN CRAG TARN ------------- NY289076",
+"TARN HILL TARNS ------------ SD209921",
+"TARN HOWS ------------------ SD328999",
+"TENT LODGE TARN ------------ SD327972",
+"TENTER HOWE TARN ----------- NY507008 (overgrown)",
+"TEWET TARN ----------------- NY305236",
+"TEWIT HOW TARN ------------- NY146118 (grown over)",
+"THRANG MOSS ---------------- See Torver Tarn",
+"THREE DUBS TARN ------------ SD377974 (private)",
+"THREE TARNS ---------------- NY248060",
+"THUNACAR KNOTT TARN -------- NY279081",
+"TIM'S TARN ----------------- NY183001",
+"TOBY TARN ------------------ SD443881",
+"TOM TARN ------------------- SD413818 (dried up)",
+"TONGUE INTAKE TARN --------- NY327026",
+"TOP DAM -------------------- See Sticks Pass Res",
+"TORVER LOW COMMON TARN ----- SD275926",
+"TORVER TARN ---------------- SD280926",
+"TOSH TARN ------------------ NY128053 (private)",
+"TOWER TARN ----------------- SD214881 (dried up)",
+"UNDERMILLBECK COMMON TARNS - SD424951",
+"WATENDLATH TARN ------------ NY275162",
+"WATERBARNETS TARN ---------- NY351011 (private, by roadside)",
+"WET SLEDDALE RESERVOIR ----- NY554115",
+"WETHERLAM TARN ------------- NY293003",
+"WHARTON TARN --------------- SD331988",
+"WHIN RIGG TARN ------------- NY156039",
+"WHITE MOSS TARN (Hay Bridge) SD334874",
+"WHITEMOSS TARN (Rydal) ----- NY346068",
+"WHITESIDE TARN ------------- NY532010 (private, by roadside)",
+"WISE EEN TARN -------------- SD368977",
+"WITHERSLACK HALL TARN ------ SD435864",
+"WOOD HOUSES TARN ----------- SD233858 (private)",
+"WOOD MOSS TARN ------------- SD328918",
+"WOODHOW TARN --------------- NY136043",
+"WOODLAND TARN -------------- SD245883",
+"WRAYMIRES TARN ------------- SD368979 (private)",
+"WYTHBURN HEAD TARNS -------- NY305115",
+"YEW TREE TARN -------------- NY322004",
+"YOUDELL TARN --------------- NY318068");
+
+
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+var m_picavailable;
+var gridref;
+ 
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var tarnlist = 	document.getElementById('tarnlist');
+	if(m_touchdevice == true)
+		tarnlist.className = "tarnlisttouch";
+	else
+		tarnlist.className = "tarnlist";
+	setuptarns();
+	topcount();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	layoutsortmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var tarnlist = document.getElementById("tarnlist");
+	var mlistwrap = document.getElementById("mlistwrap");
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + 20 + "px";
+	var noteb = document.getElementById("noteb");
+	var rect = tarnlist.getBoundingClientRect();
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "visible";
+		tarnlist.style.overflow = "visible";
+		tarnlist.style.width = scrwidth + "px";
+		mlistwrap.style.width = scrwidth + "px";
+		tarnlist.style.height = "";
+		tarnlist.style.overflow = "visible";
+		if (scrwidth < 480)
+			{
+			note.style.width = scrwidth + "px";
+			notea.style.width = (scrwidth - 126) + "px";
+			}
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		tarnlist.style.overflow = "scroll";
+		tarnlist.style.width = "480px";
+		mlistwrap.style.width = "1024px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			tarnlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			tarnlist.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		tarnlist.style.overflow = "scroll";
+		tarnlist.style.width = "480px";
+		mlistwrap.style.width = scrwidth + "px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			tarnlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			tarnlist.style.height = "600px";
+			}
+		}
+	if(m_picvisible != "")
+		{
+		HidePic();
+		ShowPic(glineid, gname,ggr)
+		}
+	}
+
+function ShowPic(lineid, name,gr) {
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+	var pictop;
+	glineid = lineid;
+	gname = name;
+	ggr = gr;
+    var frame = document.getElementById("pictureframe");
+    if (scrwidth < 850)
+   		pictop = posTop();
+   	else
+   		pictop = posTop()+ 20;
+	//clear hilite
+	var ident;
+	var elem;
+	var count = tarns_list.length;
+	for (var i = 0; i < count; i++)
+		{
+		ident = "top" + i;
+		elem = document.getElementById(ident);
+		elem.firstChild.style.color='#4C71D0';
+		}
+	elem = document.getElementById(lineid);
+	elem.firstChild.style.color = '#FF0000';
+	gridref = gr;  //save to use to get gridref
+	document.getElementById("gr").innerHTML="Grid ref: " + gr;
+    var picref = document.getElementById("pic");
+    if ((scrwidth < 500) || (scrheight < 340))
+    	{
+			picref.src = "../images/tarns_small/" + name + ".jpg";
+		}
+	else
+		{
+			picref.src = "../images/tarns/" + name + ".jpg";
+		}
+	if(name =="")
+		{
+		
+		}
+    frame.style.visibility = "visible";
+    header.style.visibility = "hidden";
+    mainmenu.style.visibility = "hidden";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "hidden";
+    var c = document.getElementById("note");
+    c.style.visibility = "hidden";
+    tarnlist.style.visibility = "hidden";
+    m_picvisible = name;
+    grvisible = gr;
+	PositionPic(pictop);
+}
+
+function PositionPic(frametop)
+{
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+   var picref = document.getElementById("pic");
+   var frame = document.getElementById("pictureframe");
+   var picwidth;
+   var picheight;
+   var picinfo = document.getElementById("picinfo");
+	if (scrwidth >= 820)
+		{
+		if (scrheight >= 556)
+			{
+			//pic full size
+			picwidth = 820;
+			picheight = 556;
+			}
+		else
+			{
+			//fit to height and scale down width
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	else
+		{
+		if (scrheight >= scrwidth*556/820)
+			{
+			//scale to width
+			picwidth = scrwidth;
+			picheight = picwidth*556/820;
+			}
+		else
+			{
+			//scale to height
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	picref.style.height = "";
+	picref.style.width = picwidth + "px";
+   frame.style.top = frametop + "px";
+	frame.style.left = (scrwidth - picwidth)/2 + "px";
+  	picinfo.style.left = frame.style.left;
+  	var closemsg = document.getElementById("closemsg");
+  	var closebtn = document.getElementById("closebutton");
+  	var capt = document.getElementById("caption");
+  	if(m_picavailable)
+  		{
+  		capt.style.visibility = "visible";
+  		closemsg.style.visibility = "visible";
+  		closebtn.style.visibility = "hidden";
+  		picinfo.style.top = "";
+  		}
+  	else
+  		{
+  		capt.style.visibility = "hidden";
+  		closemsg.style.visibility = "hidden";
+  		closebtn.style.visibility = "visible";
+		picref.style.height = "0px";
+  		picinfo.style.top = "10px";
+  		}
+}
+
+function HidePic() {
+    m_picvisible = "";
+    grvisible = "";
+    var frame = document.getElementById("pictureframe");
+    var picref = document.getElementById("pic");
+	picref.src = "";
+    frame.style.visibility = "hidden";
+    header.style.visibility = "visible";
+    mainmenu.style.visibility = "visible";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "visible";
+    var c = document.getElementById("note");
+    c.style.visibility = "visible";
+    var d = document.getElementById("closebutton");
+    d.style.visibility = "hidden";
+    tarnlist.style.visibility = "visible";
+}
+
+function posTop() 
+	{
+	return typeof window.pageYOffset != 'undefined' ?  window.pageYOffset : document.documentElement && document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ? document.body.scrollTop : 0;
+	}    
+    
+function GetMap()
+{	
+	setTimeout(function(){document.location.href = "../php/getmap.html?" + gridref;},500);
+	HidePic;
+}
+    
+function setuptarns()
+{
+	//sorts the original list
+	//base is the index from which I calculate the position of ft and m
+	var alist = document.getElementById("tarnlist");
+	var base = 29;
+	var pos = base;
+	//setup the display
+   var innerHTML = "";
+   var thisline;
+	for (var i = 0; i < tarns_list.length; i++)
+		{
+		entry = tarns_list[i];
+		tab1 = entry.indexOf("\t",1);
+		var caption = entry.substr(base +26,entry.length);
+		// fix the quote mark in captions
+		caption = caption.replace(/\'s/,"\\'s");
+		caption = caption.replace(/\'S/,"\\'S");
+   		//until pics available diplay comment as part of gridref
+		var gridref = entry.substr(base);
+ 		var display = entry.substr(0,base-1);
+ 		if(scrwidth > 400)
+ 			{
+ 			display = display + "  " + gridref; 			
+ 			}
+		else
+			{
+ 			display = display;
+			}
+ 		thisline = "<li id=\"top" + i + "\" onclick=";
+ 		thisline = thisline + "\"ShowPic('top" + i + "', '" + caption + "','" + gridref + "');return false;\"";
+ 		thisline = thisline + "><a href=\"#\">";
+ 		thisline = thisline + display + "</a></li>";
+		innerHTML = innerHTML + thisline;
+		}
+	alist.innerHTML = innerHTML;
+	alist.style.overflow = "auto";
+	return(false);
+}
+
+function topcount()
+{
+	var count = 0;
+	for (var i = 0; i < tarns_list.length; i++)
+		{
+		if(tarns_list[i].substr(44,3) != "See")
+			count = count + 1	
+		}
+	var headcount = document.getElementById("header");
+	headcount.innerHTML = headcount.innerHTML.replace("***",count);	
+}
+
+	
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">LAKE DISTRICT TARNS (***)</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div id="note">
+		<div id="notea">Sorry pictures not yet available</div>
+		<div id="noteb">Click for tarn details</div>
+	</div>
+	<div id="mlistwrap">
+		<ul id="tarnlist" class="tarnlist">
+		</ul>
+	</div>
+     <div class = "footer">
+		©John and Anne Nuttall 2014
+     </div>
+</div>
+<div id="pictureframe" style = "visibility: hidden; z-Index: 30; position: absolute; left: 1px; top: 0px">
+    <img id="pic" src="" onMouseDown="HidePic();">
+    <br>
+    	<a id="caption"> CAPTION </a>
+    	<div id="picinfo">
+    		<a class="button" style="width: 100px; left:0px" href="#" onMouseDown="GetMap();">MAP</a>
+    		<div id="gr" style="left:0px"> Grid ref</div>
+    		<div id="closemsg">Click picture to close</div>
+    		<a href="#" id="closebutton" class="button" style="float:left" onMouseDown="HidePic();">Click to close</a>
+    	</div>
+</div>
+</body>
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>News</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+ 
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	var newslist = document.getElementById("newslist");
+	back.style.minHeight=scrheight + "px";
+	var rect = newslist.getBoundingClientRect();
+	if(window.innerHeight < (650 + rect.top))
+		{
+		newslist.style.height = (window.innerHeight - rect.top - 50) + "px";
+		}
+	else
+		{
+		newslist.style.height = "600px";
+		}
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "visible";
+		newslist.style.overflow = "visible";
+		newslist.style.width = scrwidth + "px";
+		newslist.style.height = "";
+		newslist.style.overflow = "visible";
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		newslist.style.overflow = "scroll";
+		newslist.style.width = "480px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			newslist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			newslist.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		newslist.style.overflow = "scroll";
+		newslist.style.width = scrwidth - 80 + "px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			newslist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			newslist.style.height = "600px";
+			}
+		}
+	}
+    
+    
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div class="content_std">
+	<p class="title1">RECORDS</p>
+    <ul id="newslist" class="stdlistwide">
+      <li>
+        <b>1st Oct 2021<font color="#800000"><a href="../news/0129.htm">
+        New Welsh Mountain record</a></font></b></li>
+      <li>
+        <b>6th Aug 2018<font color="#800000"><a href="../news/0124.htm">
+        Welsh Mountain record</a></font></b></li>
+      <li>
+        <b>28th Sep 2016<font color="#800000"><a href="../news/0121.htm">
+        Fastest completion ever!</a></font></b></li>
+     <li>
+        <b>29th Apr 2015<font color="#800000"><a href="../news/0111.htm">
+        Tarn bagging extreme!</a></font></b></li>
+      <li>
+        <b>3rd Sep 2010 <font color="#800000"><a href="../news/0042.htm">John
+        &amp; Anne celebrate 3rd Round</a></font></b></li>
+      <li>
+        <b>12th August 2009 <a href="../news/0037.htm">Youngest climber of a 2000er?</a></b></li>
+      <li>
+        <b>30th August 2006 <a href="../news/0018.htm">Oldest and highest</a></b></li>
+        <li>
+        <b>8th July 2005 <a href="../news/0011.htm">First continuous walk over  all the English summits</a></b></li>
+        <li>
+        <b>21st June 2003 <a href="../news/0006.htm">John and Anne walk round the world</a></b></li>
+        <li>
+       <b>22 March 2003 <a href="../news/0004.htm">Myrddyn completes Welsh summits in every month</a></b></li>
+        <li>
+        <b>15 Sep 2002 <a href="../news/0002.htm">Myrddyn's 15th Round of the Welsh mountains</a></b></li>
+        <li>
+        <b>June 1996 <a href="https://leahneukirchen.org/tmp/www.geocities.com/Yosemite/1015/wp.htm">Ann Bowker's's article All the Welsh 2000ers in one walk</a></b></li>
+<li><b>June 1999 Ten rounds</b></li><li>
+Myrddyn Phillips writes to say that when he has climbed Llwytmor he will
+have completed TEN rounds of the Welsh tops (and this includes all the new
+tops). Will this record ever be equalled?
+</li><li>
+<b>May 1998 Seven rounds!</b></li><li>
+Myrddyn Phillips of Welshpool completed his SEVENTH round of all the Welsh
+tops, celebrating with champagne and strawberries on his new-found top of
+Foel Meirch. He completed the English tops in August 1995, finishing with
+Pillar Rock. (He's only done 5 Munros!)
+</li><li>
+    </ul>   
+    </div>   
+     <div class = "footer">   
+		©John and Anne Nuttall 2014   
+     </div>   
+    </div>   
+</body>   

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid Reference Redirect</title>
+  <script>
+    window.onload = function () {
+      const query = window.location.search.substring(1).toUpperCase(); // get query string without '?'
+
+      if (query.length < 6) {
+        document.body.innerHTML = "Grid ref error<br>";
+        return;
+      }
+
+      const region = query.substring(0, 2);
+      const ns = query.charAt(0);
+      let x = query.substring(2, 5);
+      let y = query.substring(5, 8);
+
+      const areas_north = "NA09NB19NC29ND39NE49NF08NG18NH28NJ38NK48NL07NM17NN27NO37NP47NQ06NR16NS26NT36NU46NV05NW15NX25NY35NZ45";
+      const areas_south = "SA04SB14SC24SD34SE44SF03SG13SH23SJ33SK43SL02SM12SN22SO32SP42SQ01SR11SS21ST31SU41SV00SW10SX20SY30SZ40";
+
+      let found = false;
+
+      const searchAreas = (areas) => {
+        for (let i = 0; i < 100; i += 4) {
+          const area = areas.substr(i, 4);
+          if (region === area.substr(0, 2)) {
+            x = area.charAt(2) + x + "00";
+            y = area.charAt(3) + y + "00";
+            found = true;
+            break;
+          }
+        }
+      };
+
+      if (ns === "N") {
+        searchAreas(areas_north);
+      } else {
+        searchAreas(areas_south);
+      }
+
+      if (found) {
+        const mapUrl = `https://www.streetmap.co.uk/grid/${x}_${y}_120`;
+        window.location.href = mapUrl; // redirect
+      } else {
+        document.body.innerHTML = "Grid ref error<br>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting based on grid reference...</p>
+</body>
+</html>

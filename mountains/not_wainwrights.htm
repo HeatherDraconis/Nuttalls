@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Not Wainwrights</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/mountains.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var mountains_list = new Array(
+"Atkinson Pike ************	2772ft -- 845m - NY324282	Atkinson Pike",
+"Black Crag ***************	2717ft -- 828m - NY166116	Black Crag (beyond Pillar) from Brandreth",
+"Black Sails **************	2444ft -- 745m - NY282007	Black Sails",
+"Bowfell North Top ********	2841ft -- 866m - NY245070	Bowfell North Top above Angle Tarn",
+"Branstree North East Top *	2208ft -- 673m - NY487103	Branstree North East Top from Artle Crag cairn",
+"Broad Crag ***************	3064ft -- 934m - NY218075	Broad Crag from the descent to Lingmell Col from Scafell Pike",
+"Codale Head **************	2395ft -- 730m - NY289090	Codale Head",
+"Cold Pike Far West Top ***	2198ft -- 670m - NY256037	Cold Pike Far West Top",
+"Cold Pike West Top *******	2241ft -- 683m - NY258035	Cold Pike West Top pointed out by Heather",
+"Combe Door Top ***********	2218ft -- 676m - NY253108	Combe Door Top",
+"Combe Head ***************	2411ft -- 735m - NY249109	Combe Head from Combe Door Top",
+"Crinkle Crags South Top **	2736ft -- 834m - NY249045	Crinkle Crags South Top (the leftmost Crinkle)",
+"Dodd (Buttermere) ********	2103ft -- 641m - NY164158	Dodd (Buttermere) summit",
+"Dovenest Top *************	2073ft -- 632m - NY256113	Dovenest Top",
+"Gategill Fell Top ********	2792ft -- 851m - NY318274	Gategill Fell Top",
+"Great Knott **************	2283ft -- 696m - NY260043	Great Knott",
+"Great Lingy Hill *********	2021ft -- 616m - NY310340	Great Lingy Hill summit",
+"Green Side ***************	2608ft -- 795m - NY352187	Green Side",
+"Hare Stones **************	2057ft -- 627m - NY315344	Hare Stones",
+"Harrop Pike **************	2090ft -- 637m - NY501078	Harrop Pike summit",
+"Helvellyn Lower Man ******	3035ft -- 925m - NY337155	Helvelyn Lower Man from the slopes of White Side",
+"Heron Pike North Top *****	2037ft -- 621m - NY357087	Heron Pike North Top",
+"High House Tarn Top ******	2244ft -- 684m - NY240092	High House Tarn Top",
+"High Spy North Top *******	2080ft -- 634m - NY236171	High Spy North Top looking down on Derwent Water",
+"Hobcarton Crag ***********	2425ft -- 739m - NY194220	Hobcarton Crag from Hopegill Head",
+"Hobcarton End ************	2080ft -- 634m - NY194235	Hobcarton End from Grisedale Pike",
+"Honister Crag ************	2067ft -- 630m - NY212142	Honister Crag",
+"Ill Crag *****************	3068ft -- 935m - NY223073	Ill Crag mist",
+"Iron Crag ****************	2100ft -- 640m - NY123119	Iron Crag",
+"Kirk Fell East Top *******	2582ft -- 787m - NY199106	Kirk Fell East Top from Beck Head",
+"Ladyside Pike ************	2306ft -- 703m - NY184227	Ladyside Pike from Hopegill Head",
+"Little Calva *************	2106ft -- 642m - NY282314	Little Calva summit",
+"Little Gowder Crag *******	2405ft -- 733m - NY140109	Little Gowder Crag with Haycock behind",
+"Little Stand *************	2428ft -- 740m - NY250034	Little Stand from Cold Pike",
+"Looking Stead (Pillar) ***	2057ft -- 627m - NY186118	Looking Stead (Pillar) from Brandreth",
+"Looking Steads (Glaramara) 2543ft -- 775m - NY246102	Looking Steads (Glaramara)",
+"Low Saddle ***************	2152ft -- 656m - NY288133	Low Saddle",
+"Middleboot Knotts ********	2306ft -- 703m - NY213080	Middleboot Knotts",
+"Miller Moss **************	2001ft -- 610m - NY303339	Miller Moss summit survey",
+"Pillar Rock **************	2559ft -- 780m - NY171123	Pillar Rock",
+"Red Beck Top *************	2365ft -- 721m - NY243097	Red Beck Top from Looking Steads",
+"Rosthwaite Fell **********	2008ft -- 612m - NY255118	Rosthwaite Fell",
+"Rough Crag ***************	2060ft -- 628m - NY454112	Rough Crag ridge above Haweswater",
+"Round How ****************	2431ft -- 741m - NY218081	Round How and Great End",
+"Sale How *****************	2185ft -- 666m - NY276286	Sale How",
+"Sand Hill ****************	2480ft -- 756m - NY187218	Sand Hill from Hopegill Head",
+"Seathwaite Fell South Top 	2070ft -- 631m - NY227094	Seathwaite Fell South Top",
+"Shelter Crags ************	2674ft -- 815m - NY249053	Shelter Crags (Crinkle Crags to left)",
+"Shelter Crags North Top **	2543ft -- 775m - NY249057	Shelter Crags North Top",
+"Striding Edge ************	2821ft -- 860m - NY350149	Striding Edge",
+"Symonds Knott ************	3146ft -- 959m - NY207067	Symonds Knott, looking to Scafell Pike",
+"Walna Scar ***************	2037ft -- 621m - SD258963	Walna Scar summit",
+"White Maiden *************	2001ft -- 610m - SD254957	White Maiden summit",
+"Whiteside East Top *******	2359ft -- 719m - NY175221	Whiteside East Top and Whiteside above Gasgale Crags",
+"Yewbarrow North Top ******	2021ft -- 616m - NY176092	Yewbarrow North Top from Red Pike");
+	
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= false;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+var m_picavailable;
+var gridref;
+ 
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var mountlist = 	document.getElementById('mountainlist');
+	if(m_touchdevice == true)
+		mountlist.className = "mountainlisttouch";
+	else
+		mountlist.className = "mountainlist";
+	sorttops(units,field,"");
+	topcount();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	layoutsortmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var mountlist = document.getElementById("mountainlist");
+	var mlistwrap = document.getElementById("mlistwrap");
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + 20 + "px";
+	var noteb = document.getElementById("noteb");
+	var rect = mountlist.getBoundingClientRect();
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "visible";
+		mountlist.style.overflow = "visible";
+		mountlist.style.width = scrwidth + "px";
+		mlistwrap.style.width = scrwidth + "px";
+		mountlist.style.height = "";
+		mountlist.style.overflow = "visible";
+		if (scrwidth < 480)
+			{
+			note.style.width = scrwidth + "px";
+			notea.style.width = (scrwidth - 126) + "px";
+			}
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		mountlist.style.overflow = "scroll";
+		mountlist.style.width = "480px";
+		mlistwrap.style.width = "1024px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			mountlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			mountlist.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		mountlist.style.overflow = "scroll";
+		mountlist.style.width = "480px";
+		mlistwrap.style.width = scrwidth + "px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			mountlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			mountlist.style.height = "600px";
+			}
+		}
+	if(m_picvisible != "")
+		{
+		HidePic();
+		ShowPic(glineid, gname,ggr)
+		}
+	}
+
+function ShowPic(lineid, name,gr) {
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+	var pictop;
+	glineid = lineid;
+	gname = name;
+	ggr = gr;
+    var frame = document.getElementById("pictureframe");
+    if (scrwidth < 850)
+   		pictop = posTop();
+   	else
+   		pictop = posTop()+ 20;
+	//clear hilite
+	var ident;
+	var elem;
+	var count = mountains_list.length;
+	for (var i = 0; i < count; i++)
+		{
+		ident = "top" + i;
+		elem = document.getElementById(ident);
+		elem.firstChild.style.color='#4C71D0';
+		}
+	elem = document.getElementById(lineid);
+	elem.firstChild.style.color = '#FF0000';
+	gridref = gr;  //save to use to get gridref
+	if(name.substr(0,1) != "#")
+		document.getElementById("caption").innerHTML=name;
+	else
+		{
+		name = "Sorry";
+		document.getElementById("caption").innerHTML="";
+		}
+	document.getElementById("gr").innerHTML="Grid ref: " + gr;
+    var picref = document.getElementById("pic");
+    if ((scrwidth < 500) || (scrheight < 340))
+    	{
+			picref.src = "../images/england_small/" + name + ".jpg";
+		}
+	else
+		{
+			picref.src = "../images/england/" + name + ".jpg";
+		}
+    frame.style.visibility = "visible";
+    header.style.visibility = "hidden";
+    mainmenu.style.visibility = "hidden";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "hidden";
+    var c = document.getElementById("note");
+    c.style.visibility = "hidden";
+    var sm = document.getElementById("sortmenu");
+    sm.style.visibility = "hidden";
+    mountainlist.style.visibility = "hidden";
+    m_picvisible = name;
+    grvisible = gr;
+	PositionPic(pictop);
+}
+
+function PositionPic(frametop)
+{
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+   var picref = document.getElementById("pic");
+   var frame = document.getElementById("pictureframe");
+   var picwidth;
+   var picheight;
+   var picinfo = document.getElementById("picinfo");
+	if (scrwidth >= 820)
+		{
+		if (scrheight >= 556)
+			{
+			//pic full size
+			picwidth = 820;
+			picheight = 556;
+			}
+		else
+			{
+			//fit to height and scale down width
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	else
+		{
+		if (scrheight >= scrwidth*556/820)
+			{
+			//scale to width
+			picwidth = scrwidth;
+			picheight = picwidth*556/820;
+			}
+		else
+			{
+			//scale to height
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	picref.style.height = "";
+	picref.style.width = picwidth + "px";
+   frame.style.top = frametop + "px";
+	frame.style.left = (scrwidth - picwidth)/2 + "px";
+  	picinfo.style.left = frame.style.left;
+  }
+function HidePic() {
+    m_picvisible = "";
+    grvisible = "";
+    var frame = document.getElementById("pictureframe");
+    var picref = document.getElementById("pic");
+	picref.src = "";
+    frame.style.visibility = "hidden";
+    header.style.visibility = "visible";
+    mainmenu.style.visibility = "visible";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "visible";
+    var c = document.getElementById("note");
+    c.style.visibility = "visible";
+    var sm = document.getElementById("sortmenu");
+    sm.style.visibility = "visible";
+    mountainlist.style.visibility = "visible";
+}
+
+function posTop() 
+	{
+	return typeof window.pageYOffset != 'undefined' ?  window.pageYOffset : document.documentElement && document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ? document.body.scrollTop : 0;
+	}    
+    
+function GetMap()
+{	
+	setTimeout(function(){document.location.href = "../php/getmap.html?" + gridref;},500);
+	HidePic;
+}
+    
+function sorttops(units,order,user)
+{
+	//sorts the original list
+	//base is the index from which I calculate the position of ft and m
+	var alist = document.getElementById("mountainlist");
+	var base = 27;
+	var pos = base;
+	//only change units if given in call
+	if(user != "" & order == "Name")
+		dirName = !dirName;
+	else if(user != "" & order == "Height")
+		dirHeight = !dirHeight;
+	
+	if(units == "" & dirUnits == "ft")
+		pos = base;
+	else if(units == "" & dirUnits == "m")
+		pos = base + 9;
+	else if(units == "m")
+		{
+		dirUnits = "m";
+		pos = base +9;
+		}
+	else if(units == "ft")
+		{
+		dirUnits = "ft";
+		pos = base;
+		}
+	if(order == "Name")
+		{
+			if(dirName)
+				{
+				// have to sort first in case previous sort was by height
+				mountains_list.sort();
+				mountains_list.reverse();
+				}
+			else
+				mountains_list.sort();
+		}
+	else if(order == "Height")
+		//sort by height
+		// position of height value depends on whether it's feet or metres
+		{
+			mountains_list.sort(function(sa,sb)
+			{
+				var ha = sa.substr(pos,4);
+				var hb = sb.substr(pos,4);
+				if(dirHeight)
+					return ha - hb;
+				else
+					return hb - ha;
+			})
+		}
+	//setup the display
+   var innerHTML = "";
+   var thisline;
+	for (var i = 0; i < mountains_list.length; i++)
+		{
+		entry = mountains_list[i];
+		tab1 = entry.indexOf("\t",1);
+		var caption = entry.substr(base +26,entry.length);
+		// fix the quote mark in captions
+		caption = caption.replace(/\'s/,"\\'s");
+		caption = caption.replace(/\'S/,"\\'S");
+		var gridref = entry.substr(base+17,8);
+ 		var display = entry.substr(0,base-1);
+ 		if(dirUnits == "ft")
+ 			height = entry.substr(base, 6);
+ 		else
+ 			height = entry.substr(base + 9,5);
+ 		if(scrwidth > 400)
+ 			{
+ 			display = display + "  " + height + "  " + gridref; 			
+ 			}
+		else
+			{
+ 			display = display + "  " + height;
+			}
+ 		thisline = "<li id=\"top" + i + "\" onclick=";
+ 		thisline = thisline + "\"ShowPic('top" + i + "', '" + caption + "','" + gridref + "');return false;\"";
+ 		thisline = thisline + "><a href=\"#\">";
+ 		thisline = thisline + display + "</a></li>";
+		innerHTML = innerHTML + thisline;
+		}
+	alist.innerHTML = innerHTML;
+	alist.style.overflow = "auto";
+	return(false);
+}
+
+function topcount()
+{
+	var headcount = document.getElementById("header");
+	var count = mountains_list.length;
+	headcount.innerHTML = headcount.innerHTML.replace("***",count);	
+}
+
+	
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">NOT WAINWRIGHTS (***)</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div id="note">
+		<div id="notea">Click/Touch mountain for picture and details</div>
+		<div id="noteb">
+		<ul class="menusmall" id="sortmenu">
+    		<li><a href="#"
+        		onmousedown="mopen('msort')" 
+        		onmouseover="mopen('msort')" 
+        		onmouseout="mclosetime()">Sort by</a>
+        		<div id="msort" 
+            		onmouseover="mcancelclosetime()"
+           		onmouseout="mclosetime()">
+        		<a href="#" onmousedown="sorttops('','Name','User');mclose();">Name</a>
+        		<a href="#" onmousedown="sorttops('','Height','User');mclose();">Height</a>
+        		<a href="#" onmousedown="sorttops('ft','','User');mclose();">Show ft</a>
+        		<a href="#" onmousedown="sorttops('m','','User');mclose();">Show m</a>
+        		</div>
+    		</li>
+		</ul>
+		</div>
+	</div>
+	<div id="mlistwrap">
+		<ul id="mountainlist" class="mountainlist">
+		</ul>
+	</div>
+     <div class = "footer">
+		©John and Anne Nuttall 2014
+     </div>
+</div>
+<div id="pictureframe" style = "visibility: hidden; z-Index: 30; position: absolute; left: 1px; top: 0px">
+    <img id="pic" src="" onMouseDown="HidePic();">
+    <br>
+    	<div id="caption"> CAPTION </div>
+    	<div id="picinfo">
+    		<a class="button" style="width: 100px; left:0px" href="#" onMouseDown="GetMap();">MAP</a>
+    		<div id="gr" style="left:0px"> Grid ref</div>
+    		<div id="close" style="float:left">Click picture to close</div>
+    	</div>
+</div>
+</body>
+

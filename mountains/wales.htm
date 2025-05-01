@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Mountains of Wales</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/mountains.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var mountains_list = new Array(
+"Allt Lwyd ****************	2146ft -- 654m - SO079189	Allt Lwyd",
+"Allt-fawr ****************	2290ft -- 698m - SH682475	Allt-fawr",
+"Aran Benllyn *************	2904ft -- 885m - SH867243	Aran Benllyn from Bala Lake",
+"Aran Fawddwy *************	2969ft -- 905m - SH863224	Aran Fawddwy",
+"Arenig Fach **************	2260ft -- 689m - SH821416	Arenig Fach",
+"Arenig Fawr **************	2802ft -- 854m - SH827369	Arenig Fawr from Llyn Arenig Fawr",
+"Arenig Fawr Sth Ridge Top 	2336ft -- 712m - SH827360	Arenig Fawr South Ridge Top",
+"Arenig Fawr South Top ****	2743ft -- 836m - SH827366	Arenig Fawr South Top",
+"Bache Hill ***************	2001ft -- 610m - SO214636	Bache Hill",
+"Bera Bach ****************	2648ft -- 807m - SH672678	Bera Bach",
+"Bera Mawr ****************	2605ft -- 794m - SH675683	Bera Mawr summit",
+"Black Mixen **************	2133ft -- 650m - SO196644	Black Mixen",
+"Black Mountain ***********	2308ft -- 703m - SO255353	Black Mountain",
+"Bwlch y Ddwyallt *********	2474ft -- 754m - SO055203	Bwlch y Ddwyallt",
+"Cadair Berwyn ************	2713ft -- 827m - SJ071323	Cadair Berwyn from the Nant y Llyn Valley",
+"Cadair Berwyn New Top ****	2723ft -- 830m - SJ072327	Cadair Berwyn New Top",
+"Cadair Bronwen ***********	2575ft -- 785m - SJ077346	Cadair Bronwen from Foel Wen",
+"Cadair Idris *************	2930ft -- 893m - SH711130	Cadair Idris, Craig Cwm Amarch and Llyn Cau",
+"Carnedd Dafydd ***********	3425ft - 1044m - SH663631	Carnedd Dafydd",
+"Carnedd Llechwedd-llyfn **	2110ft -- 643m - SH858445	Carnedd Llechwedd-llyfn",
+"Carnedd Llewelyn *********	3491ft - 1064m - SH684644	Carnedd Llewelyn from Craig Eigiau",
+"Carnedd y Filiast Arenigs)	2195ft -- 669m - SH871446	Carnedd y Filiast (Arenigs)",
+"Carnedd y Filiast (Glyders	2694ft -- 821m - SH620628	Carnedd y Filiast (Glyders)",
+"Carnedd y Filiast N Top **	2365ft -- 721m - SH617631	Carnedd y Filiast North Top",
+"Castell y Gwynt **********	3189ft -- 972m - SH654581	Castell y Gwynt",
+"Cefn Gwyntog *************	2018ft -- 615m - SH976266	Cefn Gwyntog",
+"Cefn yr Ystrad ***********	2024ft -- 617m - SO087137	Cefn yr Ystrad summit",
+"Chwarel y Fan ************	2228ft -- 679m - SO258294	Chwarel y Fan",
+"Cnicht *******************	2260ft -- 689m - SH645466	Cnicht",
+"Cnicht North Top *********	2251ft -- 686m - SH648468	Cnicht North Top",
+"Corn Du ******************	2864ft -- 873m - SO007213	Corn Du and Fan Brycheiniog above Llyn y Fan Fach",
+"Craig Cerrig-gleisiad ****	2064ft -- 629m - SN961218	Craig Cerrig-gleisiad from the col to Fan Frynych",
+"Craig Cwm Amarch *********	2595ft -- 791m - SH711121	Craig Cwm Amarch and Llyn Cau",
+"Craig Cwm Silyn **********	2408ft -- 734m - SH525503	Craig Cwm Silyn",
+"Craig Eigiau *************	2411ft -- 735m - SH713655	Craig Eigiau from Cwm Eigiau",
+"Craig Gwaun Taf **********	2711ft -- 825m - SO005207	Craig Gwaun Taf, Corn Du and Pen y Fan",
+"Craiglwyn ****************	2044ft -- 623m - SH730608	Craiglwyn",
+"Craig-y-llyn *************	2041ft -- 622m - SH665119	Craig-y-llyn and Llyn Cyri",
+"Craigysgafn **************	2260ft -- 689m - SH660443	Craigysgafn",
+"Creigiau Gleision ********	2224ft -- 678m - SH729615	Cregiau Gleision",
+"Creigiau Gleision N Top **	2080ft -- 634m - SH734622	Cregiau Gleision North Top",
+"Crib Goch ****************	3028ft -- 923m - SH624552	Crib Goch",
+"Crib y Ddysgl ************	3494ft - 1065m - SH611552	Crib y Ddysgl",
+"Cribin Fawr **************	2162ft -- 659m - SH795153	Cribyn Fawr and Waun-oer",
+"Cribyn *******************	2608ft -- 795m - SO024213	Cribyn from Pen y Fan",
+"Crib-y-rhiw **************	2198ft -- 670m - SH663249	Crib-y-rhiw",
+"Cyfrwy *******************	2661ft -- 811m - SH704133	Cyfrwy from Cadair Idris",
+"Dduallt ******************	2172ft -- 662m - SH811274	Dduallt summit, looking to the Arans",
+"Diffwys ******************	2461ft -- 750m - SH661234	Diffws",
+"Diffwys West Top *********	2106ft -- 642m - SH648229	Diffws West Top",
+"Drosgl *******************	2487ft -- 758m - SH664680	Drosgl from Bera Mawr",
+"Drum *********************	2526ft -- 770m - SH708696	Drum from Bwlch y Gwryd",
+"Drygarn Fawr *************	2103ft -- 641m - SN862584	Drygarn Fawr",
+"Elidir Fawr **************	3031ft -- 924m - SH612613	Elidir Fawr",
+"Erw y Ddafad-ddu *********	2861ft -- 872m - SH865234	Erw y Ddafad-ddu",
+"Esgeiriau Gwynion ********	2201ft -- 671m - SH890236	Esgeiriau Gwynnion",
+"Fan Brycheiniog **********	2631ft -- 802m - SN825218	Fan Brycheiniog from Picws Du",
+"Fan Fawr *****************	2408ft -- 734m - SN970193	Fan Fawr",
+"Fan Fraith ***************	2192ft -- 668m - SN887184	Fan Fraith summit, looking to Fan Gyhirych",
+"Fan Frynych **************	2064ft -- 629m - SN958228	Fan Frynych summit looking to Fan Brecheiniog",
+"Fan Gyhirych *************	2379ft -- 725m - SN881191	Fan Gyhirych",
+"Fan Hir ******************	2497ft -- 761m - SN831209	Fan Hir",
+"Fan Llia *****************	2073ft -- 632m - SN938186	Fan Llia summit cairn looking to Fan Nedd",
+"Fan Nedd *****************	2175ft -- 663m - SN913184	Fan Nedd summit",
+"Fan y Big ****************	2359ft -- 719m - SO036207	Fan y Big",
+"Foel Boeth ***************	2021ft -- 616m - SH779342	Foel Boeth",
+"Foel Cedig ***************	2188ft -- 667m - SH981283	Foel Cedig with Seven Nuttalls",
+"Foel Cwm Sian Llwyd ******	2126ft -- 648m - SH996314	Foel Cwm Sian Lwyd summit",
+"Foel Goch (Arenigs) ******	2005ft -- 611m - SH953423	Foel Goch (Arenigs)",
+"Foel Goch (Berwyns) ******	2011ft -- 613m - SH943291	Foel Goch (Berwyns) descent",
+"Foel Grach ***************	3202ft -- 976m - SH689659	Foel Grach",
+"Foel Gron ****************	2064ft -- 629m - SH560569	Foel Gron and Moel Eilio from Mynydd Mawr",
+"Foel Hafod-fynydd ********	2260ft -- 689m - SH877227	Foel Hafod-fynydd from Esgeiriau Gwynion",
+"Foel Meirch **************	2625ft -- 800m - SH659637	Foel Meirch and Carnedd Dafydd",
+"Foel Penolau *************	2014ft -- 614m - SH661348	Foel Penolau",
+"Foel Rhudd ***************	2162ft -- 659m - SH896239	Foel Rhudd summit",
+"Foel Wen *****************	2267ft -- 691m - SJ099334	Foel Wen from the col before Tomle",
+"Foel Wen South Top *******	2254ft -- 687m - SJ102330	Foel Wen South Top",
+"Foel y Geifr *************	2054ft -- 626m - SH937275	Foel y Geifr summit",
+"Foel-fras ****************	3091ft -- 942m - SH696682	Foel-fras trigpoint",
+"Foel-goch (Glyders) ******	2726ft -- 831m - SH629612	Foel-goch and Elidir Fawr",
+"Gallt y Daren ************	2031ft -- 619m - SH778345	Gallt y Daren",
+"Gallt y Wenallt **********	2031ft -- 619m - SH642533	Gallt y Wenallt",
+"Gallt yr Ogof ************	2503ft -- 763m - SH685586	Gallt yr Ogof",
+"Garnedd Uchaf ************	3038ft -- 926m - SH687669	Garnedd Uchaf, looking to Foel Grach and Carnedd Llywelen",
+"Garnedd-goch *************	2297ft -- 700m - SH511495	Garnedd-goch",
+"Garreg Las ***************	2083ft -- 635m - SN777203	Garreg Las",
+"Garreg Lwyd **************	2021ft -- 616m - SN740179	Garreg Lwyd cairn",
+"Gau Graig ****************	2241ft -- 683m - SH744141	Gau Graig and Mynydd Moel from Waun-oer",
+"Glasgwm ******************	2559ft -- 780m - SH837194	Glasgwm summit from Llyn y Fign",
+"Glyder Fach **************	3261ft -- 994m - SH656583	Glyder Fach",
+"Glyder Fawr **************	3284ft - 1001m - SH642579	Glyder Fawr summit",
+"Godor ********************	2228ft -- 679m - SJ094308	Godor summit, looking to the Berwyns",
+"Godor North Top **********	2215ft -- 675m - SJ089311	Godor North Top",
+"Gorllwyn *****************	2011ft -- 613m - SN918591	Gorllwyn",
+"Great Rhos ***************	2165ft -- 660m - SO182639	Great Rhos",
+"Gwaun Lydan **************	2073ft -- 632m - SH880212	Gwaun Llydan from Aran Fawddwy",
+"Gwaun y Llwyni ***********	2247ft -- 685m - SH857205	Gwaun y Llwyni",
+"Gyrn Wigau ***************	2110ft -- 643m - SH654675	Gyrn Wigau, looking to the Menail Straits",
+"Llechog ******************	2356ft -- 718m - SH606567	Llechog",
+"Llechwedd Du *************	2014ft -- 614m - SH894224	Llechwedd Du summit, looking to the Arans",
+"Lliwedd Bach *************	2684ft -- 818m - SH628532	Lliwedd Bach and Glaslyn",
+"Llwytmor *****************	2785ft -- 849m - SH689692	Llwytmor from Garnedd Uchaf",
+"Maesglase ****************	2218ft -- 676m - SH817150	Maesglase from Glasgwm",
+"Manod Mawr ***************	2169ft -- 661m - SH724447	Manod Mawr",
+"Manod Mawr North Top *****	2159ft -- 658m - SH727458	Manod Mawr North Top from Llyn Du-bach",
+"Moel Cynghorion **********	2211ft -- 674m - SH586564	Moel Cynghorion",
+"Moel Druman **************	2218ft -- 676m - SH671476	Moel Druman",
+"Moel Eilio ***************	2382ft -- 726m - SH556577	Moel Eilio and Foel Gron",
+"Moel Fferna **************	2067ft -- 630m - SJ116398	Moel Fferna",
+"Moel Hebog ***************	2569ft -- 783m - SH565469	Moel Hebog from Beddgelert",
+"Moel Lefn ****************	2093ft -- 638m - SH553485	Moel Lefn",
+"Moel Llyfnant ************	2464ft -- 751m - SH808352	Moel Llyfnant",
+"Moel Penamnen ************	2044ft -- 623m - SH716483	Moel Penamnen",
+"Moel Siabod **************	2861ft -- 872m - SH705546	Moel Siabod from Glaslyn",
+"Moel Sych ****************	2713ft -- 827m - SJ066318	Moel Sych from Cerrig Geneugiaid",
+"Moel y Cerrig Duon *******	2051ft -- 625m - SH923242	Moel y Cerrig Duon",
+"Moel yr Ewig *************	2280ft -- 695m - SJ080317	Moel yr Ewig on the descent from Cadair Berwyn",
+"Moel yr Ogof *************	2149ft -- 655m - SH556478	Moel yr Ogof from Moel Hebog",
+"Moel Ysgyfarnogod ********	2044ft -- 623m - SH658346	Moel Ysgyfarnogod",
+"Moelwyn Bach *************	2329ft -- 710m - SH660437	Moelwyn Bach, Craigysgafn and Moelwyn Mawr",
+"Moelwyn Mawr *************	2526ft -- 770m - SH658449	Moelwyn Mawr",
+"Moel-yr-hydd *************	2126ft -- 648m - SH672454	Moel-yr-hydd",
+"Mynydd Drws-y-coed *******	2280ft -- 695m - SH549518	Mynydd Drws-y-coed and Y Garn",
+"Mynydd Graig Goch ********	2000ft -- 610m - SH497485	Mynydd Graig Goch",
+"Mynydd Llysiau ***********	2175ft -- 663m - SO208279	Mynydd Llysiau",
+"Mynydd Mawr **************	2290ft -- 698m - SH539547	Mynydd Mawr",
+"Mynydd Moel **************	2831ft -- 863m - SH727137	Mynydd Moel",
+"Mynydd Perfedd ***********	2664ft -- 812m - SH623619	Mynydd Perfedd",
+"Mynydd Tal-y-mignedd *****	2142ft -- 653m - SH535514	Mynydd Tal-y-mignedd and Craig Cwm Silyn",
+"Mynydd Tarw **************	2234ft -- 681m - SJ113324	Mynydd Tarw",
+"Pen Allt-mawr ************	2359ft -- 719m - SO207243	Pen Allt-mawr",
+"Pen Bwlch Llandrillo Top *	2037ft -- 621m - SJ089369	Pen Bwlch Llandrillo Top",
+"Pen Cerrig-calch *********	2300ft -- 701m - SO217223	Pen Cerrig-calch ascent",
+"Pen Llithrig-y-wrach *****	2621ft -- 799m - SH716623	Pen Llithrig y Wrach",
+"Pen Pumlumon Arwystli ****	2431ft -- 741m - SN815877	Pen Pumlumon Arwystli",
+"Pen Pumlumon Llygad-bychan	2385ft -- 727m - SN799871	Pen Pumlumon Llygad-bychan",
+"Pen Twyn Glas ************	2119ft -- 646m - SO213257	Pen Twyn Glas from the Boudary Stones",
+"Pen Twyn Mawr ************	2159ft -- 658m - SO242267	Pen Twyn Mawr from Pen y Gadair Fawr",
+"Pen y Boncyn Trefeilw*****	2119ft -- 646m - SH963283	Pen y Boncyn Trefeilw",
+"Pen y Bryn-fforchog ******	2247ft -- 685m - SH818179	Pen y Bryn-Fforchog",
+"Pen y Castell ************	2044ft -- 623m - SH722689	Pen y Castell summit",
+"Pen y Fan ****************	2907ft -- 886m - SO012216	Pen y Fan from Cribyn",
+"Pen y Gadair Fawr ********	2625ft -- 800m - SO229287	Pen y Gadair Fawr from Pen Allt-mawr",
+"Pen y Garn ***************	2001ft -- 610m - SN798771	Pen y Garn summit",
+"Pen yr Allt Uchaf ********	2034ft -- 620m - SH871197	Pen yr Allt Uchaf from Gwaun y Llwyni",
+"Pen yr Helgi Du **********	2733ft -- 833m - SH698630	Pen yr Helgi Du and Pen Llithrig y Wrach",
+"Pen yr Ole Wen ***********	3209ft -- 978m - SH656619	Pen yr Ole Wen from Llyn Idwal",
+"Picws Du *****************	2457ft -- 749m - SN812219	Picws Du from Fan Brycheiniog",
+"Post Gwyn ****************	2182ft -- 665m - SJ048294	Post Gwyn",
+"Pumlumon Fach ************	2178ft -- 664m - SN787874	Pumlumon Fach, Looking to Pumlumon Fawr",
+"Pumlumon Fawr ************	2467ft -- 752m - SN790870	Pumlumon Fawr",
+"Rhinog Fach **************	2336ft -- 712m - SH665270	Rhinog Fach and Llyn Hywel",
+"Rhinog Fawr **************	2362ft -- 720m - SH657290	Rhinog Fawr from Llyn Cwmhosan",
+"Rhobell Fawr *************	2408ft -- 734m - SH787257	Rhobell Fawr from Dduallt",
+"Rhos Dirion **************	2339ft -- 713m - SO211334	Rhos Dirion",
+"Snowdon ******************	3560ft - 1085m - SH609544	Snowdon from Llynnau Mymbyr",
+"Stac Rhos ****************	2067ft -- 630m - SH969279	Stac Rhos",
+"Tal y Fan ****************	2001ft -- 610m - SH729727	Tal y Fan",
+"Tarren y Gesail **********	2188ft -- 667m - SH711059	Tarren y Gesail from Tarrenhendre",
+"Tarrenhendre *************	2080ft -- 634m - SH683041	Tarrenhendre from Tarren y Gesail",
+"Tomle ********************	2434ft -- 742m - SJ085335	Tomle from Craig Berwyn",
+"Trum y Ddysgl ************	2326ft -- 709m - SH545516	Trum y Ddysgl",
+"Trum y Gwragedd **********	2008ft -- 612m - SH941284	Trum y Gwragedd",
+"Tryfan *******************	3010ft -- 917m - SH664594	Tryfan",
+"Twmpa ********************	2231ft -- 680m - SO225350	Twmpa",
+"Tyrrau Mawr **************	2169ft -- 661m - SH677135	Tyrrau Mawr from Cadair Idris",
+"Waun Camddwr *************	2037ft -- 621m - SH848206	Waun Camddwr from the slopes of Gwaun y Llwyni",
+"Waun Fach ****************	2661ft -- 811m - SO215300	Waun Fach",
+"Waun Garnedd-y-filiast ***	2135ft -- 650m - SH874452	Waun Garnedd-y-filiast",
+"Waun Lefrith *************	2221ft -- 677m - SN798215	Waun Lefrith",
+"Waun Rydd ****************	2523ft -- 769m - SO062206	Waun Rydd",
+"Waun-oer *****************	2198ft -- 670m - SH786148	Waun-oer",
+"Y Foel Goch **************	2641ft -- 805m - SH678582	Y Foel Goch",
+"Y Garn (Glyders) *********	3107ft -- 947m - SH631596	Y Garn (Glyders)",
+"Y Garn (Moel Hebog) ******	2077ft -- 633m - SH551526	Y Garn (Moel Hebog)",
+"Y Garn (Pumlumon) ********	2244ft -- 684m - SN776852	Y Garn (Pumlumon)",
+"Y Garn (Rhinogs) *********	2064ft -- 629m - SH702230	Y Garn (Rhinogs)",
+"Y Groes Fagl *************	2162ft -- 659m - SH988290	Y Groes Fagl",
+"Y Gyrn *******************	2031ft -- 619m - SN989216	Y Gyrn",
+"Y Llethr *****************	2480ft -- 756m - SH661258	Y Llethr from Llyn Bodlyn",
+"Y Lliwedd ****************	2946ft -- 898m - SH622533	Y Lliwedd",
+"Y Lliwedd East Peak ******	2930ft -- 893m - SH623532	Y Lliwedd East Peak",
+"Yr Aran ******************	2451ft -- 747m - SH604515	Yr Aran and Llyn-y- Gader",
+"Yr Elen ******************	3156ft -- 962m - SH674651	Yr Elen",
+"Ysgafell Wen *************	2205ft -- 672m - SH667481	Ysgafell Wen",
+"Ysgafell Wen Far North Top	2162ft -- 659m - SH663488	Ysgafell Wen Far North Top",
+"Ysgafell Wen North Top ***	2195ft -- 669m - SH663485	Ysgafell Wen North Top, looking to Moel Siabod");
+	
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= false;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+var m_picavailable;
+var gridref;
+
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var mountlist = 	document.getElementById('mountainlist');
+	if(m_touchdevice == true)
+		mountlist.className = "mountainlisttouch";
+	else
+		mountlist.className = "mountainlist";
+	sorttops(units,field,"");
+	topcount();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	layoutsortmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var mountlist = document.getElementById("mountainlist");
+	var mlistwrap = document.getElementById("mlistwrap");
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + 20 + "px";
+	var noteb = document.getElementById("noteb");
+	var rect = mountlist.getBoundingClientRect();
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "visible";
+		mountlist.style.overflow = "visible";
+		mountlist.style.width = scrwidth + "px";
+		mlistwrap.style.width = scrwidth + "px";
+		mountlist.style.height = "";
+		mountlist.style.overflow = "visible";
+		if (scrwidth < 480)
+			{
+			note.style.width = scrwidth + "px";
+			notea.style.width = (scrwidth - 126) + "px";
+			}
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		mountlist.style.overflow = "scroll";
+		mountlist.style.width = "480px";
+		mlistwrap.style.width = "1024px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			mountlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			mountlist.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		mountlist.style.overflow = "scroll";
+		mountlist.style.width = "480px";
+		mlistwrap.style.width = scrwidth + "px";
+		note.style.width = "480px";
+		notea.style.width = "250px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			mountlist.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			mountlist.style.height = "600px";
+			}
+		}
+	if(m_picvisible != "")
+		{
+		HidePic();
+		ShowPic(glineid, gname,ggr)
+		}
+	}
+
+function ShowPic(lineid, name,gr) {
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+	var pictop;
+	glineid = lineid;
+	gname = name;
+	ggr = gr;
+    var frame = document.getElementById("pictureframe");
+    if (scrwidth < 850)
+   		pictop = posTop();
+   	else
+   		pictop = posTop()+ 20;
+	//clear hilite
+	var ident;
+	var elem;
+	var count = mountains_list.length;
+	for (var i = 0; i < count; i++)
+		{
+		ident = "top" + i;
+		elem = document.getElementById(ident);
+		elem.firstChild.style.color='#4C71D0';
+		}
+	elem = document.getElementById(lineid);
+	elem.firstChild.style.color = '#FF0000';
+	gridref = gr;  //save to use to get gridref
+	if(name.substr(0,1) != "#")
+		document.getElementById("caption").innerHTML=name;
+	else
+		{
+		name = "Sorry";
+		document.getElementById("caption").innerHTML="";
+		}
+	document.getElementById("gr").innerHTML="Grid ref: " + gr;
+    var picref = document.getElementById("pic");
+    if ((scrwidth < 500) || (scrheight < 340))
+    	{
+			picref.src = "../images/wales_small/" + name + ".jpg";
+		}
+	else
+		{
+			picref.src = "../images/wales/" + name + ".jpg";
+		}
+    frame.style.visibility = "visible";
+    header.style.visibility = "hidden";
+    mainmenu.style.visibility = "hidden";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "hidden";
+    var c = document.getElementById("note");
+    c.style.visibility = "hidden";
+    var sm = document.getElementById("sortmenu");
+    sm.style.visibility = "hidden";
+    mountainlist.style.visibility = "hidden";
+    m_picvisible = name;
+    grvisible = gr;
+	PositionPic(pictop);
+}
+
+function PositionPic(frametop)
+{
+	var scrwidth = screenwidth();
+	var scrheight = screenheight();
+   var picref = document.getElementById("pic");
+   var frame = document.getElementById("pictureframe");
+   var picwidth;
+   var picheight;
+   var picinfo = document.getElementById("picinfo");
+	if (scrwidth >= 820)
+		{
+		if (scrheight >= 556)
+			{
+			//pic full size
+			picwidth = 820;
+			picheight = 556;
+			}
+		else
+			{
+			//fit to height and scale down width
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	else
+		{
+		if (scrheight >= scrwidth*556/820)
+			{
+			//scale to width
+			picwidth = scrwidth;
+			picheight = picwidth*556/820;
+			}
+		else
+			{
+			//scale to height
+			picheight = scrheight;
+			picwidth = picheight*820/556;
+			}
+		}
+	picref.style.height = "";
+	picref.style.width = picwidth + "px";
+   frame.style.top = frametop + "px";
+	frame.style.left = (scrwidth - picwidth)/2 + "px";
+  	picinfo.style.left = frame.style.left;
+  }
+
+function HidePic() {
+    m_picvisible = "";
+    grvisible = "";
+    var frame = document.getElementById("pictureframe");
+    var picref = document.getElementById("pic");
+	picref.src = "";
+    frame.style.visibility = "hidden";
+    header.style.visibility = "visible";
+    mainmenu.style.visibility = "visible";
+    var b = document.getElementById("navwrap");
+    b.style.visibility = "visible";
+    var c = document.getElementById("note");
+    c.style.visibility = "visible";
+    var sm = document.getElementById("sortmenu");
+    sm.style.visibility = "visible";
+    mountainlist.style.visibility = "visible";
+}
+
+function posTop() 
+	{
+	return typeof window.pageYOffset != 'undefined' ?  window.pageYOffset : document.documentElement && document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ? document.body.scrollTop : 0;
+	}    
+    
+function GetMap()
+{	
+	setTimeout(function(){document.location.href = "../php/getmap.html?" + gridref;},500);
+	HidePic;
+}
+    
+function sorttops(units,order,user)
+{
+	//sorts the original list
+	//base is the index from which I calculate the position of ft and m
+	var alist = document.getElementById("mountainlist");
+	var base = 27;
+	var pos = base;
+	//only change units if given in call
+	if(user != "" & order == "Name")
+		dirName = !dirName;
+	else if(user != "" & order == "Height")
+		dirHeight = !dirHeight;
+	
+	if(units == "" & dirUnits == "ft")
+		pos = base;
+	else if(units == "" & dirUnits == "m")
+		pos = base + 9;
+	else if(units == "m")
+		{
+		dirUnits = "m";
+		pos = base +9;
+		}
+	else if(units == "ft")
+		{
+		dirUnits = "ft";
+		pos = base;
+		}
+	if(order == "Name")
+		{
+			if(dirName)
+				{
+				// have to sort first in case previous sort was by height
+				mountains_list.sort();
+				mountains_list.reverse();
+				}
+			else
+				mountains_list.sort();
+		}
+	else if(order == "Height")
+		//sort by height
+		// position of height value depends on whether it's feet or metres
+		{
+			mountains_list.sort(function(sa,sb)
+			{
+				var ha = sa.substr(pos,4);
+				var hb = sb.substr(pos,4);
+				if(dirHeight)
+					return ha - hb;
+				else
+					return hb - ha;
+			})
+		}
+	//setup the display
+   var innerHTML = "";
+   var thisline;
+	for (var i = 0; i < mountains_list.length; i++)
+		{
+		entry = mountains_list[i];
+		tab1 = entry.indexOf("\t",1);
+		var caption = entry.substr(base +26,entry.length);
+		// fix the quote mark in captions
+		caption = caption.replace(/\'s/,"\\'s");
+		caption = caption.replace(/\'S/,"\\'S");
+		var gridref = entry.substr(base+17,8);
+ 		var display = entry.substr(0,base-1);
+ 		if(dirUnits == "ft")
+ 			height = entry.substr(base, 6);
+ 		else
+ 			height = entry.substr(base + 9,5);
+ 		if(scrwidth > 400)
+ 			{
+ 			display = display + "  " + height + "  " + gridref; 			
+ 			}
+		else
+			{
+ 			display = display + "  " + height;
+			}
+ 		thisline = "<li id=\"top" + i + "\" onclick=";
+ 		thisline = thisline + "\"ShowPic('top" + i + "', '" + caption + "','" + gridref + "');return false;\"";
+ 		thisline = thisline + "><a href=\"#\">";
+ 		thisline = thisline + display + "</a></li>";
+		innerHTML = innerHTML + thisline;
+		}
+	alist.innerHTML = innerHTML;
+	alist.style.overflow = "auto";
+	return(false);
+}
+
+function topcount()
+{
+	var headcount = document.getElementById("header");
+	var count = mountains_list.length;
+	headcount.innerHTML = headcount.innerHTML.replace("***",count);	
+}
+
+	
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">MOUNTAINS OF WALES (***)</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div id="note">
+		<div id="notea">Click/Touch mountain for picture and details</div>
+		<div id="noteb">
+		<ul class="menusmall" id="sortmenu">
+    		<li><a href="#"
+        		onmousedown="mopen('msort')" 
+        		onmouseover="mopen('msort')" 
+        		onmouseout="mclosetime()">Sort by</a>
+        		<div id="msort" 
+            		onmouseover="mcancelclosetime()"
+           		onmouseout="mclosetime()">
+        		<a href="#" onmousedown="sorttops('','Name','User');mclose();">Name</a>
+        		<a href="#" onmousedown="sorttops('','Height','User');mclose();">Height</a>
+        		<a href="#" onmousedown="sorttops('ft','','User');mclose();">Show ft</a>
+        		<a href="#" onmousedown="sorttops('m','','User');mclose();">Show m</a>
+        		</div>
+    		</li>
+		</ul>
+		</div>
+	</div>
+	<div id="mlistwrap">
+		<ul id="mountainlist" class="mountainlist">
+		</ul>
+	</div>
+     <div class = "footer">
+		©John and Anne Nuttall 2014
+     </div>
+</div>
+<div id="pictureframe" style = "visibility: hidden; z-Index: 30; position: absolute; left: 1px; top: 0px">
+    <img id="pic" src="" onMouseDown="HidePic();">
+    <br>
+    	<div id="caption"> CAPTION </div>
+    	<div id="picinfo">
+    		<a class="button" style="width: 100px; left:0px" href="#" onMouseDown="GetMap();">MAP</a>
+    		<div id="gr" style="left:0px"> Grid ref</div>
+    		<div id="close" style="float:left">Click picture to close</div>
+    	</div>
+</div>
+</body>
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Mountains</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+ 
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		}
+	}
+    
+    
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div class="content_std">
+    <div class="title1">THE MOUNTAINS OF ENGLAND AND WALES</div>
+      <br>
+      <p>The Mountains of England and Wales are those
+      summits in England and Wales which are at least 2000 feet (610 metres)
+      high, with a minimum of 50 feet (15 metres) of ascent on all sides. All
+      the mountains were visited personally by us and we checked the
+      marginal tops using on-the-spot surveys. Full details of the
+      tops, and how to ascend them in a series of interesting walks is given in:
+      <a class="button" href="../general/books.htm">England and Wales</a>
+      <br>
+      <br>
+      <p class="header1red"> NEW TOPS - ENGLAND:</p>
+      There are seven new tops in England since edition 1:-  
+      <br>  
+      <br>  
+      <ul class="content_stdlist">  
+      <li>1. <b>  Honister Crag</b> (NY212142) see<a class="button" href="honister%20crag.htm"> more</a></li>  
+      <li>2. <b>  Birks Fell</b> (SD919764) see <a class="button" href="../news/0021.htm">news 1</a> and <a class="button" href="../news/0022.htm">news 2</a></li>  
+      <li>3. <b>  Thack Moor</b> (NY611462) see <a class="button" href="../news/0084.htm">more</a></li>  
+      <li>4. <b>  Calf Top</b> (SD664856) see <a class="button" href="../news/0114.htm">more</a></li>  
+      <li>5. <b>  Tinside Rigg</b> (NY775199) see <a class="button" href="../news/0118.htm">more</a></li>  
+      <li>6. <b>  Long Fell</b> (NY768198) see <a class="button" href="../news/0118.htm">more</a></li>  
+      <li>7. <b>  Miller Moss</b> (NY303339) see <a class="button" href="../news/0123.htm">more</a></li>  
+      </ul>  
+      <br>  
+      <p class="header1red"> DELETED TOPS - ENGLAND:</p>
+      <br>
+      <ul class="content_stdlist">  
+      <li>1. <b>Bram Rigg Top</b> (SD668965) see <a class="button" href="../news/0116.htm">News</a></li>  
+      <li>2. <b>Little Calva</b> (NY282315) see <a class="button" href="../news/0128.htm">News</a></li> 
+      <li>3. <b>Hobcarton End</b> (NY195235) see<a class="button" href="../news/0128.htm">News</a></li> 
+      <li>4. <b>Gray Crag (Hartsop) </b> (NY428117) Latest survey shows not enough height difference</a></li>
+      <br>
+</ul>
+      <br>
+     <p class="header1red"> NEW TOPS - WALES:</p>
+      Thirteen new Tops have been discovered in Wales since edition 1. The  
+      first seven were added as a result  
+      of diligent work by Dewi Jones of Porthmadog and Myrddyn Phillips of  
+      Welshpool. The top of Maesglase has also moved! (Edition 2 of Volume 1: Wales includes  
+      the first seven new tops). Very accurate surveying by John Barnard  
+      and Graham Jackson has resulted in the addition of Carnedd y Filiast North  
+      Top, Castell y Gwynt and Mynydd Graig Goch.  
+      <br>  
+      <br>  
+      <ul class="content_stdlist">  
+      <li>1. <b>  Waun Garnedd-y-Filiast</b> in the Arenigs (SH874452) just made it into the list in time for the new edition of  
+      Volume 1.</li>  
+      <li>2. <b>  Waun Lefrith</b> in the Brecon Beacons (SN798215) has been surveyed as having 17m of re-ascent.</li>  
+      <li>3. <b>  Waun Camddwr</b> in the Arans (SH848206) (previously deleted by reference to the OS  
+      contours) has been resurveyed by us. The  
+      top turns out to be a rocky knoll about 100m south of the 620m contour,  
+      but without a ring contour of its own.</li>  
+      <li>4. <b>  Cnicht North Top</b> (SH648469) has been surveyed by us and proved to rise by just over 60ft from the col.</li>  
+      <li>5. <b>  Craiglwyn</b> in the Carneddau (SH731609) had previously been omitted as the OS map  
+      showed insufficient height difference. However having surveyed it  
+      ourselves, we agree that it does indeed rise by 68ft and has therefore  
+      been added to the list.</li>  
+      <li>6. <b>  Foel Meirch</b>, also in the Carneddau (SH659637), rises by 53ft.</li>  
+      <li>7. <b>  Moelwyn Mawr North Ridge Top</b>, in the Moelwyns (SH661453) rises by just 50ft (but see below!).</li>  
+      <li>8. <b>  Carnedd y Filiast North Top</b> (SH617631) After three surveys we originally dismissed  
+      this top as having only 49ft of reascent, but precision levelling now gives it 52.5ft.</li>  
+      <li>9. <b>  Castell y Gwynt</b> (SH654581) We originally dismissed this also as having  
+      only 49ft of reascent, but precision levelling gives it 51.5ft. It also has the distinction of being a three thousander.</li>  
+      <li>10. <b>  Mynydd Graig Goch</b> (SH497485) Surveyed by John Barnard and Graham  
+      Jackson (see <a class="button" href="../news/0029.htm">News 1</a> and <a class="button" href="../news/0030.htm">News 2</a></li>  
+      <li>11. <b>  Maesglase</b> (SH817150) Summit is now the top of Craig Rhiw-erch, which we have surveyed as around 2m higher than the previously recorded top.</li>  
+      <li>12. <b>  Craig Gwaun Taf</b> (SO005207) See <a class="button" href="../news/0117.htm">News</a></li>  
+      <li>13. <b>  Foel Cedig</b> [SH981283] See <a class="button" href="../news/0125.htm">News</a></li>  
+     </ul> 
+      <br> 
+      <p class="header1red"> DELETED TOPS - WALES:</p> 
+       
+      <b>Cadair Bronwen NE Top</b> (SJ087352) See <a class="button" href="../news/0025.htm">News</a>  
+      <br>  
+      <b>Moelwyn Mawr North Ridge Top</b> (SH661453) See <a class="button" href="../news/0113.htm">News</a>  
+       <br>  
+      <b>Carnedd y Ddelw</b> (SH708705) See <a class="button" href="../news/0120.htm">News</a>  
+      <br>  
+      <b>Cyrniau Nod replaced by Foel Cedig</b> (SH981283) See <a class="button" href="../news/0125.htm">News</a>  
+      <br>  
+      <b>Black Mountain South Top </b> (SO267322) See <a class="button" href="../news/0127.htm">News</a>
+      <br>
+     <div class = "footer">  
+		©John and Anne Nuttall 2021  
+      </div>  
+    </div>  
+    </div>  
+</body>  

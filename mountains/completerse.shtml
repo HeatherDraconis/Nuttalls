@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Completers England</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/mountains.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script src="../js/completersengland.js"></script>
+<script>
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	setcompleters();
+	var pcompleters = document.getElementById('completerslist');
+	if(m_touchdevice == true)
+		pcompleters.className = "mountainlisttouch";
+	else
+		pcompleters.className = "mountainlist";
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var pcompleters = document.getElementById('completerslist');
+	var intro = document.getElementById('intro');
+	pcompleters.style.fontSize = "12px";
+	var mlistwrap = document.getElementById("mlistwrap");
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + "px";
+	back.style.overflow = "visible";
+	var rect = pcompleters.getBoundingClientRect();
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		pcompleters.style.overflow = "visible";
+		pcompleters.style.width = scrwidth + "px";
+		intro.style.width = scrwidth + "px";
+		mlistwrap.style.width = scrwidth + "px";
+		pcompleters.style.height = "";
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		pcompleters.style.overflow = "scroll";
+		pcompleters.style.width = "480px";
+		intro.style.width = "480px";
+		mlistwrap.style.width = "1024px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			pcompleters.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			pcompleters.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		pcompleters.style.overflow = "scroll";
+		pcompleters.style.width = "480px";
+		intro.style.width = "480px";
+		mlistwrap.style.width = scrwidth + "px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			pcompleters.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			pcompleters.style.height = "600px";
+			}
+		}
+	}
+function setcompleters()
+	{
+	var innerHTML = "";
+	var thisline;
+	var thislist = document.getElementById('completerslist');
+	for (var i = 0; i < completers.length; i++)
+		{
+ 		thisline = "<li>" + completers[i] + "</li>";
+		innerHTML = innerHTML + thisline;
+		}
+	thislist.innerHTML = innerHTML;
+	}
+</script>
+</head>
+
+<body onload="setup()" onresize="reset()">	
+<div id="backdrop" style="background-color: rgb(253, 241, 219); width: 1024px; min-height: 588px; overflow: hidden;">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">COMPLETERS - ENGLAND</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div id="intro" class="introclass" style="width: 480px;">
+      People who have climbed all the English summits of <i>The Mountains of England and Wales</i>.
+      <br>
+      <br>If you would like to be added to the completers list (England, Wales, or both) please email us at:
+	  <br><i> john@nuttalls.com</i>
+	  <br>
+	  <br>
+      <p><b>(NPR)</b> means all summits except Pillar Rock.
+	  <br>Tinside Rigg and Long Fell:
+	  &nbsp;We have decided that these summits in the Warcop Artillery Range (added in 2016) will be optional.
+	  <br>For England and Wales see <a class="button" href="http://www.nuttalls.com/mountains/completers.shtml">Completers</a>
+   </p></div>
+   <div id="mlistwrap" style="width: 1000px;">
+		<div id="completerslist" class="mountainlist" style="font-size: 12px; overflow: scroll; width: 480px; height: 300px;"><li>  62 Alan Duval (NPR) 2nd round ------- Apr-23</li><li>  61 Kathy Duval (NPR) 2nd round ------ Apr-23</li><li>  60 Matthew Bourne (NPR)-------------- May-22</li><li>  59 Sarah Bourne (NPR)---------------- May-22</li><li>  58 Andrew Micklewright (NPR)--------- Sep-21</li><li>  57 Bernadette Micklwright (NPR)------ Sep-21</li><li>  56 Tom Hayek------------------------- Jul-19</li><li>  55 Phillip Day----------------------- Nov-19</li><li>  54 Richard Day----------------------- Nov-19</li><li>  53 Christine Shepherd---------------- Jun-17</li><li>  52 Chris Johnson--------------------- Mar-17</li><li>  51 Peter Stone----------------------- Dec-16</li><li>  50 David Garside (NPR)--------------- Oct-15</li><li>  49 Kenneth Highley (NPR)------------- Aug-15</li><li>  48 David Highley (NPR)--------------- Aug-15</li><li>  47 Nigel Mason (NPR)----------------- Aug-15</li><li>  46 Toby Harling---------------------- Jul-15</li><li>  45 Ronnie Bowron--------------------- Sep-14</li><li>  44 David Bibby----------------------- Dec-13</li><li>  43 Richard Slack--------------------- Aug-13</li><li>  42 Mike Cunningham (NPR)------------- Jun-13</li><li>  41 Steve Smith (NPR)----------------- Apr-13</li><li>  40 Colin Wilkinson (NPR)------------- Aug-12</li><li>  39 Stephen Mawby (NPR)--------------- Jul-12</li><li>  38 Michael Finnigan (NPR)------------ Jul-12</li><li>  37 Jason Houghton (NPR)-------------- Nov-11</li><li>  36 Martin Roberts-------------------- Oct-11</li><li>  35 Jeff Ford------------------------- Oct-11</li><li>  34 Roger Chapman--------------------- Sep-11</li><li>  33 David Ward------------------------ Jun-11</li><li>  32 Heather Ward (NPR)---------------- Jun-11</li><li>  31 Ian Brown------------------------- Mar-11</li><li>  30 Teresa Brown---------------------- Mar-11</li><li>  29 Mark Hallam (NPR)----------------- Aug-10</li><li>  28 Alex Hardisty--------------------- Jul-10</li><li>  27 David Brown ---------------------- Dec-09</li><li>  26 Warwick Peirson------------------- Sep-09</li><li>  25 John Jennison--------------------- May-09</li><li>  24 Eric Binns------------------------ May-09</li><li>  23 Adrian Wade (NPR)----------------- Aug-08</li><li>  22 Susan Wade (NPR)------------------ Aug-08</li><li>  21 Trevor Mason (NPR)---------------- Aug-07</li><li>  20 Stuart Henderson (NPR)------------ Jun-07</li><li>  19 Anne Henderson (NPR)-------------- Jun-07</li><li>  18 Matthew Webster------------------- Oct-06</li><li>  17 George Hladowski (NPR)------------ Jul-06</li><li>  16 Bill Gardner(Tim's dog) (NPR)----- Feb-05</li><li>  15 Steve Fletcher-------------------- Aug-04</li><li>  14 Mal Walker (NPR)------------------ Aug-04</li><li>  13 Annie (NPR) (John &amp; Barbara's dog) May-03</li><li>  12 John Twidale (NPR)---------------- May-03</li><li>  11 Barbara Twidale (NPR)------------- May-03</li><li>  10 Dennis Foster (NPR)--------------- Feb-03</li><li>   9 Paul Nichols (NPR)---------------- Jan-02</li><li>   8 Storm (Martin's dog)-------------- Jan-01</li><li>   7 Chris Scaife---------------------- Nov-00</li><li>   6 Rob Scaife------------------------ Nov-00</li><li>   5 Alec Burford---------------------- Sep-00</li><li>   4 Margaret Burford------------------ Sep-00</li><li>   3 Paul Lyons------------------------ Jun-99</li><li>   2 Gill Lyons------------------------ Jun-99</li><li>   1 Bryan Spark----------------------- Jun-99</li></div>
+	</div>
+     <div class="footer">
+		©John and Anne Nuttall 2014
+     </div>
+</div>
+
+</body></html>
+
+
+

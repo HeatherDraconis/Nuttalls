@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>John and Anne Nuttall</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet" type="text/css" href="css/standard.css">
+<STYLE type="text/css">
+
+.topclass{
+	padding: 0px;
+    margin: 10px;
+}
+
+.introclass{
+ 	font: bold 18px Times New Roman;
+	margin: 0px 15px 0px 15px;
+}
+
+.introclass a:hover{
+	color: #FF0000;
+	background: #FFFF00
+}
+
+.bookclass{
+	padding: 5px;
+	overflow: hidden;
+	height: 1%;
+   margin: 5px;
+}
+
+.bookclass a{
+ 	font: bold 18px Times New Roman;
+	color: #0000FF
+}
+
+.bookclass a:hover{
+ 	font: bold 18px Times New Roman;
+	color: #FF0000;
+	background: #FFFF00
+}
+
+.news
+{	left: 0px;
+	margin: 0 0 0 0;
+	padding: 2px;
+}
+
+.news li
+{	margin: 0 0 0 0;
+	padding: 5px 5px;
+	width: 240px;
+	list-style: none;
+	font: bold 18px arial}
+
+.news li a
+{	display: block;
+	margin: 0 0 0 0;
+	padding: 5px 5px;
+	width: 240px;
+	background: #6DCDE5;
+	color: #000080;
+	z-index: 50;
+	text-align: center;
+	text-decoration: none}
+
+.news li a:hover
+{	color: #FF0000;
+	background: #FFFF00}
+
+.news div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 5px 5px;
+	background: #6DCDE5}
+
+.news div a
+	{	position: relative;
+		display: block;
+		margin: 0;
+		padding: 5px 5px;
+		width: 230px;
+		white-space: nowrap;
+		text-align: left;
+		text-decoration: none;
+		background: #FFFFFF;
+		color: #000000;
+		font: 15px arial}
+ 
+</STYLE>
+<script src="js/general.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/menuhtm.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/headlines.js"></script>
+<script src="js/completers.js"></script>
+<script>
+var screenw;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+ 
+function setup()
+	{
+	general();
+	createmenu();
+	setdivs();
+	layoutmenu();
+	getarticles();
+	getheadlines();
+	setcompleterscount();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + 20 + "px";
+	if(m_touchdevice || (scrwidth < 500))
+		{
+		back.style.width = scrwidth + "px";
+		main.style.width = scrwidth -10 + "px";
+		}
+	else if(scrwidth > 1023)
+		{
+		back.style.width = "1024px";
+		}
+	else
+		// not touchdevice or scrwidth between 500 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		}
+	}
+	
+function setdivs(size)
+	{
+	var scrwidth = screenwidth();
+	if(scrwidth < 530)
+		{
+			document.getElementById("D1").style.margin = "3px";	
+			document.getElementById("D2").style.margin = "0px 15px 0px 8px";	
+			document.getElementById("D3").style.margin = "3px";	
+			document.getElementById("D4").style.margin = "3px";	
+			document.getElementById("D5").style.margin = "3px";	
+			document.getElementById("D8").style.margin = "3px";	
+			document.getElementById("D9").style.margin = "3px";	
+			document.getElementById("N1").style.margin = "0px 15px 0px 8px";
+		}
+	else
+		{
+			document.getElementById("D1").style.margin = "10px";	
+			document.getElementById("D2").style.margin = "0px 15px 0px 15px";	
+			document.getElementById("D3").style.margin = "10px";	
+			document.getElementById("D4").style.margin = "10px";	
+			document.getElementById("D5").style.margin = "10px";	
+			document.getElementById("D8").style.margin = "10px";	
+			document.getElementById("D9").style.margin = "10px";	
+			document.getElementById("N1").style.margin = "0px 15px 0px 15px";
+		}
+	}
+	
+function getheadlines()
+	{
+	var news = document.getElementById('headlineslist');
+	var entry = '';
+	for (var i = 0; i < headlines.length; i++)
+		{
+		entry = entry + headlines[i];
+		}
+	news.innerHTML = news.innerHTML + entry;
+	}
+	
+function getarticles()
+	{
+	var features = document.getElementById('articleslist');
+	var entry = '';
+	for (var i = 0; i < articles.length; i++)
+		{
+		entry = entry +articles[i];
+		}
+	features.innerHTML =features.innerHTML + entry;
+	}
+	
+function setcompleterscount()
+	{
+	var total = document.getElementById("completerscount");
+	total.innerHTML = completers.length;
+	}
+</script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>
+   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	
+	<div class="topclass" id="D1">
+  		<img style="float:left" alt="England" hspace="5" vspace="3" width="140" height="96" src="images/graphics/authors.jpg">
+      <p valign="top" align="left" ><i><b><font color="#800000" face="Arial" size="4">Authors of
+      Guidebooks for Walkers</font></b></i>
+		<br> <br><b><font color="#00000" face="Arial" size="3">The Mountains of England and Wales</font></b><br>
+    	<b> <font color="#80000" face="Arial" size="4px">Total completers = </font> <font color="#FF0000" face="Times New Roman" size="4px"> <span id="completerscount">$$$</span></font> 
+    	</b></p>
+	</div>
+	<br><br>
+	
+	<div class="maintenanceclass" id = "N1">
+		<b><font color="#800000" face="Arial" size="5">This website is currently under maintenance.
+		<br>Some links are not working.
+		<br>However, the completers list is back online and we are now taking new names.
+		<br>We hope to have the rest of the website up and running again soon.</font></b>
+		<br>
+		<br>
+   	</div> 
+	
+	<div class="introclass" id = "D2">
+    	<a href="walks/walks.htm">Walking
+      	in North West England</a> <span class="textredAbold">Now over 600 walks to choose from!</span><p>Browse the walks and pictures and download a free
+      	sample
+		<a class="button" href="walks/details/Free_381_Baslow_Edge.htm"> Free walk</a>&nbsp;&nbsp;
+   	</div> 
+ 
+  	<ul id="articles" class="news" align="right">
+    		<li><a href="#" 
+        		onmouseover="mopen('articleslist')" 
+        		onclick="mopen('articleslist')" 
+        		onmouseout="mclosetime()">Articles</a>
+        		<div id="articleslist" 
+            		onmouseover="mcancelclosetime()" 
+            		onmouseout="mclosetime()">
+       		</div>
+    		</li>
+  	</ul>
+  	<ul id="headlines" class="news" align="right">
+    		<li><a href="#" 
+        		onmouseover="mopen('headlineslist')" 
+        		onclick="mopen('headlineslist')" 
+        		onmouseout="mclosetime()">Headlines</a>
+        		<div id="headlineslist" 
+            		onmouseover="mcancelclosetime()" 
+            		onmouseout="mclosetime()">
+       		</div>
+    		</li>
+  	</ul>
+    <div class="bookclass" id="D3">
+    	<a href="general/books.htm#MOUNTAINS">
+    	<img style="float:left; margin: 5px 5px" src="images/graphics/England.jpg" alt="England" width="55" height="82">
+    	<img style="float:left; margin: 5px 5px" src="images/graphics/Wales.jpg" style="float:left; margin: 5px 5px" alt="Wales" width="55" height="82"></a>
+    	<b><a href="general/books.htm#MOUNTAINS">THE MOUNTAINS OF ENGLAND AND WALES</a>                                                 
+      <a href="general/books.htm#MOUNTAINS">                                                 
+      </a><br>Guidebook of walks to all the 442 mountain summits of England and Wales.   
+      <br>England has just been republished with updates.  Thus both volumes now match the website                                                 
+      <font color="#FF0000" size="3"><b><br>Edition 3</b></i></font>                                                 
+    </div>                                                 
+   <div class="bookclass" id="D4">                                                 
+			<a href="general/books.htm#KIDDIWALKSPEAK">                                                 
+      		<img style="float:left; margin: 5px 5px" src="images/graphics/KiddiwalksPeak.jpg" width="58" height="82">                                                 
+      		</a>                                                 
+    		<b><a href="general/books.htm#KIDDIWALKSPEAK">KIDDIWALKS                                                 
+    		IN THE PEAK DISTRICT</a><br>                                                 
+      		</b><i><b>                                                 
+      		A successor to the very popular Kiddiwalks in Cheshire.&nbsp; Keep the                                                 
+     		 children happy with lots more exciting walks.&nbsp; How about a visit to                                                 
+      		the cave of the Thunder God or go looking for a secret hiding place in the                                                 
+     		 woods?</b></i>                                                 
+     </div>                                                 
+     <div class="bookclass" id="D5">                                                 
+    		<a href="general/books.htm#KIDDIWALKSCHESHIRE">                                                 
+    		<img src="images/graphics/KiddiwalksCheshire.jpg" style="float:left; margin: 5px 5px"  width="58" height="82">                                                 
+      	</a>                                                 
+    		<b><a href="general/books.htm#KIDDIWALKSCHESHIRE">KIDDIWALKS                                                 
+        	IN CHESHIRE</a><br>                                                 
+        	</b><i><b>                                                 
+      		Easy walks for small children ranging from one to five miles, each with background notes and fun                                                 
+      		things to see and do.</b></i>                                                 
+     </div>                                                 
+     <div class="bookclass" id="D8">                                                 
+    		<a href="/postcodes/getpostcode.htm">                                                 
+    		<img src="images/graphics/postcodefinder.gif" style="float:left; margin: 5px 5px"  width="50" height="50"></a>                                                 
+    		<b><a href="/postcodes/getpostcode.htm">POSTCODE FINDER</a><br>                                                 
+  			<font color="#FF0000"><i><b>Know the Grid Reference for a walk, but the SatNav wants a PostCode?</b></i></font>                                                 
+     		<br><font color="#000080">Find the PostCode for any grid reference</font><font color="#FF0000"></font></b>                                                 
+ 			<span style="font-family: Times New Roman"><font size="3"><br>                                                 
+ 			</span>                                                 
+     </div>                                                 
+     <div class="bookclass" id="D9">                                                 
+			<b><font color="#800000" size="3">John and Anne are members of <a href="http://www.owpg.org.uk">The Outdoor                                                 
+      		Writers and Photographers Guild</a></font></b>                                                 
+     </div>                                                 
+     <br>                                                  
+     <div class = "footer">                                                 
+		©John and Anne Nuttall 2025                                                 
+     </div>                                                 
+</div>                                                 
+</body>                                                 
+                                                 
+</html>                                                 

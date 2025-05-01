@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Completers Wales</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/mountains.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script src="../js/completerswales.js"></script>
+<script>
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	setcompleters();
+	var pcompleters = document.getElementById('completerslist');
+	if(m_touchdevice == true)
+		pcompleters.className = "mountainlisttouch";
+	else
+		pcompleters.className = "mountainlist";
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var pcompleters = document.getElementById('completerslist');
+	pcompleters.style.fontSize = "12px";
+	var mlistwrap = document.getElementById("mlistwrap");
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + "px";
+	var intro = document.getElementById('intro');
+	var rect = pcompleters.getBoundingClientRect();
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "visible";
+		intro.style.width = scrwidth + "px";
+		pcompleters.style.overflow = "visible";
+		pcompleters.style.width = scrwidth + "px";
+		mlistwrap.style.width = scrwidth + "px";
+		pcompleters.style.height = "";
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		back.style.overflow = "hidden";
+		intro.style.width = "480px";
+		pcompleters.style.overflow = "scroll";
+		pcompleters.style.width = "480px";
+		mlistwrap.style.width = "1024px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			pcompleters.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			pcompleters.style.height = "600px";
+			}
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		back.style.overflow = "hidden";
+		intro.style.width = "480px";
+		pcompleters.style.overflow = "scroll";
+		pcompleters.style.width = "480px";
+		mlistwrap.style.width = scrwidth + "px";
+		if(window.innerHeight < (650 + rect.top))
+			{
+			pcompleters.style.height = (window.innerHeight - rect.top - 50) + "px";
+			}
+		else
+			{
+			pcompleters.style.height = "600px";
+			}
+		}
+	}
+function setcompleters()
+	{
+	var innerHTML = "";
+	var thisline;
+	var thislist = document.getElementById('completerslist');
+	for (var i = 0; i < completers.length; i++)
+		{
+ 		thisline = "<li>" + completers[i] + "</li>";
+		innerHTML = innerHTML + thisline;
+		}
+	thislist.innerHTML = innerHTML;
+	}
+</script>
+</head>
+
+<body onload="setup()" onresize="reset()">	
+<div id="backdrop" style="background-color: rgb(253, 241, 219); width: 982px; min-height: 722px; overflow: hidden;">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">COMPLETERS - WALES</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div id="intro" class="introclass" style="width: 480px;">
+      People who have climbed all the Welsh summits of <i>The Mountains of England and Wales</i>.
+      <br>
+      <br>If you would like to be added to the completers list (England, Wales, or both) please email us at:
+	  <br><i>john@nuttalls.com</i>
+	  <br>
+      <p><br>For England and Wales see <a class="button" href="http://www.nuttalls.com/mountains/completers.shtml">Completers</a>
+   </p></div>
+   <div id="mlistwrap" style="width: 1000px;">
+		<div id="completerslist" class="mountainlist" style="font-size: 12px; overflow: scroll; width: 480px; height: 300px;"><li> 170 Jonathan England------------------ Apr-24</li><li> 169 Sioned Rees Davies---------------- Apr-24</li><li> 168 Scott Grove----------------------- Jan-24</li><li> 167 Graham Smith---------------------- Nov-23</li><li> 166 Thomas Smith---------------------- Nov-23</li><li> 165 Szymon Zareba--------------------- Oct-23</li><li> 164 Ed Casey-------------------------- Aug-23</li><li> 163 Sharon Casey---------------------- Aug-23</li><li> 162 Mick Peakman---------------------- Aug-23</li><li> 161 Joe Nuttall----------------------- Jun-23</li><li> 160 Tara Nuttall---------------------- Jun-23</li><li> 159 George Tod------------------------ May-23</li><li> 158 Ric Keeling----------------------- Sep-22</li><li> 157 Erwyn Jones----------------------- Sep-22</li><li> 157 Delia Roberts--------------------- May-21</li><li> 157 Iwan Williams--------------------- May-21</li><li> 156 Erwyn Jones----------------------- Apr-21</li><li> 155 Nathan Parry---------------------- Feb-20</li><li> 154 Robert Massey--------------------- Jan-20</li><li> 153 Peter Knight---------------------- Apr-19</li><li> 152 Eilir Jones----------------------- Sep-18</li><li> 151 Alex Hardisty--------------------- Sep-18</li><li> 150 Michael Murray-------------------- Sep-18</li><li> 149 Matthew Myerscough---------------- Sep-18</li><li> 148 Mark Trengove--------------------- May-18</li><li> 147 Graham Jelley--------------------- Oct-17</li><li> 146 Andy Moon------------------------- Apr-17</li><li> 145 Sarah Marlor---------------------- Apr-17</li><li> 144 Tom Garrod------------------------ Sep-16</li><li> 143 Akke Post------------------------- Jun-16</li><li> 142 Malcolm (Sunshine) Rogers--------- Sep-15</li><li> 141 Anne Rogers----------------------- Sep-15</li><li> 140 Ben Hardman (Aged 12)------------- Aug-15</li><li> 139 Eddie Hardman (Aged 11)----------- Aug-15</li><li> 138 Mark Lloyd------------------------ Aug-15</li><li> 137 Dianne Williams------------------- Jul-15</li><li> 136 Adrian Ives----------------------- Jun-15</li><li> 135 James Burnham--------------------- Apr-15</li><li> 134 Ian Cox -------------------------- Jan-15</li><li> 133 David Tomlinson------------------- Dec-14</li><li> 132 Dave Aston------------------------ Sep-14</li><li> 131 Ben Aston------------------------- Sep-14</li><li> 130 Sian Williams--------------------- Jun-14</li><li> 129 Rob Williams---------------------- Jun-14</li><li> 128 Adrian Doling--------------------- Nov-14</li><li> 127 Jason Till------------------------ Aug-14</li><li> 126 Keith Williams-------------------- Sep-14</li><li> 125 Gill Sanderson-------------------- Sep-14</li><li> 124 Steve Sanderson------------------- Sep-14</li><li> 123 Michael Cotton-------------------- Jul-14</li><li> 122 Huw Idris Jones------------------- Jun-14</li><li> 121 John Barnard---------------------- Jun-14</li><li> 120 Jenny Barnard--------------------- Jun-14</li><li> 119 Diane Salt------------------------ Jun-14</li><li> 118 Allan Salt------------------------ Jun-14</li><li> 117 Peter Richmond-------------------- Apr-14</li><li> 116 Alistair Pooler------------------- Mar-14</li><li> 115 Graham Coleman-------------------- Aug-13</li><li> 114 Gerald A. Davies------------------ Jul-13</li><li> 113 Sally Dodwell--------------------- Jul-13</li><li> 112 Tim Summers----------------------- May-13</li><li> 111 Simon Baker----------------------- Apr-13</li><li> 110 Tim Barnes------------------------ Dec-12</li><li> 109 Derek Roberts--------------------- Aug-12</li><li> 108 Roslyn Connolly------------------- Aug-12</li><li> 107 Peter Stuart---------------------- Aug-12</li><li> 106 Peter Young----------------------- May-12</li><li> 105 Flo (Rob and Becki's dog)--------- Dec-11</li><li> 104 Jessie (Rob and Becki's dog)------ Dec-11</li><li> 103 Rob Johnson----------------------- Dec-11</li><li> 102 Becki Johnson--------------------- Dec-11</li><li> 101 Mike Day-------------------------- Oct-11</li><li> 100 Howard Smith---------------------- Sep-11</li><li>  99 Peter Kirkwood-------------------- Sep-11</li><li>  98 Brian Dodd------------------------ Aug-11</li><li>  97 Nigel Jones----------------------- Aug-11</li><li>  96 Paul Wells------------------------ May-11</li><li>  95 Rob Davies------------------------ May-11</li><li>  94 Bill Lloyd------------------------ Sep-10</li><li>  93 Peter Jameson--------------------- Sep-10</li><li>  92 Jonathan Tod---------------------- Sep-10</li><li>  91 Nicola Tod------------------------ Sep-10</li><li>  90 Max Wiecko------------------------ Jul-10</li><li>  89 Brian Marsh----------------------- Jun-10</li><li>  88 Simon Griffiths------------------- Jun-10</li><li>  87 Tony Herraty---------------------- May-10</li><li>  86 Stuart Hyde----------------------- May-10</li><li>  85 Steve Allen----------------------- Nov-09</li><li>  84 Haydn Davies---------------------- Oct-09</li><li>  83 Jim Linton------------------------ Sep-09</li><li>  82 Andy Gourlay---------------------- Jul-09</li><li>  81 Paul Kimsey----------------------- Jul-09</li><li>  80 Jim MacDonald--------------------- Jul-09</li><li>  79 Rachel Marrington----------------- Jul-09</li><li>  78 Dafydd Davies (2 rounds)---------- Mar-09</li><li>  77 Aled Williams--------------------- Dec-08</li><li>  76 Malcolm Gilbertson---------------- Oct-08</li><li>  75 Steve Ward------------------------ Aug-08</li><li>  74 Robert Morley--------------------- Aug-08</li><li>  73 Steve Casey----------------------- Aug-08</li><li>  72 John Broom------------------------ Jul-08</li><li>  71 Andrew Archer--------------------- Jun-08</li><li>  70 Peter Hinxman--------------------- Apr-08</li><li>  69 Stewart Burley-------------------- Feb-08</li><li>  68 Andy Orchard---------------------- Sep-07</li><li>  67 Meirion Evans--------------------- Sep-07</li><li>  66 Nicky Viner----------------------- Aug-07</li><li>  65 Phil Viner------------------------ Aug-07</li><li>  64 Ian Marshall---------------------- Aug-07</li><li>  63 Richard Harris-------------------- Jun-07</li><li>  62 Russell Moseley------------------- May-07</li><li>  61 Jane Hawkins---------------------- May-07</li><li>  60 David Caddick--------------------- Apr-07</li><li>  59 Malcolm Bee----------------------- Jan-07</li><li>  58 Kevin Jones----------------------- Jan-07</li><li>  57 Carol Gruffydd-------------------- Jan-07</li><li>  56 Nigel Thomas---------------------- Dec-06</li><li>  55 Mair Lloyd Evans------------------ Oct-06</li><li>  54 Paul Cassidy---------------------- Sep-06</li><li>  53 Pat West-------------------------- Sep-06</li><li>  52 Richard West---------------------- Sep-06</li><li>  51 John Warren----------------------- Aug-06</li><li>  50 Bruce Strong---------------------- Jul-06</li><li>  49 Trevor Ansell--------------------- Oct-05</li><li>  48 Mark Creswell--------------------- Aug-05</li><li>  47 Bridget Inns---------------------- Aug-05</li><li>  46 Allister McNeill------------------ Jul-05</li><li>  45 Keri James------------------------ May-05</li><li>  44 Bill Lansbury--------------------- Mar-05</li><li>  43 Bill Lansbury's dog--------------- Mar-05</li><li>  42 Phil Humphreys-------------------- Sep-04</li><li>  41 Ian Bensted----------------------- Aug-04</li><li>  40 Ellie Bensted--------------------- Aug-04</li><li>  39 Bill Lancashire------------------- Aug-04</li><li>  38 George Tunstall------------------- Jun-04</li><li>  37 David Passey---------------------- May-04</li><li>  36 Paul Rudkin----------------------- Oct-03</li><li>  35 Mike Steggles--------------------- Oct-03</li><li>  34 Eric Williams--------------------- Oct-03</li><li>  33 John Burn (2 rounds)-------------- Sep-03</li><li>  32 David Nicholson------------------- Aug-03</li><li>  31 Roy Tunstall---------------------- Aug-03</li><li>  30 Eric Johnson---------------------- Aug-03</li><li>  29 Steve Wilby----------------------- Jul-03</li><li>  28 Scott Butterworth----------------- Apr-03</li><li>  27 Geoff Passey---------------------- Jan-03</li><li>  26 Dave Jarvis----------------------- Jan-03</li><li>  25 Phil Lloyd Jones------------------ Jan-03</li><li>  24 Myrddyn Phillips (16 rounds)------ Sep-02**</li><li>  23 David Stearne--------------------- Oct-02</li><li>  22 Tom Hardman (2 rounds)------------ Aug-02</li><li>  21 Derek Ivens----------------------- Aug-02</li><li>  20 David Bingham--------------------- Jun-02</li><li>  19 Colin Waines---------------------- Apr-02</li><li>  18 Susan Waines---------------------- Apr-02</li><li>  17 Mervyn Probert-------------------- Jun-01</li><li>  16 Colin Mansell--------------------- Oct-00</li><li>  15 Mrs Mansell----------------------- Oct-00</li><li>  14 Iain Chippendale------------------ Oct-00</li><li>  13 Eryl Selly (2 rounds)------------- Jun-00**</li><li>  12 Mark Picktall--------------------- Jun-00</li><li>  11 Mal Davies------------------------ Dec-99</li><li>  10 Tom Alves------------------------- Oct_98</li><li>   9 Sarah_Jane Alves------------------ Oct-98</li><li>   8 David Walker---------------------- Oct-98</li><li>   7 Ed Humphreys---------------------- Aug-98</li><li>   6 John Burton----------------------- Sep-96</li><li>   5 Dewi Jones (3 rounds)------------- Sep-96**</li><li>   4 Ann Bowker------------------------ Jun-96</li><li>   3 Tim Jones------------------------- Jun-96</li><li>   2 Rita Selly------------------------ Jul-95</li><li>   1 Alan Taylor----------------------- </li></div> 
+	</div> 
+     <div class="footer"> 
+		©John and Anne Nuttall 2014 
+     </div> 
+</div> 
+
+</body></html>
