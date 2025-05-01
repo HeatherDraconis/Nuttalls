@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Switzerland article</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		back.style.width = scrwidth + "px";
+		picresize(scrwidth-40); 
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		picresize(800);
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		if(scrwidth < 800)
+			picresize(scrwidth-40);
+		else
+			picresize(760);
+		}
+	}
+
+function picscale(pic,size)
+	{
+	
+	if (pic.width > pic.height)
+		{
+		pic.width = size;
+		pic.height = size*2/3;
+		}
+	else
+		{
+		pic.width = size*2/3;
+		pic.height = size;
+		}
+	}	
+
+function picresize(picsize)
+	{
+		picscale(pic1,picsize);
+		picscale(pic2,picsize);
+		picscale(pic3,picsize);
+		picscale(pic4,picsize);
+		picscale(pic5,picsize);
+		picscale(pic6,picsize);
+		picscale(pic7,picsize);
+	}    
+
+    
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+<div class="content_std">
+    <div width="214" align="top" height="30">
+      <p align="left">
+      <b><font color="#800000" size="5">SWITZERLAND, THE EASY WAY<br></font>
+      <font color="#FF0000" size="5">by John Nuttall</font></b></p><br>
+    </div>
+    <div align="left"> 
+The Mountains and Lakes of Switzerland are very tempting, but for every enthusiastic walker there eventually comes a time when they have to admit that walks are taking longer than they used to.  Descents, especially steep ones,  hurt the knees, while climbs that used to be a doddle now require a lot more puff.  For a while you can put off admitting the truth by developing an enthusiasm.  Wild flowers are a good choice.  It's surprising how long one can spend leafing through a book trying to identify some minute white flower by counting its petals and deciding whether it is taller or shorter than the almost identical one on the opposite page.  Other people prefer birds, but they have the disadvantage they usually pass in less than a second and you're left thumbing the pages and wondering hopelessly if it was an eagle a long way off or merely a nearby sparrow.&nbsp;<br> 
+<br> 
+<p class="MsoNormal"><img id="pic1" border="0" src="../images/illustrations/switzerland/Brissago.jpg" width="800" height="533"><br> 
+<font color="#FF0000"><b>View from Brissago</b></font></p> 
+<br> 
+Yet despite infirmities, our enthusiasm for mountains and wild open countryside is as strong as ever.   Each spring there is an influx of brochures.  Obviously the tour companies think we are pretty tough.  A self guided trek across the Alps perhaps, with the view from eight thousand feet looking alluring.  Or how about  Africa with cuddly lions on every page?  And then there's Australia with thousands of miles of wilderness.  But strangely all the pictures show bronzed men and girls gazing at the horizon and they are, let's face it, a lot younger than us.  In fact most of them are not much older than our grandchildren.  We wouldn't stand a chance.<br>  
+<br>  
+But surely there must be a lot of people like us and that's when we found Adagio.  The word sounds slowish.  Not Presto or Vivacci or Allegro.  There is even an Adagio Plus, though that is not any musical direction I've ever come across.  You must be able to walk at up to 2 mph, said the holiday details, and climb and descend about a thousand feet.  Anyway having just returned from a backpack of over twenty miles round Ullswater and camping wild we were still OK for the mountains and decided to give it a go.<br>  
+<br> 
+<p class="MsoNormal"><img id="pic2" border="0" src="../images/illustrations/switzerland/Bellinzona_Market.jpg" width="800" height="533"><br> 
+<font color="#FF0000"><b>Bellinzona market</b></font></p> 
+<br><p class="MsoNormal">The first walk was near Locarno, about a mile and mostly down steps  on a narrow shaded twisting path to the lake, followed by a boat trip to Brissago, an island which is a superb botanical garden.  Returning to the mainland we went on a vineyard tour, including wine tasting, then finally back to the hotel.  Day total about three miles.  We can manage this easily, we thought, in fact it's much shorter than we expected.<br>  
+<br>  
+The next day was to be a stroll from Tenero to Locarno, then up a funicular followed by a cable car up to Cardada.  It was again a lovely day and we looked forward to a mountain walk with all the tough ascent taken out.   Rather disappointingly though after a picnic lunch it was back down the cable car, a look round a monastery and a return to our hotel.<br>  
+</p>  
+<br> 
+<p class="MsoNormal"><img id="pic3" border="0" src="../images/illustrations/switzerland/Orselina_Church.jpg" width="800" height="533"><br> 
+<font color="#FF0000"><b>Orselina Church</b></font></p>  
+<br><p class="MsoNormal">Succeeding days included a tour of Castelgrande, a 13th century castle dominating Bellinzona, a wine and cheese tasting and, entirely unplanned, a cycle race.  This was something really special including a display by the Swiss Air force with the jets roaring past in perfect formation time after time and just missing the rooftops.  But so far not much walking.<br>  
+<br><img id="pic4" border="0" src="../images/illustrations/switzerland/Cycle_Race_in_Bellinzona.jpg" width="800" height="533"><br> 
+<font color="#FF0000"><b>Cycle Race in Bellinzona</b></font></p> 
+<br> 
+<p class="MsoNormal">This is a two centre holiday and now it was off to Lugano.  Pausing for coffee at a mountain village, then a stroll through the woods above the river at Lavertezzo we arrived at the lakeside town where we discovered within a few yards of the hotel the shops included Prada, Rolex, Patek Philippe and Louis Vuitton.<br>  
+&nbsp;<o:p> 
+</o:p> 
+</p> 
+<p class="MsoNormal"><font color="#FF0000"><b><img id="pic5" border="0" src="../images/illustrations/switzerland/Monte_Bre_above_Lugano.jpg" width="800" height="533"> 
+<br> 
+Monte Bre above Lugano</b></font></p> 
+<br><p class="MsoNormal">Tomorrow is a free day we were told, so ambitiously we planned a walk up Monte Bre.  No problems in ascent, there was a funicular railway to the top, then a gradual climb up steps.  But, and it was our fault, the planned continuation to the next summit started with a 500 foot descent which then had to be climbed on our return.<br>  
+<o:p>  
+</o:p>  
+</p> 
+<br> 
+<p class="MsoNormal"><img id="pic6" border="0" src="../images/illustrations/switzerland/San_Salvatore_from_Lugano.jpg" width="800" height="533"> 
+<br> 
+<font color="#FF0000"><b>San Salvatore from Lugano</b></font></p>  
+<br> 
+<p class="MsoNormal">So the final day and it was a short walk beside Lake Lugano to look at flowers then, after pottering round for a couple of hours, a boat back.  We had six days walking, delightful companions, a friendly guide, splendid architecture, beautiful scenery and superb weather.   But after a total of only fifteen miles in six days we're not quite ready for taking things as easy as this.<br>  
+    <br> 
+  <a class="button"  href="http://www.adagio.co.uk"> Adagio</a>  
+</div>  
+    </div>     
+    </div>     
+</body>     

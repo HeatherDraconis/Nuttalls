@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Corsica article</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		back.style.width = scrwidth + "px";
+		picresize(scrwidth-40); 
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		picresize(800);
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		if(scrwidth < 800)
+			picresize(scrwidth-20);
+		else
+			picresize(780);
+		}
+	}
+
+function picscale(pic,size)
+	{
+	if (pic.width > pic.height)
+		{
+		pic.width = size;
+		pic.height = size*2/3;
+		}
+	else
+		{
+		pic.width = size*2/3;
+		pic.height = size;
+		}
+	}	
+
+function picresize(picsize)
+	{
+		picscale(pic1,picsize);
+		picscale(pic2,picsize);
+		picscale(pic3,picsize);
+		picscale(pic4,picsize);
+		picscale(pic5,picsize);
+		picscale(pic6,picsize);
+		picscale(pic7,picsize);
+	}    
+
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+<div class="content_std">
+
+    <div width="214" align="top" height="30">
+      <p align="left">
+    <div width="214" align="top" height="30">
+      <p align="left">
+      <b><font color="#800000" size="5">MINORCA<br></font>
+      <font color="#FF0000" size="5">by John Nuttall</font></b></p><br>
+    </div>
+      <br>
+      </font></b>
+    </div>
+    <div align="left">
+      <p><img id="pic1"  border="0" src="../images/illustrations/minorca/Torre_D'en_Galmes.jpg" width="800" height="532"><br>
+	<font color="#FF0000"><b>Torre D'en Galmes</b></font></p><br>
+      How the ancient Minorcans got all those vast rocks into place we'll never know, yet every corner of the island seems to have its own mini Stonehenge.  The map lists no less than 38 historical sites spread across the island, many with huge blocks set up like a giant's furniture.  When the Romans came, they must have felt this was close to paradise, for every year archaeologists are uncovering more links with that civilisation.  For most people however the beaches are the attraction.  The island is not vast, barely twenty per cent of Majorca, but there are more beaches and certainly many quieter ones than its big brother.<br> 
+      <br> 
+      As with many islands in the Mediterranean, ownership has changed hands over the centuries, like a game of musical chairs, and evidence of the British influence is still there in the waterfront at Port Mahon.  Here many of the houses overlooking the harbour have an unmistakeable English grand style, some dating back to the 18th century, for then the island was part of the British Empire.<br> 
+      <br> 
+      <p><img id="pic2"  border="0" src="../images/illustrations/minorca/Santo_Entierro.jpg" width="800" height="532"><br> 
+	<font color="#FF0000"><b>Santo Enteirro</b></font></p><br> 
+      Easter in Minorca is, of course, procession time and on Good Friday, our very first evening, we went to see Santo Entierro, which means Holy Burial.  Huge floats surmounted with carved statues, representing the last days of Christ, are carried through the streets by teams of bearers and penitents who wear tall pointed hats with full face masks, strongly reminiscent of the Ku Klux Klan.  The idea, apparently, is that only God knows who they are, and all sway from side to side as they walk to the slow beat of a drum.&nbsp;<br> 
+      <br> 
+      <p><img id="pic3" border="0" src="../images/illustrations/minorca/Cala_Macarella.jpg" width="800" height="532"><br> 
+ 	<font color="#FF0000"><b>Cala Macarella</b></font></p><br> 
+     "I've never seen that in Minorca before" exclaimed Stephanie our leader.  Following her gaze I saw a stark naked man run across the sand and throw himself into the sea.  He didn't stay in long though, April temperatures in the Mediterranean are a bit on the low side.  However the warmth of the sunshine makes up for the sea, and anyway we'd come to Minorca for the walking, not the nude bathing.<br> 
+      <br> 
+      We walked along winding paths and tracks across a landscape still firmly rooted in peasant culture, where stone walls enclose small fields and flowers bloom unspoilt by modern sprays and pesticides.  The black and white cows looked strangely familiar, just like Friesians back home, and that is exactly what they are, for they were introduced by Sir Richard Cane, the Lieutenant governor around 1722.  And then we came to sea views where ancient forts still gaze seawards surrounded by carpets of golden flowers.&nbsp;<br> 
+      <br> 
+      <p><img id="pic4" border="0" src="../images/illustrations/minorca/Hotel_Port_Mahon.jpg" width="800" height="532"><br> 
+	<font color="#FF0000"><b>Hotel Port Mahon</b></font></p><br> 
+      Being, I must admit, a trifle cynical at times I was sceptical about the advertised "Minorca in a Four Star hotel".  I was wrong.  Hotel Port Mahon fully lives up to that standard.  The buffet breakfast and dinner had such variety to select from that one morning I spent so long trying to choose breakfast that I completely failed to notice the free champagne.<br> 
+      <br> 
+      From Cala Santa Galdana on the southern coast we followed undulating limestone cliffs and over pitted, jagged rocks to Son Xoriguer which was like a ghost town – shops, cafes, even supermarkets deathly quiet.  I half expected to see tumbleweed rolling down the street like in those old westerns, but April is off season, with everything clean and new awaiting the coming summer.  This quiet time however has its rewards for Spring is when the wild flowers bloom.<br> 
+      <br> 
+      <p><img id="pic5" border="0" src="../images/illustrations/minorca/Cala_Figuera,_Port_Mahon.jpg" width="800" height="532"><br> 
+ 	<font color="#FF0000"><b>Figuera Port Mahon</b></font></p> 
+     <br> 
+      The highest point on the island is Monte Toro where, from the grand height of just 1455ft, you look out on the plain.  Afterwards a track took us to the north coast to follow the shore, stopping for a picnic on the beach by a flight of steps with a stern notice forbidding horses from climbing them.  Out and back then to see a crumbling tower where despite diligent searching, we failed to see the wild tortoise.<br> 
+      <br> 
+      <p><img  id="pic6" border="0" src="../images/illustrations/minorca/Fort_and_flowers,_Fondeadero_de_los_Llanes.jpg" width="800" height="532"><br> 
+	<font color="#FF0000"><b>Fondeadero de los Llanes</b></font></p><br> 
+      After more ruins at Torre d'en Galmes we were off to Son Bou and the sands on the south coast to walk on the edge of the waves - the tide here, as the rest of the Mediterranean, doesn't go in and out much.  Then, turning inland we followed the wooded Binigaus Gorge, with its many varieties of orchids, to the Cova des Coloms, The Cathedral.<br> 
+      <br> 
+      Just a week and so much to see, but next time I'll keep an eye open for the free champagne!<br> 
+    <br> 
+       <font color="#000080"><font size="4">This article was first  published in the Manchester Evening News</font></font> 
+  <br><a class="button"  href="http://www.ramblersholidays.co.uk"> Ramblers Holidays</a>  
+    </div> 
+   </div> 
+</body> 

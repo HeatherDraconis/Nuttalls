@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Corsica article</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		back.style.width = scrwidth + "px";
+		picresize(scrwidth-40); 
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		picresize(800);
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		if(scrwidth < 800)
+			picresize(scrwidth-20);
+		else
+			picresize(780);
+		}
+	}
+
+function picscale(pic,size)
+	{
+	if (pic.width > pic.height)
+		{
+		pic.width = size;
+		pic.height = size*2/3;
+		}
+	else
+		{
+		pic.width = size*2/3;
+		pic.height = size;
+		}
+	}	
+
+function picresize(picsize)
+	{
+		picscale(pic1,picsize);
+		picscale(pic2,picsize);
+		picscale(pic3,picsize);
+		picscale(pic4,picsize);
+		picscale(pic5,picsize);
+		picscale(pic6,picsize);
+		picscale(pic7,picsize);
+	}    
+
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+<div class="content_std">
+    <div width="214" align="top" height="30">
+      <p align="left">
+    <div width="214" align="top" height="30">
+      <p align="left">
+      <b><font color="#800000" size="5">CORSICA<br></font>
+      <font color="#FF0000" size="5">by John Nuttall</font></b></p><br>
+    </div>
+      </font></b>
+    </div>
+    <div align="left">
+    You don't often come across fish on a walking holiday, except perhaps as a  
+    succulent plateful at the end of a hard day on the hills, but the ones I met  
+    at Calvi were looking at me face to face. This  
+    was the easy part of the holiday, a trip on an antique train to Orso Longo  
+    followed by a gentle stroll back along the coast with lunch in a beachside  
+    café followed by a swim among the fish that thronged the rocks.<br>  
+    <br>  
+    <img id="pic1"  border="0" src="../images/illustrations/corsica/Tower_on_the_coast.jpg" width="531" height="800"><br>  
+     <font color="#FF0000"><b>Tower on the coast</b></font> 
+     <br> 
+    <br>  
+    Ancient watchtowers, surrounded by a mass of golden yellow flowers, looked out over  
+    a dark blue sea, while the sun beat down remorselessly with reflections  
+    shimmering in the heat. Somehow this reminded me of the desert, which wasn't  
+    far wrong really, as the crowd of bronzed athletic young men lazing on the  
+    beach turned out to be members of the French Foreign Legion.<br>  
+    <br>  
+    <img id="pic2"  border="0" src="../images/illustrations/corsica/French_Foreign_Legion_at_Calvi.jpg" width="800" height="532"><br>  
+     <font color="#FF0000"><b>French Foreign Legion at Calvi</b></font> 
+     <br> 
+    <br>  
+    Corsica has a reputation for toughness. After all the most strenuous and  
+    demanding of all the famous French walking routes, the GR20, with its  
+    mountain huts and airy scrambles along rocky ridges, can be found here. But  
+    we weren't following the way the hard men go, ours was more relaxing with a  
+    return every night to an hotel close to Calvi's magnificent Citadelle  
+    towering over the harbour.<br>  
+    <br>  
+    <img id="pic3"  border="0" src="../images/illustrations/corsica/Citadelle_and_Harbour,_Calvi.jpg" width="800" height="532">  
+     <font color="#FF0000"><b>Citadelle and Harbour, Calvi</b></font> 
+    <br>  
+    <br>  
+    Most people know the tale of Nelson clapping the telescope to his blind eye  
+    and declaring &quot;I see no ships&quot;, but it was here, during the Siege  
+    of Calvi in 1794, that he lost that eye when struck by stone splinters  
+    thrown up by a cannonball. There were certainly plenty of ships though, for  
+    the harbour was full of them and we strolled along the quayside past  
+    ferries, fishing boats, diving boats and a host of multi-million pound  
+    yachts getting ready for Calvi's round the island race. 
+    <br>  
+    <img id="pic4"  border="0" src="../images/illustrations/corsica/la_Revellata_cliffs,_near_Calvi.jpg" width="800" height="532"><br>  
+     <font color="#FF0000"><b>la Revellata cliffs near Calvi</b></font> 
+    <br>  
+    <br>  
+    Across  
+    the wide bay the distant mountains beckoned, but walks at Calvi were mostly  
+    through villages where cherry trees hung heavy with fruit and we stopped in  
+    the cool of cafes like Sant Antonino where lemonade was made on the spot  
+    from freshly squeezed lemons. 
+     
+    <p>Friends made on holiday often turn out to come from far away, but it was  
+    a surprise to find one lived just round the corner from us and Anne had even  
+    babysat there. Another couple lived only a few miles from us and, when one  
+    young lady happened to mention fell running, it turned out she ran regularly  
+    with a friend of mine.</p>  
+    <p>Running was definitely out though when we moved to the university town of  
+    Corte.<br>  
+    <br>  
+    <img id="pic5"  border="0" src="../images/illustrations/corsica/Belvedere_above_Corte.jpg" width="800" height="532"><br>  
+     <font color="#FF0000"><b>Belvedere above Corte</b></font> 
+    <br>  
+    <br> 
+    Set  in the mountains we expected to find cool mountain breezes, but the heat  
+    continued as we explored tree-lined gorges set beneath towering peaks, while  
+    lizards scurried beneath our feet. Corte is a strange mixture, with busy  
+    cafes set round a shady square dominated by a statues of Pascal Paoli, the  
+    leader of Corsica's 18<sup>th</sup> century independence, while the  
+    care-worn buildings were a reminder that in the 1960's the island lost half  
+    its population through emigration.<br>  
+    <br>  
+    <img id="pic6"  border="0" src="../images/illustrations/corsica/Pigna,_one_of_the_Corsican_villages.jpg" width="532" height="800"></p>  
+     <font color="#FF0000"><b>Pigna, one of the Corsican villages</b></font> 
+    <br>  
+    <br> 
+<p>&quot;Tomorrow&quot;, said our guide, &quot;I've planned a villages  
+    walk&quot;. Our faces fell. Independence reared its head. We come on these  
+    holidays for the company of other walkers, but the Arche de Corte could not  
+    be missed. True it's practically straight up, an unrelenting climb of four  
+    thousand feet, but from every postcard stand the images of this huge rocky  
+    arch tempted us.</p> 
+    <br>  
+    <img id="pic7"  border="0" src="../images/illustrations/corsica/Mountains_and_pine_trees_high_above_Corte.jpg" width="800" height="532"><br>  
+     <font color="#FF0000"><b>Mountains and pine trees high above Corte</b></font> 
+    <br>  
+    <br> 
+    An  early start was called for and, as we climbed away from the town up a  
+    hillside covered in yellow flowering maquis, I was glad to have invested in  
+    a set of walking maps. Within minutes three locals passed us going the  
+    opposite way. Obviously our 8.30a.m. start was pretty late by their  
+    standards. &quot;You've got plenty of water haven't you?&quot; enquired one  
+    and, with shoulders drooping under the weight of half a gallon of the stuff,  
+    we felt well prepared. It wasn't alas enough. Perhaps it was thirst, for  
+    when we reached the ridge we failed completely to find the arch. The  
+    surroundings were superb with wild goats, pine trees, stupendous drops and  
+    gleaming jagged mountains. But no arch.  
+    <p>And will we go back? Well, I rather like the heat and then there's that  
+    rocky arch to find. It must be up there somewhere.</p>  
+    <br> 
+       <font color="#000080"><font size="4">This article was first  published in the Manchester Evening News</font></font>  
+  <br><a class="button"  href="http://www.ramblersholidays.co.uk"> Ramblers Holidays</a>   
+    </div>  
+    </div>  
+</body>  

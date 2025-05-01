@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Corsica article</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		back.style.width = scrwidth + "px";
+		picresize(scrwidth-40); 
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		picresize(800);
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		if(scrwidth < 800)
+			picresize(scrwidth-20);
+		else
+			picresize(780);
+		}
+	}
+
+function picscale(pic,size)
+	{
+	if (pic.width > pic.height)
+		{
+		pic.width = size;
+		pic.height = size*2/3;
+		}
+	else
+		{
+		pic.width = size*2/3;
+		pic.height = size;
+		}
+	}	
+
+function picresize(picsize)
+	{
+		picscale(pic1,picsize);
+		picscale(pic2,picsize);
+		picscale(pic3,picsize);
+		picscale(pic4,picsize);
+		picscale(pic5,picsize);
+		picscale(pic6,picsize);
+		picscale(pic7,picsize);
+	}    
+
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+<div class="content_std">
+    <div width="214" align="top" height="30">
+      <p align="left">
+    <div width="214" align="top" height="30">
+      <p align="left">
+      <b><font color="#800000" size="5">DODECANESE<br></font>
+      <font color="#FF0000" size="5">by John Nuttall</font></b></p>
+    </div>
+      </font></b></p>
+    </div>
+    <div align="left">
+    <div align="left">
+    <br>
+      <p class="MsoNormal">It sounded like porridge bubbling gently on the stove, but this was no culinary expedition for beneath my feet thick, black mud was on the boil and all around was the pervading smell of sulphur.  This was Stefanos, the famous volcano of Nissyros and I was standing right in the middle of the crater.<br>
+      <img id="pic1" border="0" src="..//images/illustrations/dodecanese/Stefanos_crater.jpg" width="800" height="533"><br>
+       <font color="#FF0000"><b>Stefanos crater</b></font><br><br>
+      We had come to explore five islands in the eastern Mediterranean.  All are Greek, but they're so close to Turkey you feel you could swim across.  Rhodes and Kos will be well known to lovers of sun and sea, but our ports of call also included Tilos, Nissyros and Symi.<br>
+      <img id="pic2" border="0" src="..//images/illustrations/dodecanese/Acropolis,_Rhodes.jpg" width="800" height="533"><br>
+       <font color="#FF0000"><b>Acropolis, Rhodes</b></font><br><br>
+      The promise was walking the wildness of these islands together with seeing the sights.  We started with Lindhos Acropolis.  Here a massive Greek fort is set on a hill summit.  It looks, and is, ancient, yet they're still building it, for a crane was lifting great blocks of ancient stone back into position.  Walking uphill doesn't appeal to everyone so photogenic donkeys are available, but my favourite sight was a girl seated astride with eyes only for her mobile phone.<br>
+      <img id="pic3" border="0" src="..//images/illustrations/dodecanese/Donkey_approach_to_the_Acropolis.jpg" width="800" height="533"><br>
+	<font color="#FF0000"><b>Donkey approach to the Acropolis, Rhodes</b></font><br><br>
+      Tilos, one of the quietest of our islands, is so different from the tourist throngs of Rhodes.  We arrived by ferry at midnight, trundled about a hundred yards and into bed in a delightful little hotel.  Another brilliant morning and a walk to the deserted village of Mikro Horio.  Set high on the hillside, and once the home of 1200 people, it was abandoned when the water supply ran out.  Water here is very precious.  "Please remember", goes one notice, "No more rain until winter"  Memo to self: don't take so much outdoor gear next time – you don't need Lake District waterproofs!  Walks were rather shorter than I'd expected, but in splendid places, like the cliff path from Ayiou Pandelimona monastery, where the resident dog was so overjoyed to see us we thought he must be the reincarnated spirit of a former monk.<br>
+      <img id="pic4"  border="0" src="..//images/illustrations/dodecanese/Cliff_path_from_Ayiou_Pandelimona_monastery,_Tilos.jpg" width="800" height="533">
+	<br>
+	<font color="#FF0000"><b>Cliff path from Ayiou Pandelimona monastery, Tilos</b></font><br><br>
+      On Livadhia waterfront I saw a visiting Greek gunboat and made friends with a charming lady in Coastguard uniform.  All the men in the service seemed to carry guns, but I thought it indelicate to ask where she kept hers. &nbsp;<br>
+      Nissyros, the one with the volcano, is the smallest of our islands, but though a more popular destination, the port of Mandhraki has delightful narrow streets where day trippers seldom venture. &nbsp;<br>
+      Tourists invariably approach the volcano by bus.  We walked.  A narrow mule track wound across a rocky hillside to emerge with an eagle's eye view of the vast amphitheatre below.  Down then into the dusty bowl where the final descent to the caldera was an optional extra and a cynical guide told horrific tales to spellbound tourists. &nbsp;<br>
+      "Anyone fancy another walk?" enquired our deputy leader, so five of us set off up the rocky hillside where an occasional faded red waymark gave reassurance.  Soon high above the volcano we walked across rough country with red cistus flowers among the rocks while overgrown terraces hinted once this was a thriving landscape of olive groves.<span style="mso-bidi-font-size: 12.0pt"><br>
+      <img id="pic5" border="0" src="..//images/illustrations/dodecanese/Quiet_back_street_in_Mandhraki,_Nissyros.jpg" width="800" height="533">
+	<br>
+	<font color="#FF0000"><b>Quiet back street in Mandhraki, Nissyros</b></font><br><br>
+      All too soon we headed down to the harbour, for ahead lay Kos where friends spoke not of walks and architectural marvels, but of riotous excess.  But first we had to get there.  The ferry arrived.  Our luggage was trundled aboard.  We waited.  The day trippers must go first.  At last it was our turn.  We settled into seats or lounged on the rail.  A handful of grim faced port officials eyed us suspiciously, then "All Off", cried our leader.  Boat overloaded?  We never found out, but it was back to the taverna where we were welcomed as only the Greeks can, while beer and wine flowed freely until, on the horizon, a small boat was seen tacking its way through the waves. &nbsp;<br>
+      After a couple of days sight-seeing on Kos we went to Symi and had, if not the best hotel of the trip, the best location – right on the beach.  Walks followed, a beach lunch with goats leaning over the fence casting envious eyes at our feta cheese and tomatoes.  I even swam to an island just like an Enid Blyton tale, followed by a walk across a wild rocky headland with no-one is sight for miles.<span style="mso-bidi-font-size: 12.0pt"><br>
+      <img  id="pic6" border="0" src="..//images/illustrations/dodecanese/Aerial_view_of_Symi_harbour.jpg" width="800" height="533">
+      <br>
+	<font color="#FF0000"><b>Aerial view of Symi harbour</b></font><br><br>
+      </span>These islands are a fascinating mixture, where ports may throng with tourists in search of gaily coloured souvenirs, but only a short stroll away is wild rocky and almost deserted countryside.  It's magnificent.  This is what we came for.  I've swum in blue seas with not a soul in sight and after two weeks of sun I've come home brown.  I wonder whether my grand children will recognise me!
+       <br>
+       <font color="#000080"><font size="4">This article was first  published in the Manchester Evening News</font></font> 
+  <br><a class="button"  href="http://www.ramblersholidays.co.uk"> Ramblers Holidays</a>  
+    </div>
+    </div>
+</body>

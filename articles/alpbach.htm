@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Corsica article</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		back.style.width = scrwidth + "px";
+		picresize(scrwidth-40); 
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		picresize(800);
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		if(scrwidth < 800)
+			picresize(scrwidth-20);
+		else
+			picresize(780);
+		}
+	}
+
+function picscale(pic,size)
+	{
+	var exists = document.getElementById(pic);
+	if (exists)
+		{	
+		if (pic.width > pic.height)
+			{
+			pic.width = size;
+			pic.height = size*2/3;
+			}
+		else
+			{
+			pic.width = size*2/3;
+			pic.height = size;
+			}
+		}
+	}	
+
+function picresize(picsize)
+	{
+		picscale(pic1,picsize);
+		picscale(pic2,picsize);
+		picscale(pic3,picsize);
+		picscale(pic4,picsize);
+		picscale(pic5,picsize);
+		picscale(pic6,picsize);
+		picscale(pic7,picsize);
+	}    
+
+
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+<div class="content_std">
+    <div width="214" align="top" height="30">
+      <p align="left">
+      <b><font color="#800000" size="5">
+    <div width="214" align="top" height="30">
+      <p align="left">
+      <b><font color="#800000" size="5">ALPBACH<br></font>
+      <font color="#FF0000" size="5">by John Nuttall</font></b></p><br>
+    </div>
+      </font></b></p>
+    </div>
+    <div align="left">
+    There was a revolt on our very first day in Alpbach.  After only a short walk through the flower meadows our leader, Rosemary, stood like Horatius on the bridge as those behind cried "Forward!", while those at the front cried "Back!".  But the dispute was only whether to climb mountains or return in time for the village festival.<br> 
+    <br><img id="pic1"  border="0" src="../images/illustrations/alpbach/Gross_Galtenberg_from_our_balcony.jpg" width="800" height="533"> <br>
+    <font color="#FF0000"><b>Gross Galtenberg from our balcony</b></font>
+    <br>
+    <br>The toughest and most determined member of the group sidled up to me and in low, confidential tones asked if I would lead a breakaway group on a "proper walk".  No, this was not one of the hard men, but the smallest lady of them all.  She was also the oldest member of the party, but before many days were out everyone had come to look on her in awe.  When steep rocks and wire ropes were the only way to reach a mountain summit she was in front; when others took the easy option she headed resolutely uphill; and when we returned exhausted at the end of the day and slumped in the bar to recuperate, Margaret headed off round the corner to explore some more of this delightful part of Austria.  The trouble was I wanted to go to the festival and she never quite got over my desertion as I headed back to Alpbach for Tyrolean music and dancing.<br> 
+    <br><img id="pic2"  src="../images/illustrations/alpbach/Break_for_a_chat_at_Alpbach_Festival.jpg" width="800" height="533"><br> 
+    <font color="#FF0000"><b>Break for a chat at Alpbach Festival</b></font>
+    <br>
+    <br>The next day we were being let in gently, for the first 3000ft of the Wiedersberger Horn was by gondola lift; all very civilised, warm and comfy, but enclosed.  Call me old fashioned, but I much prefer chairlifts, where your feet dangle over space, with the chiming of cowbells and the scent of pine trees gently wafting up.  But whichever way you reach the summits, or only admire them from your hotel balcony, the views are a feast.<br> 
+    <br> 
+    Even in a remote village like Alpbach, I.T. is gradually insinuating itself in the form of an Internet Café and also an on-line weather forecast.  "One moment", said the lady at the tourist office when I enquired about the day's weather, "I'm just printing it off".  The proffered sheet showed a confusion of black clouds, white clouds, clouds with a raindrop, and others with two or more raindrops, while a jagged streak looked ominously like lightning.  It was just the same as being back home.  Very enigmatic and also completely wrong.<br> 
+    <br><img id="pic3"   border="0" src="../images/illustrations/alpbach/Bear_carving_at_Alpbach.jpg" width="533" height="800"> <br>
+    <font color="#FF0000"><b>Bear carving at Alpbach</b></font>  
+    <br>
+    <br>One of the essentials for a walker is a good map and the tourist office was eager to help.  Covered in wriggly red lines the map showed the Alpbach Valley had much to offer, while signposts on every street corner pointed uphill indicating A61, A13 and even A6 - it's not everyone who can say they've been a walk on the A6!&nbsp;<br> 
+    <br><img  id="pic4"  border="0" src="../images/illustrations/alpbach/Thierbach.jpg" width="800" height="533"> <br>
+     <font color="#FF0000"><b>Theirbach</b></font>
+     <br>  
+    <br>You might think that leading walking parties is a nice cushy job.  However one of the cardinal rules is that when anything goes wrong you have to be present and accept total blame.  They certainly have to keep cheerful.  A friend of mine went out as a guide to the Himalayas.  When he got back I asked how it had gone.  "Any problems?", I enquired.  "No, none", he said, then adding almost as an afterthought, "Apart from the bloke who died".  Fortunately our problems were very minor compared to his.  We got lost - the squiggly red lines on the tourist map didn't always correspond to the actual paths.  And it did rain.  One day, for an hour and a half, it rained bucketfuls, sheets and torrents of rain, but fortunately the whole time we were in a gasthof tucking into cheese pancakes and apfel strudel with a glass of beer.  Now that's the most important quality that a guide should have - good luck.<br> 
+    <br> 
+    Apart from the mountains themselves, one of the most memorable things about Alpbach is the mountain huts.  Arriving mid-morning we found the place locked and shuttered.  Above us a figure waved, so we hung about disconsolately until, almost at a trot, a lady arrived, flung open the door and started to make a fire and within minutes we were sitting steaming in front of a roaring blaze.<br> 
+    <br><img  id="pic5"  border="0" src="../images/illustrations/alpbach/Grubersee_on_the_approach_to_Rofanspitze.jpg" width="800" height="533"> <br>
+    <font color="#FF0000"><b>Grubersee on the approach to Rofanspitze</b></font>
+    <br>
+   <br>And we did get up the mountains.  There was the Rofanspitze, approached through gleaming white rock spires, and there was Standkopf and Gratispitz, while on the mountainsides grew alpenrose and gentians.  But among the finest was the sight of Alpbach appearing through the clouds almost three thousand feet below - definitely an experience not to be missed.&nbsp;<br> 
+    <br> 
+       <font color="#000080"><font size="4">This article was first  published in the Manchester Evening News</font></font> 
+  <br><a class="button"  href="http://www.ramblersholidays.co.uk"> Ramblers Holidays</a>  
+    </div> 
+    </div> 
+</body> 

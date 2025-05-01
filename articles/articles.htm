@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Travel Articles</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+ 
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	back.style.minHeight=scrheight + "px";
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		// list extends full height
+		back.style.width = scrwidth + "px";
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		}
+	}
+function sm() {
+	var myaddr = "john" + "@" + "nut" + "talls" + ".co" + "m";
+	document.location = "mailto:" + myaddr;
+	}
+    
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FDF1DB">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+	<div class="content_std">
+		<div class="title1">TRAVEL ARTICLES</div>
+		<div style="min-height: 80px; padding: 10px">
+			<ul class= "listbigredstyle" >
+				<li><a href="alpbach.htm"> Alpbach </a></li>
+				<li><a href="corsica.htm"> Corsica </a> </li>
+				<li><a href="dodecanese.htm"> Dodecanese</a> <a> </li>
+				<li></a><a href="madeira.htm"> Madeira </a> </li>
+				<li><a href="minorca.htm"> Minorca </a> </li>
+				<li><a href="switzerland.htm"> Switzerland </a> </li>
+			</ul>
+		</div>
+    </div>
+     <div class = "footer">
+		©John and Anne Nuttall 2014
+     </div>
+</body>

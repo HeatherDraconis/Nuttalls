@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content="width=device-width ,initial-scale=1, minimum-scale=1">
+<title>Corsica article</title>
+<style>html, body {height: 105%; background-color: #BED3AA; }</style>
+<link rel="stylesheet" type="text/css" href="../css/standard.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<script src="../js/general.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/menuhtm.js"></script>
+<script>
+var scrwidth;
+var scrheight;
+var ddmenuitem = 0;
+var ddsubmenuitem = 0;
+var viewportWidth;
+var viewportHeight;
+var phone;
+var dirName= true;
+var dirHeight = false;
+var dirUnits = "ft";
+var order;
+var m_picvisible = "";
+var grvisible = "";
+var units = "ft";
+var field = "Name";
+var glineid;
+var gname;
+var ggr;
+
+function setup()
+	{
+	general();
+	if(m_touchdevice)
+		timeout = 5000;
+	else
+		timeout = 300;
+	createmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	reset();
+	}
+	
+function reset()
+	{
+	layoutmenu();
+	scrwidth = screenwidth();
+	scrheight = screenheight();
+	var back = document.getElementById("backdrop");
+	if(m_touchdevice || (scrwidth < 480))
+		{
+		back.style.width = scrwidth + "px";
+		picresize(scrwidth-40); 
+		}
+	else if(scrwidth > 1023)
+		{
+		// list with scrollbar
+		back.style.width = "1024px";
+		picresize(800);
+		}
+	else
+		// not touchdevice or scrwidth between 480 and 1024
+		{
+		back.style.width = scrwidth + "px";
+		if(scrwidth < 800)
+			picresize(scrwidth-20);
+		else
+			picresize(780);
+		}
+	}
+
+function picscale(pic,size)
+	{
+	if (pic.width > pic.height)
+		{
+		pic.width = size;
+		pic.height = size*2/3;
+		}
+	else
+		{
+		pic.width = size*2/3;
+		pic.height = size;
+		}
+	}	
+
+function picresize(picsize)
+	{
+		picscale(pic1,picsize);
+		picscale(pic2,picsize);
+		picscale(pic3,picsize);
+		picscale(pic4,picsize);
+		picscale(pic5,picsize);
+		picscale(pic6,picsize);
+		picscale(pic7,picsize);
+	}    
+
+ </script>
+</head>
+
+<body onload="setup()" onresize="reset()">
+<!DOCTYPE html>
+<div id="backdrop" style="background-color: #FFFFFF">
+	<div id="header">
+		<ul class="headerw">
+    		<li id="headline">JOHN and ANNE NUTTALL</li>
+		</ul>
+	</div>   
+	<div id="navwrap" class="navwrap">
+		<div id="nav" class="nav">
+			<ul class="menu" id="mainmenu">
+			</ul>
+		</div>
+	</div>
+<div class="content_std">
+    <div width="214" align="top" height="30">
+      <p align="left">
+    <div width="214" align="top" height="30">
+      <p align="left">
+      <b><font color="#800000" size="5">MADEIRA<br></font>
+      <font color="#FF0000" size="5">by John Nuttall</font></b></p><br>
+    </div>
+      </font></b></p>
+    </div>
+    <div align="left">
+    "This water's flowing uphill!", exclaimed Eric, pointing to the swift-flowing stream at our feet.  But though water in Madeira has not acquired gravity-defying properties, the light begins to play strange tricks while walking beside the levadas, or mini-canals, that irrigate the terraced vineyards and banana plantations clinging to the steep hillsides.<br> 
+    <img  id="pic1" border="0" src="../images/illustrations/madeira/Levada_near_the_25_Fonts_waterfall.jpg" width="800" height="533"><br> 
+    <font color="#FF0000"><b>Levada near the 25 Fonts Waterfall</b></font><br> 
+	<br> 
+    Now many people say they prefer their walks downhill.  Well in Madeira you can indulge yourself by taking a bus or taxi ride to the top and walking down.  It's a long way mind, for though the island is not much bigger than the Isle of Wight, Madeira rises steeply from the Atlantic to mountain peaks over six thousand feet high.<br> 
+    <img id="pic2"   border="0" src="../images/illustrations/madeira/Clouds_on_Pico_Torres.jpg" width="800" height="533"><br> 
+     <font color="#FF0000"><b>Clouds on Pico Torres</b></font><br> 
+   There really is hardly anywhere in the island that is flat and, with no sandy beaches for sun worshippers, the Atlantic breaks in thunderous roars on the rocks.  Even the airport is built out into the sea on stilts, while the roads twist and turn in convoluted meanderings between villages clinging to the hillside.  The only way to go straight is to dig lots of tunnels. And that is exactly what they are doing, as the main road emerges from solid rock to cross a bridge boasting the highest single span in Europe.<br> 
+    <br> 
+    Our fortnight was advertised as a "flower holiday", and indeed on the hillsides we found many sub-tropical blooms including Agapanthus and the Madonna Lily, but Madeira surprisingly has only around 30 native species - all the rest have arrived like tourists that have fallen in love with the island and stayed.  Walkers must take a day off and visit the gardens.  Monte Palace Tropical Garden, which is reached by a cable car giving superb views of Funchal, is the best known, but the Jardim Botanico is even finer.<br> 
+    <img  id="pic3" border="0" src="../images/illustrations/madeira/Cable_car_above_Funchal.jpg" width="800" height="533"><br> 
+    <font color="#FF0000"><b>Cable car above Funchal</b></font><br>
+    <br> 
+   Funchal, the capital, has over half the island's population and its Market Hall is a cornucopia of delights.  Bird of Paradise flowers and masses of orchids vie with rows upon rows of fish.  Especially the scabbard fish.  I wouldn't want to meet one of these face to face in its natural element, for its long muscular body ends in an evil-looking set of sharp teeth.  This is the celebrated delicacy of Madeira, appearing on every menu together with the island's main crop, banana.  They might seem strange companions, but the combination is remarkably effective.<br> 
+    The best excursion in the whole island is one that will have mountain lovers drooling.  Again Madeira springs surprises.  Believe it or not there is a road to the very summit of Pico do Arieiro, the third highest mountain on the island.  "We drove up there", said my brother-in-law, "but couldn't see anything so came down again".   And, as our bus wound its way up through thick mist, we reconciled ourselves to a wet grey day.  But suddenly, on turning a corner, the mist was gone.  All around us were the mountains with the jagged fangs of Pico Torres reaching skywards out of a white sea, while above the sun shone in a perfect blue sky.  Beyond the road end the true walking starts.  A neatly paved way sets off along the ridge and then continues with a flight of steps.  A bit tame?  Just look down!  These paths are in some remarkable situations and it's difficult to believe they could exist in such a place.<br> 
+    <img  id="pic4" border="0" src="../images/illustrations/madeira/Path_round_the_Pico_Torres.jpg" width="800" height="533"><br> 
+       <font color="#FF0000"><b>Path round the Pico Torres</b></font><br> 
+    <br>
+    But exist they do, with a staircase of steps cut into sheer rock walls, or a narrow scrape of a path twisting up a weakness in the cathedral architecture of the mountains.  There are tunnels for the faint of heart, but these avoid some of the best bits and when you arrive at Pico Rivo it is with a twinge of regret that all is over.  Of course you could turn round and walk back the same way, but our bus was waiting.  So next time we'll have to do the big traverse.  It's marked on the map, a long ridge stretching in a massive horseshoe to the final summit of Pico Grande.<br> 
+    <img  id="pic5" border="0" src="../images/illustrations/madeira/High_level_path_to_Pico_Rivo.jpg" width="800" height="533"><br> 
+   <font color="#FF0000"><b>High level path to Pico Rivo</b></font><br> 
+    <br>And will we ever go back?   The answer is yes.  There's the traverse of the high mountains to do and many more levadas to explore.  In the meantime, well it's not the same, but how about cod and chips with banana?<br> 
+    <br> 
+       <font color="#000080"><font size="4">This article was first  published in the Manchester Evening News</font></font> 
+  <br><a class="button"  href="http://www.ramblersholidays.co.uk"> Ramblers Holidays</a>  
+    </div> 
+   </div> 
+</body> 
